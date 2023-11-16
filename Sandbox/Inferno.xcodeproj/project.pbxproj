@@ -1,0 +1,605 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		516617962AFA4B2300978554 /* SimpleTransformationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617952AFA4B2300978554 /* SimpleTransformationPreview.swift */; };
+		516617982AFA517C00978554 /* TouchTransformationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617972AFA517C00978554 /* TouchTransformationPreview.swift */; };
+		5166179A2AFA519500978554 /* TouchTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617992AFA519500978554 /* TouchTransformationShader.swift */; };
+		5166179C2AFA543700978554 /* TransitionShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5166179B2AFA543700978554 /* TransitionShader.swift */; };
+		516617A22AFA58CA00978554 /* TransitionPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617A12AFA58CA00978554 /* TransitionPreview.swift */; };
+		516617A42AFA6A5100978554 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617A32AFA6A5000978554 /* WelcomeView.swift */; };
+		516617A62AFA6B8500978554 /* GenerativeShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617A52AFA6B8500978554 /* GenerativeShader.swift */; };
+		516617A82AFA6BC300978554 /* String-ShaderName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617A72AFA6BC300978554 /* String-ShaderName.swift */; };
+		516617AA2AFA6C2900978554 /* GenerativePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617A92AFA6C2800978554 /* GenerativePreview.swift */; };
+		516617B02AFA711B00978554 /* AbsoluteTouchTransformationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617AF2AFA711B00978554 /* AbsoluteTouchTransformationPreview.swift */; };
+		516617B22AFA717500978554 /* RelativeTouchTransformationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 516617B12AFA717500978554 /* RelativeTouchTransformationPreview.swift */; };
+		518833952AFBC0DF00D30D44 /* ContentPreviewSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518833942AFBC0DF00D30D44 /* ContentPreviewSelector.swift */; };
+		518833972AFBC44400D30D44 /* ContentPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518833962AFBC44400D30D44 /* ContentPreview.swift */; };
+		5188339B2AFBD0DE00D30D44 /* TransformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5188339A2AFBD0DE00D30D44 /* TransformationType.swift */; };
+		51A63CEE2B05018A00A67C06 /* ToggleAlphaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63CED2B05018A00A67C06 /* ToggleAlphaButton.swift */; };
+		51A63DBE2B054F6700A67C06 /* Water.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51A63DBD2B054F6700A67C06 /* Water.metal */; };
+		51A63DC02B0570F400A67C06 /* Interlace.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51A63DBF2B0570F400A67C06 /* Interlace.metal */; };
+		51C72B672AFBE7800094D932 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B662AFBE7800094D932 /* Transitions.swift */; };
+		51C72B892AFBE7C40094D932 /* Diamond.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B6E2AFBE7C40094D932 /* Diamond.metal */; };
+		51C72B8A2AFBE7C40094D932 /* CircleWave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B6F2AFBE7C40094D932 /* CircleWave.metal */; };
+		51C72B8B2AFBE7C40094D932 /* Pixellate.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B702AFBE7C40094D932 /* Pixellate.metal */; };
+		51C72B8C2AFBE7C40094D932 /* DiamondWave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B712AFBE7C40094D932 /* DiamondWave.metal */; };
+		51C72B8D2AFBE7C40094D932 /* Radial.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B722AFBE7C40094D932 /* Radial.metal */; };
+		51C72B8E2AFBE7C40094D932 /* Circle.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B732AFBE7C40094D932 /* Circle.metal */; };
+		51C72B8F2AFBE7C40094D932 /* Crosswarp.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B742AFBE7C40094D932 /* Crosswarp.metal */; };
+		51C72B902AFBE7C40094D932 /* Wind.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B752AFBE7C40094D932 /* Wind.metal */; };
+		51C72B912AFBE7C40094D932 /* Swirl.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B762AFBE7C40094D932 /* Swirl.metal */; };
+		51C72B922AFBE7C40094D932 /* RainbowNoise.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B782AFBE7C40094D932 /* RainbowNoise.metal */; };
+		51C72B932AFBE7C40094D932 /* WarpingLoupe.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B792AFBE7C40094D932 /* WarpingLoupe.metal */; };
+		51C72B942AFBE7C40094D932 /* AnimatedGradientFill.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7A2AFBE7C40094D932 /* AnimatedGradientFill.metal */; };
+		51C72B952AFBE7C40094D932 /* GradientFill.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7B2AFBE7C40094D932 /* GradientFill.metal */; };
+		51C72B962AFBE7C40094D932 /* Emboss.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7C2AFBE7C40094D932 /* Emboss.metal */; };
+		51C72B972AFBE7C40094D932 /* InvertAlpha.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7D2AFBE7C40094D932 /* InvertAlpha.metal */; };
+		51C72B982AFBE7C40094D932 /* WhiteNoise.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7E2AFBE7C40094D932 /* WhiteNoise.metal */; };
+		51C72B992AFBE7C40094D932 /* Checkerboard.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7F2AFBE7C40094D932 /* Checkerboard.metal */; };
+		51C72B9A2AFBE7C40094D932 /* RelativeWave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B802AFBE7C40094D932 /* RelativeWave.metal */; };
+		51C72B9B2AFBE7C40094D932 /* SimpleLoupe.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B812AFBE7C40094D932 /* SimpleLoupe.metal */; };
+		51C72B9C2AFBE7C40094D932 /* Recolor.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B822AFBE7C40094D932 /* Recolor.metal */; };
+		51C72B9D2AFBE7C40094D932 /* Wave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B832AFBE7C40094D932 /* Wave.metal */; };
+		51C72B9E2AFBE7C40094D932 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B842AFBE7C40094D932 /* Passthrough.metal */; };
+		51C72B9F2AFBE7C40094D932 /* Infrared.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B852AFBE7C40094D932 /* Infrared.metal */; };
+		51C72BA02AFBE7C40094D932 /* ColorPlanes.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B862AFBE7C40094D932 /* ColorPlanes.metal */; };
+		51C72BA12AFBE7C40094D932 /* Sinebow.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B882AFBE7C40094D932 /* Sinebow.metal */; };
+		51C72BA32AFC20FA0094D932 /* CircleWave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72BA22AFC20FA0094D932 /* CircleWave.metal */; };
+		51C72BA52AFC40440094D932 /* PreviewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C72BA42AFC40440094D932 /* PreviewType.swift */; };
+		51C72BA92AFD36A80094D932 /* LightGrid.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72BA82AFD36A80094D932 /* LightGrid.metal */; };
+		51DB1BA32AF3EFEE00518737 /* InfernoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BA22AF3EFEE00518737 /* InfernoApp.swift */; };
+		51DB1BA52AF3EFEE00518737 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BA42AF3EFEE00518737 /* ContentView.swift */; };
+		51DB1BA72AF3EFEF00518737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DB1BA62AF3EFEF00518737 /* Assets.xcassets */; };
+		51DB1BAA2AF3EFEF00518737 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DB1BA92AF3EFEF00518737 /* Preview Assets.xcassets */; };
+		51DB1BD42AF3F8E300518737 /* TimeTransformationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD32AF3F8E300518737 /* TimeTransformationPreview.swift */; };
+		51DB1BD62AF3FCEC00518737 /* SimpleTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */; };
+		51DB1BD82AF3FD5500518737 /* TimeTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		516617952AFA4B2300978554 /* SimpleTransformationPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTransformationPreview.swift; sourceTree = "<group>"; };
+		516617972AFA517C00978554 /* TouchTransformationPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchTransformationPreview.swift; sourceTree = "<group>"; };
+		516617992AFA519500978554 /* TouchTransformationShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchTransformationShader.swift; sourceTree = "<group>"; };
+		5166179B2AFA543700978554 /* TransitionShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionShader.swift; sourceTree = "<group>"; };
+		516617A12AFA58CA00978554 /* TransitionPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitionPreview.swift; sourceTree = "<group>"; };
+		516617A32AFA6A5000978554 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		516617A52AFA6B8500978554 /* GenerativeShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerativeShader.swift; sourceTree = "<group>"; };
+		516617A72AFA6BC300978554 /* String-ShaderName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String-ShaderName.swift"; sourceTree = "<group>"; };
+		516617A92AFA6C2800978554 /* GenerativePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerativePreview.swift; sourceTree = "<group>"; };
+		516617AF2AFA711B00978554 /* AbsoluteTouchTransformationPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbsoluteTouchTransformationPreview.swift; sourceTree = "<group>"; };
+		516617B12AFA717500978554 /* RelativeTouchTransformationPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelativeTouchTransformationPreview.swift; sourceTree = "<group>"; };
+		518833942AFBC0DF00D30D44 /* ContentPreviewSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPreviewSelector.swift; sourceTree = "<group>"; };
+		518833962AFBC44400D30D44 /* ContentPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPreview.swift; sourceTree = "<group>"; };
+		5188339A2AFBD0DE00D30D44 /* TransformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationType.swift; sourceTree = "<group>"; };
+		51A63CED2B05018A00A67C06 /* ToggleAlphaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleAlphaButton.swift; sourceTree = "<group>"; };
+		51A63DBD2B054F6700A67C06 /* Water.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Water.metal; sourceTree = "<group>"; };
+		51A63DBF2B0570F400A67C06 /* Interlace.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Interlace.metal; sourceTree = "<group>"; };
+		51C72B662AFBE7800094D932 /* Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transitions.swift; path = ../../Transitions.swift; sourceTree = "<group>"; };
+		51C72B6E2AFBE7C40094D932 /* Diamond.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Diamond.metal; sourceTree = "<group>"; };
+		51C72B6F2AFBE7C40094D932 /* CircleWave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = CircleWave.metal; sourceTree = "<group>"; };
+		51C72B702AFBE7C40094D932 /* Pixellate.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Pixellate.metal; sourceTree = "<group>"; };
+		51C72B712AFBE7C40094D932 /* DiamondWave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DiamondWave.metal; sourceTree = "<group>"; };
+		51C72B722AFBE7C40094D932 /* Radial.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Radial.metal; sourceTree = "<group>"; };
+		51C72B732AFBE7C40094D932 /* Circle.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Circle.metal; sourceTree = "<group>"; };
+		51C72B742AFBE7C40094D932 /* Crosswarp.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Crosswarp.metal; sourceTree = "<group>"; };
+		51C72B752AFBE7C40094D932 /* Wind.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Wind.metal; sourceTree = "<group>"; };
+		51C72B762AFBE7C40094D932 /* Swirl.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Swirl.metal; sourceTree = "<group>"; };
+		51C72B782AFBE7C40094D932 /* RainbowNoise.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RainbowNoise.metal; sourceTree = "<group>"; };
+		51C72B792AFBE7C40094D932 /* WarpingLoupe.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = WarpingLoupe.metal; sourceTree = "<group>"; };
+		51C72B7A2AFBE7C40094D932 /* AnimatedGradientFill.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AnimatedGradientFill.metal; sourceTree = "<group>"; };
+		51C72B7B2AFBE7C40094D932 /* GradientFill.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GradientFill.metal; sourceTree = "<group>"; };
+		51C72B7C2AFBE7C40094D932 /* Emboss.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Emboss.metal; sourceTree = "<group>"; };
+		51C72B7D2AFBE7C40094D932 /* InvertAlpha.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = InvertAlpha.metal; sourceTree = "<group>"; };
+		51C72B7E2AFBE7C40094D932 /* WhiteNoise.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = WhiteNoise.metal; sourceTree = "<group>"; };
+		51C72B7F2AFBE7C40094D932 /* Checkerboard.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Checkerboard.metal; sourceTree = "<group>"; };
+		51C72B802AFBE7C40094D932 /* RelativeWave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RelativeWave.metal; sourceTree = "<group>"; };
+		51C72B812AFBE7C40094D932 /* SimpleLoupe.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SimpleLoupe.metal; sourceTree = "<group>"; };
+		51C72B822AFBE7C40094D932 /* Recolor.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Recolor.metal; sourceTree = "<group>"; };
+		51C72B832AFBE7C40094D932 /* Wave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Wave.metal; sourceTree = "<group>"; };
+		51C72B842AFBE7C40094D932 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Passthrough.metal; sourceTree = "<group>"; };
+		51C72B852AFBE7C40094D932 /* Infrared.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Infrared.metal; sourceTree = "<group>"; };
+		51C72B862AFBE7C40094D932 /* ColorPlanes.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ColorPlanes.metal; sourceTree = "<group>"; };
+		51C72B882AFBE7C40094D932 /* Sinebow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sinebow.metal; sourceTree = "<group>"; };
+		51C72BA22AFC20FA0094D932 /* CircleWave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = CircleWave.metal; sourceTree = "<group>"; };
+		51C72BA42AFC40440094D932 /* PreviewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewType.swift; sourceTree = "<group>"; };
+		51C72BA82AFD36A80094D932 /* LightGrid.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LightGrid.metal; sourceTree = "<group>"; };
+		51DB1B9F2AF3EFEE00518737 /* Inferno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inferno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51DB1BA22AF3EFEE00518737 /* InfernoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfernoApp.swift; sourceTree = "<group>"; };
+		51DB1BA42AF3EFEE00518737 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		51DB1BA62AF3EFEF00518737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		51DB1BA92AF3EFEF00518737 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		51DB1BAB2AF3EFEF00518737 /* Inferno.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Inferno.entitlements; sourceTree = "<group>"; };
+		51DB1BD32AF3F8E300518737 /* TimeTransformationPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTransformationPreview.swift; sourceTree = "<group>"; };
+		51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTransformationShader.swift; sourceTree = "<group>"; };
+		51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTransformationShader.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		51DB1B9C2AF3EFEE00518737 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5188339C2AFBD5D000D30D44 /* ShaderDescriptions */ = {
+			isa = PBXGroup;
+			children = (
+				516617A52AFA6B8500978554 /* GenerativeShader.swift */,
+				5166179B2AFA543700978554 /* TransitionShader.swift */,
+				51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */,
+				51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */,
+				516617992AFA519500978554 /* TouchTransformationShader.swift */,
+			);
+			path = ShaderDescriptions;
+			sourceTree = "<group>";
+		};
+		5188339D2AFBD5ED00D30D44 /* ShaderPreviews */ = {
+			isa = PBXGroup;
+			children = (
+				516617AF2AFA711B00978554 /* AbsoluteTouchTransformationPreview.swift */,
+				516617A92AFA6C2800978554 /* GenerativePreview.swift */,
+				516617B12AFA717500978554 /* RelativeTouchTransformationPreview.swift */,
+				516617952AFA4B2300978554 /* SimpleTransformationPreview.swift */,
+				51DB1BD32AF3F8E300518737 /* TimeTransformationPreview.swift */,
+				516617972AFA517C00978554 /* TouchTransformationPreview.swift */,
+				516617A12AFA58CA00978554 /* TransitionPreview.swift */,
+			);
+			path = ShaderPreviews;
+			sourceTree = "<group>";
+		};
+		5188339E2AFBD66200D30D44 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				518833962AFBC44400D30D44 /* ContentPreview.swift */,
+				518833942AFBC0DF00D30D44 /* ContentPreviewSelector.swift */,
+				51C72BA42AFC40440094D932 /* PreviewType.swift */,
+				516617A72AFA6BC300978554 /* String-ShaderName.swift */,
+				51A63CED2B05018A00A67C06 /* ToggleAlphaButton.swift */,
+				5188339A2AFBD0DE00D30D44 /* TransformationType.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		51C72B6C2AFBE7C40094D932 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				51C72B872AFBE7C40094D932 /* Generation */,
+				51C72B772AFBE7C40094D932 /* Transformation */,
+				51C72B6D2AFBE7C40094D932 /* Transition */,
+			);
+			name = Shaders;
+			path = ../../Shaders;
+			sourceTree = "<group>";
+		};
+		51C72B6D2AFBE7C40094D932 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				51C72B732AFBE7C40094D932 /* Circle.metal */,
+				51C72B6F2AFBE7C40094D932 /* CircleWave.metal */,
+				51C72B742AFBE7C40094D932 /* Crosswarp.metal */,
+				51C72B6E2AFBE7C40094D932 /* Diamond.metal */,
+				51C72B712AFBE7C40094D932 /* DiamondWave.metal */,
+				51C72B702AFBE7C40094D932 /* Pixellate.metal */,
+				51C72B722AFBE7C40094D932 /* Radial.metal */,
+				51C72B762AFBE7C40094D932 /* Swirl.metal */,
+				51C72B752AFBE7C40094D932 /* Wind.metal */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
+		51C72B772AFBE7C40094D932 /* Transformation */ = {
+			isa = PBXGroup;
+			children = (
+				51C72B7A2AFBE7C40094D932 /* AnimatedGradientFill.metal */,
+				51C72B7F2AFBE7C40094D932 /* Checkerboard.metal */,
+				51C72BA22AFC20FA0094D932 /* CircleWave.metal */,
+				51C72B862AFBE7C40094D932 /* ColorPlanes.metal */,
+				51C72B7C2AFBE7C40094D932 /* Emboss.metal */,
+				51C72B7B2AFBE7C40094D932 /* GradientFill.metal */,
+				51C72B852AFBE7C40094D932 /* Infrared.metal */,
+				51A63DBF2B0570F400A67C06 /* Interlace.metal */,
+				51C72B7D2AFBE7C40094D932 /* InvertAlpha.metal */,
+				51C72B842AFBE7C40094D932 /* Passthrough.metal */,
+				51C72B782AFBE7C40094D932 /* RainbowNoise.metal */,
+				51C72B822AFBE7C40094D932 /* Recolor.metal */,
+				51C72B802AFBE7C40094D932 /* RelativeWave.metal */,
+				51C72B812AFBE7C40094D932 /* SimpleLoupe.metal */,
+				51C72B792AFBE7C40094D932 /* WarpingLoupe.metal */,
+				51A63DBD2B054F6700A67C06 /* Water.metal */,
+				51C72B832AFBE7C40094D932 /* Wave.metal */,
+				51C72B7E2AFBE7C40094D932 /* WhiteNoise.metal */,
+			);
+			path = Transformation;
+			sourceTree = "<group>";
+		};
+		51C72B872AFBE7C40094D932 /* Generation */ = {
+			isa = PBXGroup;
+			children = (
+				51C72BA82AFD36A80094D932 /* LightGrid.metal */,
+				51C72B882AFBE7C40094D932 /* Sinebow.metal */,
+			);
+			path = Generation;
+			sourceTree = "<group>";
+		};
+		51DB1B962AF3EFEE00518737 = {
+			isa = PBXGroup;
+			children = (
+				51DB1BA12AF3EFEE00518737 /* Inferno */,
+				51DB1BA02AF3EFEE00518737 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		51DB1BA02AF3EFEE00518737 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51DB1B9F2AF3EFEE00518737 /* Inferno.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		51DB1BA12AF3EFEE00518737 /* Inferno */ = {
+			isa = PBXGroup;
+			children = (
+				51C72B6C2AFBE7C40094D932 /* Shaders */,
+				5188339E2AFBD66200D30D44 /* Helpers */,
+				5188339D2AFBD5ED00D30D44 /* ShaderPreviews */,
+				5188339C2AFBD5D000D30D44 /* ShaderDescriptions */,
+				51DB1BA22AF3EFEE00518737 /* InfernoApp.swift */,
+				51DB1BA42AF3EFEE00518737 /* ContentView.swift */,
+				51C72B662AFBE7800094D932 /* Transitions.swift */,
+				516617A32AFA6A5000978554 /* WelcomeView.swift */,
+				51DB1BA62AF3EFEF00518737 /* Assets.xcassets */,
+				51DB1BAB2AF3EFEF00518737 /* Inferno.entitlements */,
+				51DB1BA82AF3EFEF00518737 /* Preview Content */,
+			);
+			path = Inferno;
+			sourceTree = "<group>";
+		};
+		51DB1BA82AF3EFEF00518737 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				51DB1BA92AF3EFEF00518737 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		51DB1B9E2AF3EFEE00518737 /* Inferno */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 51DB1BAE2AF3EFEF00518737 /* Build configuration list for PBXNativeTarget "Inferno" */;
+			buildPhases = (
+				51DB1B9B2AF3EFEE00518737 /* Sources */,
+				51DB1B9C2AF3EFEE00518737 /* Frameworks */,
+				51DB1B9D2AF3EFEE00518737 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Inferno;
+			productName = Inferno;
+			productReference = 51DB1B9F2AF3EFEE00518737 /* Inferno.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		51DB1B972AF3EFEE00518737 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					51DB1B9E2AF3EFEE00518737 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 51DB1B9A2AF3EFEE00518737 /* Build configuration list for PBXProject "Inferno" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 51DB1B962AF3EFEE00518737;
+			productRefGroup = 51DB1BA02AF3EFEE00518737 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				51DB1B9E2AF3EFEE00518737 /* Inferno */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		51DB1B9D2AF3EFEE00518737 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				51DB1BAA2AF3EFEF00518737 /* Preview Assets.xcassets in Resources */,
+				51DB1BA72AF3EFEF00518737 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		51DB1B9B2AF3EFEE00518737 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				518833972AFBC44400D30D44 /* ContentPreview.swift in Sources */,
+				51C72B992AFBE7C40094D932 /* Checkerboard.metal in Sources */,
+				51C72B9A2AFBE7C40094D932 /* RelativeWave.metal in Sources */,
+				51C72B8C2AFBE7C40094D932 /* DiamondWave.metal in Sources */,
+				516617A62AFA6B8500978554 /* GenerativeShader.swift in Sources */,
+				5166179A2AFA519500978554 /* TouchTransformationShader.swift in Sources */,
+				51C72BA12AFBE7C40094D932 /* Sinebow.metal in Sources */,
+				51A63DBE2B054F6700A67C06 /* Water.metal in Sources */,
+				516617A22AFA58CA00978554 /* TransitionPreview.swift in Sources */,
+				51C72B932AFBE7C40094D932 /* WarpingLoupe.metal in Sources */,
+				516617A42AFA6A5100978554 /* WelcomeView.swift in Sources */,
+				51DB1BD42AF3F8E300518737 /* TimeTransformationPreview.swift in Sources */,
+				51C72B962AFBE7C40094D932 /* Emboss.metal in Sources */,
+				51C72B8B2AFBE7C40094D932 /* Pixellate.metal in Sources */,
+				51A63CEE2B05018A00A67C06 /* ToggleAlphaButton.swift in Sources */,
+				51C72B952AFBE7C40094D932 /* GradientFill.metal in Sources */,
+				51DB1BA52AF3EFEE00518737 /* ContentView.swift in Sources */,
+				51C72B672AFBE7800094D932 /* Transitions.swift in Sources */,
+				51C72B9F2AFBE7C40094D932 /* Infrared.metal in Sources */,
+				51C72B8A2AFBE7C40094D932 /* CircleWave.metal in Sources */,
+				51C72B8D2AFBE7C40094D932 /* Radial.metal in Sources */,
+				516617A82AFA6BC300978554 /* String-ShaderName.swift in Sources */,
+				51C72B922AFBE7C40094D932 /* RainbowNoise.metal in Sources */,
+				51DB1BD82AF3FD5500518737 /* TimeTransformationShader.swift in Sources */,
+				51C72B9C2AFBE7C40094D932 /* Recolor.metal in Sources */,
+				516617AA2AFA6C2900978554 /* GenerativePreview.swift in Sources */,
+				51DB1BD62AF3FCEC00518737 /* SimpleTransformationShader.swift in Sources */,
+				51A63DC02B0570F400A67C06 /* Interlace.metal in Sources */,
+				51C72BA02AFBE7C40094D932 /* ColorPlanes.metal in Sources */,
+				51C72B9B2AFBE7C40094D932 /* SimpleLoupe.metal in Sources */,
+				51C72B982AFBE7C40094D932 /* WhiteNoise.metal in Sources */,
+				51C72B892AFBE7C40094D932 /* Diamond.metal in Sources */,
+				51C72B942AFBE7C40094D932 /* AnimatedGradientFill.metal in Sources */,
+				51C72B8E2AFBE7C40094D932 /* Circle.metal in Sources */,
+				51C72BA52AFC40440094D932 /* PreviewType.swift in Sources */,
+				51C72B9E2AFBE7C40094D932 /* Passthrough.metal in Sources */,
+				51C72BA32AFC20FA0094D932 /* CircleWave.metal in Sources */,
+				516617982AFA517C00978554 /* TouchTransformationPreview.swift in Sources */,
+				51C72B972AFBE7C40094D932 /* InvertAlpha.metal in Sources */,
+				51C72B912AFBE7C40094D932 /* Swirl.metal in Sources */,
+				51DB1BA32AF3EFEE00518737 /* InfernoApp.swift in Sources */,
+				51C72B8F2AFBE7C40094D932 /* Crosswarp.metal in Sources */,
+				5188339B2AFBD0DE00D30D44 /* TransformationType.swift in Sources */,
+				51C72B9D2AFBE7C40094D932 /* Wave.metal in Sources */,
+				518833952AFBC0DF00D30D44 /* ContentPreviewSelector.swift in Sources */,
+				516617B22AFA717500978554 /* RelativeTouchTransformationPreview.swift in Sources */,
+				5166179C2AFA543700978554 /* TransitionShader.swift in Sources */,
+				51C72B902AFBE7C40094D932 /* Wind.metal in Sources */,
+				516617962AFA4B2300978554 /* SimpleTransformationPreview.swift in Sources */,
+				51C72BA92AFD36A80094D932 /* LightGrid.metal in Sources */,
+				516617B02AFA711B00978554 /* AbsoluteTouchTransformationPreview.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		51DB1BAC2AF3EFEF00518737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		51DB1BAD2AF3EFEF00518737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		51DB1BAF2AF3EFEF00518737 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Inferno/Inferno.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Inferno/Preview Content\"";
+				DEVELOPMENT_TEAM = B5C26XE59E;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.Inferno;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		51DB1BB02AF3EFEF00518737 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Inferno/Inferno.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Inferno/Preview Content\"";
+				DEVELOPMENT_TEAM = B5C26XE59E;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackingwithswift.Inferno;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		51DB1B9A2AF3EFEE00518737 /* Build configuration list for PBXProject "Inferno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51DB1BAC2AF3EFEF00518737 /* Debug */,
+				51DB1BAD2AF3EFEF00518737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		51DB1BAE2AF3EFEF00518737 /* Build configuration list for PBXNativeTarget "Inferno" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51DB1BAF2AF3EFEF00518737 /* Debug */,
+				51DB1BB02AF3EFEF00518737 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 51DB1B972AF3EFEE00518737 /* Project object */;
+}
