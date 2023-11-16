@@ -39,7 +39,9 @@ struct WelcomeView: View {
             .onHover { logoHover = $0 }
             .foregroundStyle(.white)
         }
+        #if os(macOS)
         .navigationSubtitle("Welcome to the Shader Sandbox")
+        #endif
         .padding()
     }
 }

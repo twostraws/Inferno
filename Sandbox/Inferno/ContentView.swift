@@ -27,7 +27,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                .collapsible(false)
+                .nonCollapsible()
 
                 Section("Animated") {
                     ForEach(TimeTransformationShader.shaders) { shader in
@@ -36,7 +36,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                .collapsible(false)
+                .nonCollapsible()
 
                 Section("Touchable") {
                     ForEach(TouchTransformationShader.shaders) { shader in
@@ -45,7 +45,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                .collapsible(false)
+                .nonCollapsible()
 
                 Section("Transitions") {
                     ForEach(TransitionShader.shaders) { shader in
@@ -54,7 +54,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                .collapsible(false)
+                .nonCollapsible()
 
                 Section("Generation") {
                     ForEach(GenerativeShader.shaders) { shader in
@@ -63,7 +63,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                .collapsible(false)
+                .nonCollapsible()
             }
             .navigationTitle("Inferno Sandbox")
             .navigationDestination(for: SimpleTransformationShader.self) { shader in
@@ -91,6 +91,16 @@ struct ContentView: View {
         } detail: {
             WelcomeView()
         }
+    }
+}
+
+private extension Section where Parent: View, Content: View, Footer: View {
+    func nonCollapsible() -> some View {
+        #if macOS
+        self.collapsible(false)
+        #else
+        return self
+        #endif
     }
 }
 

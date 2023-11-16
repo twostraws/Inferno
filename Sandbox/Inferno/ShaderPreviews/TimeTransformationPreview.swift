@@ -70,7 +70,9 @@ struct TimeTransformationPreview: View {
         .toolbar {
             ToggleAlphaButton(opacity: $opacity)
         }
+        #if os(macOS)
         .navigationSubtitle(shader.name)
+        #endif
     }
 }
 
