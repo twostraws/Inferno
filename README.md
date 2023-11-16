@@ -199,11 +199,15 @@ struct ContentView: View {
 
             Image(systemName: "figure.walk.circle")
                 .font(.system(size: 300))
-                .colorEffect(
-                    ShaderLibrary.animatedGradientFill(
-                        .float(elapsedTime)
+                .visualEffect { content, proxy in
+                    content
+                        .colorEffect(
+                            ShaderLibrary.animatedGradientFill(
+                                .float2(proxy.size),
+                                .float(elapsedTime)
+                        )
                     )
-                )
+                }
         }
     }
 }
