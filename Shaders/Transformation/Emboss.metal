@@ -19,7 +19,7 @@ using namespace metal;
 /// left, to see what's nearby, and add or subtract them from our color. How much
 /// we add our subtract depends on the strength the user provided.
 
-//// If you're not sure how this works, imagine a pixel on the top edge of a view.
+/// If you're not sure how this works, imagine a pixel on the top edge of a view.
 /// Above it has nothing, so nothing gets added to the base color. Below it has a
 /// pixel of the same color, so that color gets subtracted from the base color to
 /// make it black. The same is true in reverse of pixels on the bottom edge: they
