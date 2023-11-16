@@ -21,7 +21,7 @@ using namespace metal;
 /// We then calculate the color for each chunk by taking a base color and
 /// adjusting it based on the random color variance we just calculated, so
 /// that each chunk displays a different color. This is done using sin() so we
-//get a smooth color modulation.
+/// get a smooth color modulation.
 ///
 /// Finally, we pulsate each chunk so that it glows up and down, with black space
 /// between each chunk to create delineated a light effect. The black space is
