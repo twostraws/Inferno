@@ -230,7 +230,7 @@ Image(systemName: "figure.walk.circle")
     .font(.system(size: 300))
     .colorEffect(
         ShaderLibrary.checkerboard(
-            .color(.red)
+            .color(.red),
             .float(50)
         )
     )
@@ -358,7 +358,7 @@ struct ContentView: View {
 
 ### Gradient Fill
 
-A `colorEffect()` shader that generates generates a gradient fill
+A `colorEffect()` shader that generates a gradient fill
 
 **Parameters:**
 
@@ -367,13 +367,11 @@ A `colorEffect()` shader that generates generates a gradient fill
 Example code:
 
 ```swift
-VStack {
-    Image(systemName: "figure.walk.circle")
-        .font(.system(size: 300))
-        .colorEffect(
-            ShaderLibrary.gradientFill()
-        )
-}
+Image(systemName: "figure.walk.circle")
+    .font(.system(size: 300))
+    .colorEffect(
+        ShaderLibrary.gradientFill()
+    )
 ```
 
 
