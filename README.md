@@ -1282,7 +1282,7 @@ struct ContentView: View {
                     .padding()
                     .background(.blue)
                     .drawingGroup()
-                    .transition(.wind)
+                    .transition(.wind())
             } else {
                 Image(systemName: "figure.run.circle")
                     .font(.system(size: 300))
@@ -1290,7 +1290,7 @@ struct ContentView: View {
                     .padding()
                     .background(.indigo)
                     .drawingGroup()
-                    .transition(.wind)
+                    .transition(.wind())
             }
 
             Button("Toggle Views") {
