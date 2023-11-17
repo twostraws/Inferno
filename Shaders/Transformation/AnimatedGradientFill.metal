@@ -35,5 +35,5 @@ using namespace metal;
     // Send back variations on the sine of that angle, so we
     // get a range of colors. The use of abs() here avoids
     // negative values for any color component.
-    return half4(abs(sin(angle)), abs(sin(angle + 2.0h)), abs(sin(angle + 4.0h)), color.a) * color.a;
+    return half4(abs(sin(angle)), abs(sin(angle + 2.0h)), abs(sin(angle + 4.0h)), 1.0h) * color.a;
 }

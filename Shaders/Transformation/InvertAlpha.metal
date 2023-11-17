@@ -22,5 +22,5 @@ using namespace metal;
 [[ stitchable ]] half4 invertAlpha(float2 position, half4 color, half4 replacement) {
     // Send back the RGB values from our input pixel, but
     // flip the alpha value around.
-    return half4(replacement.rgb, 1.0h - color.a) * (1.0h - color.a);
+    return half4(replacement.rgb, 1.0h) * (1.0h - color.a);
 }
