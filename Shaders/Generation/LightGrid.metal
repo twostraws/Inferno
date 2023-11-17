@@ -8,9 +8,6 @@
 #include <metal_stdlib>
 using namespace metal;
 
-/// π to a large degree of accuracy.
-#define M_PI 3.14159265358979323846264338327950288
-
 /// Creates a grid of multi-colored flashing lights.
 ///
 /// This works by creating a grid of colors by chunking the texture according
@@ -104,7 +101,7 @@ using namespace metal;
         // STEP 4: Now we know the color, calculate the color pulse
         // Start by moving down and left a little to create black
         // lines at intersection points.
-        float2 adjustedGroupSize = M_PI * 2 * groupSize * (point - (0.25 / groupSize));
+        float2 adjustedGroupSize = M_PI_F * 2 * groupSize * (point - (0.25 / groupSize));
 
         // Calculate the sine of our group size, then adjust it
         // to lie in the range 0...1.

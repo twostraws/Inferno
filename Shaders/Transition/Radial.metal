@@ -9,9 +9,6 @@
 #include <SwiftUI/SwiftUI_Metal.h>
 using namespace metal;
 
-/// π to a large degree of accuracy.
-#define M_PI 3.14159265358979323846264338327950288
-
 /// A transition that mimics a radial wipe.
 ///
 /// This works by calculating the angle from the center of the input view
@@ -38,17 +35,17 @@ using namespace metal;
     // Calculate the angle to this pixel, adjusted by
     // half π (90 degrees) so our transition starts
     // directly up rather than to the left.
-    float angle = atan2(rp.y, rp.x) + M_PI / 2;
+    float angle = atan2(rp.y, rp.x) + M_PI_2_F;
 
     // Wrap the angle around so it's always in the 
     // range 0...2π.
-    if (angle < 0) angle += M_PI * 2;
+    if (angle < 0) angle += M_PI_F * 2;
 
     // Rotate clockwise rather than anti-clockwise.
-    angle = M_PI * 2 - angle;
+    angle = M_PI_F * 2 - angle;
 
     // Calculate how far this pixel is through the transition.
-    float progress = smoothstep(0, 1, angle - (amount - 0.5) * M_PI * 4);
+    float progress = smoothstep(0, 1, angle - (amount - 0.5) * M_PI_F * 4);
 
     // Send back a blend between transparent and the original
     // color based on the progress.

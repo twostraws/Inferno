@@ -9,9 +9,6 @@
 #include <SwiftUI/SwiftUI_Metal.h>
 using namespace metal;
 
-/// π to a large degree of accuracy.
-#define M_PI 3.14159265358979323846264338327950288
-
 /// A transition that causes images to swirl like a vortex as they fade out.
 ///
 /// This starts by calculating how far the current pixel is from the center of
@@ -58,7 +55,7 @@ using namespace metal;
         }
 
         // Calculate the swirl angle based on the swirl strength and amount.
-        float swirlAngle = swirlStrength * swirlStrength * swirlAmount * 8 * M_PI;
+        float swirlAngle = swirlStrength * swirlStrength * swirlAmount * 8 * M_PI_F;
 
         // Compute sine and cosine for the rotation.
         float sinAngle = sin(swirlAngle);
