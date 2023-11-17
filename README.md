@@ -417,7 +417,7 @@ Image(systemName: "figure.walk.circle")
             .colorEffect(
                 ShaderLibrary.interlace(
                     .float2(proxy.size),
-                    .float(1),
+                    .float(2),
                     .color(.black),
                     .float(1)
                 )
