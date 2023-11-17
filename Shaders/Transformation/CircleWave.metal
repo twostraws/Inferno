@@ -34,7 +34,7 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[ stitchable ]] half4 circleWave(float2 position, half4 color, float2 size, float time, float brightness, float speed, float strength, float density, float2 center, half4 circleColor) {
     // If it's not transparent…
-    if (color.a > 0) {
+    if (color.a > 0.0h) {
         // Calculate our coordinate in UV space, 0 to 1.
         float2 uv = position / size;
 
@@ -55,7 +55,7 @@ using namespace metal;
         // Calculate how fast to make the waves move; this
         // is negative so the waves move outwards with a
         // positive speed.
-        float waveSpeed = -(time * speed * 10);
+        float waveSpeed = -(time * speed * 10.0);
 
         // Create RGB colors from the provided brightness.
         half3 newBrightness = half3(brightness);
@@ -67,7 +67,7 @@ using namespace metal;
 
         // Calculate how much color to apply to this pixel
         // by cubing its distance from the center.
-        float colorStrength = pow(1 - pixelDistance, 3);
+        float colorStrength = pow(1.0 - pixelDistance, 3.0);
 
         // Multiply by the user's input strength.
         colorStrength *= strength;
@@ -94,7 +94,7 @@ using namespace metal;
 
         // Force the brightness to decay rapidly so we
         // don't hit the edges of our sprite.
-        luma *= 1 - (pixelDistance * 2);
+        luma *= 1.0 - (pixelDistance * 2.0);
         luma = max(0.0, luma);
 
         // Multiply our gradient color by brightness for RGB,

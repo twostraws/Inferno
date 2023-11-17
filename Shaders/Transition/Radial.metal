@@ -27,7 +27,7 @@ using namespace metal;
 
     // Get the same UV in the range -1 to 1, so that
     // 0 is in the center.
-    float2 rp = uv * 2 - 1;
+    float2 rp = uv * 2.0 - 1.0;
 
     // Read the current color of this pixel.
     half4 currentColor = layer.sample(position);
@@ -39,15 +39,15 @@ using namespace metal;
 
     // Wrap the angle around so it's always in the 
     // range 0...2π.
-    if (angle < 0) angle += M_PI_F * 2;
+    if (angle < 0) angle += M_PI_F * 2.0;
 
     // Rotate clockwise rather than anti-clockwise.
-    angle = M_PI_F * 2 - angle;
+    angle = M_PI_F * 2.0 - angle;
 
     // Calculate how far this pixel is through the transition.
-    float progress = smoothstep(0, 1, angle - (amount - 0.5) * M_PI_F * 4);
+    float progress = smoothstep(0.0, 1.0, angle - (amount - 0.5) * M_PI_F * 4.0);
 
     // Send back a blend between transparent and the original
     // color based on the progress.
-    return mix(0, currentColor, progress);
+    return mix(0.0, currentColor, progress);
 }

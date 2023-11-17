@@ -35,6 +35,6 @@ using namespace metal;
         return color;
     } else {
         // Otherwise send back clear.
-        return 0;
+        return half4(0.0h);
     }
 }

@@ -40,11 +40,11 @@ using namespace metal;
     // 0.5, the left edge will be 0, and the right edge
     // will be 1. When amount is 1, the left edge will be
     // 1, and the right edge 2.
-    float progress = amount * 2 + uv.x - 1;
+    float progress = amount * 2.0 + uv.x - 1.0;
 
     // Move smoothly between 0 and 1 with easing, making
     // sure to clamp to 0 and 1 at the same time.
-    float x = smoothstep(0, 1, progress);
+    float x = smoothstep(0.0, 1.0, progress);
 
     // We want to read pixels increasingly close to the
     // center of our texture as the transition progresses.
@@ -54,7 +54,7 @@ using namespace metal;
 
     // Now blend the pixel at that location with the clear
     // color based on x, so we fade out over time.
-    return mix(layer.sample(newPosition * size), 0, x);
+    return mix(layer.sample(newPosition * size), 0.0, x);
 }
 
 /// A transition that stretches and fades pixels starting from the left edge.
@@ -73,20 +73,20 @@ using namespace metal;
     // 0.5, the left edge will be 1, and the right edge
     // will be 0. When amount is 1, the left edge will be
     // 2, and the right edge 1.
-    float progress = amount * 2 + (1 - uv.x) - 1;
+    float progress = amount * 2.0 + (1.0 - uv.x) - 1.0;
 
     // Move smoothly between 0 and 1 with easing, making
     // sure to clamp to 0 and 1 at the same time.
-    float x = smoothstep(0, 1, progress);
+    float x = smoothstep(0.0, 1.0, progress);
 
     // We want to read pixels increasingly close to the
     // original position as the transition progresses.
     // So, we move the UV origin towards the center,
     // scale the value upwards by 1 minus our smoothed
     // progress, then move the UV back to where it was.
-    float2 newPosition = (uv - 0.5) * (1 - x) + 0.5;
+    float2 newPosition = (uv - 0.5) * (1.0 - x) + 0.5;
 
     // Now blend the pixel at that location with the clear
     // color based on x, so we fade out over time.
-    return mix(layer.sample(newPosition * size), 0, x);
+    return mix(layer.sample(newPosition * size), 0.0h, x);
 }

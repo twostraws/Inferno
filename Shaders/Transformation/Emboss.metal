@@ -43,10 +43,10 @@ using namespace metal;
     half4 newColor = currentColor;
 
     // Add an offset pixel, adding more of it based on strength
-    newColor += layer.sample(position + 1) * strength;
+    newColor += layer.sample(position + 1.0) * strength;
 
     // Do the opposite in the other direction.
-    newColor -= layer.sample(position - 1) * strength;
+    newColor -= layer.sample(position - 1.0) * strength;
 
     // Send back the resulting color, factoring in the
     // original alpha to get smooth edges.

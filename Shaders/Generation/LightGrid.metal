@@ -51,7 +51,7 @@ using namespace metal;
     uv.x *= aspectRatio;
 
     // If it's not transparent…
-    if (color.a > 0) {
+    if (color.a > 0.0h) {
         // STEP 1: Split the grid up into groups based on user input.
         float2 point = uv * density;
 
@@ -85,7 +85,7 @@ using namespace metal;
 
         // STEP 3: Calculate the final color for this group.
         // Select a base color to work from.
-        half3 baseColor = half3(3, 1.5, 0);
+        half3 baseColor = half3(3.0h, 1.5h, 0.0h);
 
         // Apply our variation to the base color, factoring in time.
         half3 variedColor = baseColor + acceleratedVariance + time;
@@ -101,7 +101,7 @@ using namespace metal;
         // STEP 4: Now we know the color, calculate the color pulse
         // Start by moving down and left a little to create black
         // lines at intersection points.
-        float2 adjustedGroupSize = M_PI_F * 2 * groupSize * (point - (0.25 / groupSize));
+        float2 adjustedGroupSize = M_PI_F * 2.0 * groupSize * (point - (0.25 / groupSize));
 
         // Calculate the sine of our group size, then adjust it
         // to lie in the range 0...1.
@@ -109,12 +109,12 @@ using namespace metal;
 
         // Use the sine to calculate a pulsating value between
         // 0 and 1, making our group fluctuate together.
-        float2 pulse = smoothstep(0, 1, groupSine);
+        float2 pulse = smoothstep(0.0, 1.0, groupSine);
 
         // Calculate the final color by combining the pulse
         // strength and user brightness with the color
         // for this square.
-        return half4(newColor * pulse.x * pulse.y * brightness, 1) * color.a;
+        return half4(newColor * pulse.x * pulse.y * brightness, 1.0h) * color.a;
     } else {
         // Use the current (transparent) color.
         return color;

@@ -33,27 +33,27 @@ using namespace metal;
     // These numbers are commonly used to create
     // seemingly random values from non-random inputs,
     // in our case the Y coordinate of the current pixel.
-    float random = fract(sin(dot(float2(0, uv.y), float2(12.9898, 78.233))) * 43758.5453);
+    float random = fract(sin(dot(float2(0.0, uv.y), float2(12.9898, 78.233))) * 43758.5453);
 
     // Adjust the horizontal UV coordinate with the wind effect.
     // This step scales uv.x to the range of 0 to 1 - windSize
     // and then shifts it by windSize, so we start with no movement
     // but finish fully off the screen.
-    float adjustedX = uv.x * (1 - windSize) + windSize * random;
+    float adjustedX = uv.x * (1.0 - windSize) + windSize * random;
 
     // Calculate the offset for the transition based on the amount.
     // This moves the transition effect across the screen, taking
     // into account the need to overshoot fully based on the size
     // of the wind effect.
-    float transitionOffset = amount * (1 + windSize);
+    float transitionOffset = amount * (1.0 + windSize);
 
     // Calculate the transition progress for each pixel.
     // The smoothstep() function smooths the transition between
     // 0 and -windSize, creating a more gradual effect as the
     // transition moves.
-    float progress = smoothstep(0, -windSize, adjustedX - transitionOffset);
+    float progress = smoothstep(0.0, -windSize, adjustedX - transitionOffset);
 
     // Blend the original color with the transparent color
     // based on the value of progress.
-    return mix(layer.sample(position), 0, progress);
+    return mix(layer.sample(position), 0.0h, progress);
 }

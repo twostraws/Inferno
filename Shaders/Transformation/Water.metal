@@ -32,7 +32,7 @@ using namespace metal;
     // Bring both speed and strength into the kinds of
     // ranges we need for this effect.
     float adjustedSpeed = time * speed * 0.05;
-    float adjustedStrength = strength / 100;
+    float adjustedStrength = strength / 100.0;
 
     // Offset the coordinate by a small amount in each
     // direction, based on wave frequency and wave strength.

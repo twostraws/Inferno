@@ -55,7 +55,7 @@ using namespace metal;
         }
 
         // Calculate the swirl angle based on the swirl strength and amount.
-        float swirlAngle = swirlStrength * swirlStrength * swirlAmount * 8 * M_PI_F;
+        float swirlAngle = swirlStrength * swirlStrength * swirlAmount * 8.0 * M_PI_F;
 
         // Compute sine and cosine for the rotation.
         float sinAngle = sin(swirlAngle);
@@ -70,5 +70,5 @@ using namespace metal;
 
     // Now blend the pixel at that location with the clear
     // color based on amount, so we fade out over time.
-    return mix(layer.sample(uv * size), 0, amount);
+    return mix(layer.sample(uv * size), 0.0h, amount);
 }

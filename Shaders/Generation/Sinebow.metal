@@ -25,7 +25,7 @@ using namespace metal;
     float aspectRatio = size.x / size.y;
 
     // Calculate our coordinate in UV space, -1 to 1.
-    float2 uv = (position / size.x) * 2 - 1;
+    float2 uv = (position / size.x) * 2.0 - 1.0;
 
     // Make sure we can create the effect roughly equally no
     // matter what aspect ratio we're in.
@@ -36,13 +36,13 @@ using namespace metal;
 
     // Square that movement, and multiply by a large number
     // to make the peaks and troughs be nice and big.
-    wave *= wave * 50;
+    wave *= wave * 50.0;
 
     // Assume a black color by default.
-    half3 waveColor = half3(0);
+    half3 waveColor = half3(0.0h);
 
     // Create 10 lines in total.
-    for (float i = 0; i < 10; i++) {
+    for (float i = 0.0; i < 10.0; i++) {
         // The base brightness of this pixel is 1%, but we
         // need to factor in the position after our wave
         // calculation is taken into account. The abs()
@@ -50,7 +50,7 @@ using namespace metal;
         // so we care about the absolute distance to the
         // nearest line, rather than ignoring values that
         // are negative.
-        float luma = abs(1 / (100 * uv.y + wave));
+        float luma = abs(1.0 / (100.0 * uv.y + wave));
 
         // This calculates a second sine wave that's unique
         // to each line, so we get waves inside waves.
@@ -67,8 +67,8 @@ using namespace metal;
         // are between 0 and 1 rather than -1 and 1.
         half3 rainbow = half3(
             sin(i * 0.3 + time) * 0.5 + 0.5,
-            sin(i * 0.3 + 2 + sin(time * 0.3) * 2) * 0.5 + 0.5,
-            sin(i * 0.3 + 4) * 0.5 + 0.5
+            sin(i * 0.3 + 2.0 + sin(time * 0.3) * 2.0) * 0.5 + 0.5,
+            sin(i * 0.3 + 4.0) * 0.5 + 0.5
         );
 
         // Add that to the current wave color, ensuring that

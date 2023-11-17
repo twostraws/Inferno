@@ -36,11 +36,11 @@ using namespace metal;
 
     // If the transition has progressed beyond our distance,
     // factoring in our X/Y UV coordinate…
-    if (d + uv.x + uv.y < amount * 3) {
+    if (d + uv.x + uv.y < amount * 3.0) {
         // Send back the color
         return color;
     } else {
         // Otherwise send back clear.
-        return 0;
+        return half4(0.0h);
     }
 }

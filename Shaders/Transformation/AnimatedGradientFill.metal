@@ -26,7 +26,7 @@ using namespace metal;
 
     // Get the same UV in the range -1 to 1, so that
     // 0 is in the center.
-    float2 rp = uv * 2 - 1;
+    float2 rp = uv * 2.0 - 1.0;
 
     // Calculate the angle top this pixel, adding in time
     // so it's constantly changing.
@@ -35,5 +35,5 @@ using namespace metal;
     // Send back variations on the sine of that angle, so we
     // get a range of colors. The use of abs() here avoids
     // negative values for any color component.
-    return half4(abs(sin(angle)), abs(sin(angle + 2)), abs(sin(angle + 4)), color.a) * color.a;
+    return half4(abs(sin(angle)), abs(sin(angle + 2.0)), abs(sin(angle + 4.0)), color.a) * color.a;
 }

@@ -47,7 +47,7 @@ using namespace metal;
     // Determine the direction of transition and restrict it
     // to the 0...1 range. This will count from 0.0 to 0.5,
     // then back down to to 0.0 again.
-    float direction = min(amount, 1 - amount);
+    float direction = min(amount, 1.0 - amount);
 
     // Quantize d to create a stepping effect. So, rather
     // than moving smoothly between states, we move in
@@ -58,14 +58,14 @@ using namespace metal;
 
     // Calculate the size of each square based on steppedProgress
     // and the minimum number of squares.
-    float2 squareSize = 2 * steppedProgress / float2(squares);
+    float2 squareSize = 2.0 * steppedProgress / float2(squares);
 
     // If steppedProgress is greater than 0, adjust uv to be the
     // center of a square. Otherwise, use uv as is.
     float2 newPosition;
 
     // If our stepped progress is 0…
-    if (steppedProgress == 0) {
+    if (steppedProgress == 0.0) {
         // Use the original pixel location, to avoid a divide by 0.
         newPosition = uv;
     } else {
@@ -76,5 +76,5 @@ using namespace metal;
     // Now blend the pixel at that location with the clear
     // color based on transition progress, so we fade out
     // as we pixellate.
-    return mix(layer.sample(newPosition * size), 0, amount);
+    return mix(layer.sample(newPosition * size), 0.0h, amount);
 }

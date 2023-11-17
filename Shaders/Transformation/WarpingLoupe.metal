@@ -45,7 +45,7 @@ using namespace metal;
     float distance = (delta.x * delta.x) + (delta.y * delta.y) / aspectRatio;
 
     // Show 1 pixel in the space by default.
-    float totalZoom = 1;
+    float totalZoom = 1.0;
 
     // If we're inside the loupe area…
     if (distance < maxDistance) {
@@ -57,7 +57,7 @@ using namespace metal;
         // causing the zoom effect to lessen as pixels are
         // further from the touch point.
         float zoomAdjustment = smoothstep(0.0, maxDistance, distance);
-        totalZoom += zoomAdjustment / 2;
+        totalZoom += zoomAdjustment / 2.0;
     }
 
     // Calculate the new pixel to read by applying that zoom
