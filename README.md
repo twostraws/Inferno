@@ -412,13 +412,17 @@ Example code:
 Image(systemName: "figure.walk.circle")
     .font(.system(size: 300))
     .foregroundStyle(.red)
-    .colorEffect(
-        ShaderLibrary.interlace(
-            .float(2),
-            .color(.black),
-            .float(1)
-        )
-    )
+    .visualEffect { content, proxy in
+        content
+            .colorEffect(
+                ShaderLibrary.interlace(
+                    .float2(proxy.size),
+                    .float(1),
+                    .color(.black),
+                    .float(1)
+                )
+             )
+    }
 ```
 
 
