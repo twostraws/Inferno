@@ -91,7 +91,7 @@ The transformation process can recolor the pixel however it wants. Users can cus
 
 ## How are shaders written?
 
-Shaders are written in the Metal Shading Language shading language (MSL), which is a simple, fast, and extremely efficient C-like language that is optimized for high-performance GPU operations. When you activate a shader in your app, it gets loaded and compiled at runtime, and in doing so should be optimized for whatever device the user has.
+Shaders are written in the Metal Shading Language (MSL), which is a simple, fast, and extremely efficient language based on C++ that is optimized for high-performance GPU operations. Metal shaders are compiled at build-time and linked into a `.metallib` file. When you activate a shader in your app, the corresponding Metal function is loaded from the `metallib` and is then used to create a program to be executed on the GPU.
 
 SwiftUI is able to work with a variety of Metal shaders, depending on what kind of effect you're trying to create.
 
@@ -101,11 +101,21 @@ MSL comes with a wide variety of built-in data types and functions, many of whic
 - `float`: A floating-point number.
 - `float2`: A two-component floating-point vector, used to hold things like X and Y coordinates or width and height.
 - `half`: A half-precision floating-point number.
+- `half2`: A two-component half-precision floating-point number.
 - `half3`: A three-component floating-point vector, used to hold RGB values.
 - `half4`: A four-component floating-point vector, used to hold RGBA values.
-- `uint2`: A two-component integer vector, used to hold X and Y coordinates or width and  height.
+- `uint2`: A two-component integer vector, used to hold X and Y coordinates or width and height.
 
-Shaders commonly move fluidly between `float`, `float2`, `half3`, and `half4` as needed. For example, if you create a `half4` from a `float` then the number will just get repeated for each component in the vector. You’ll also frequently see code to create a `half4` by using a `half3` for the first three values (usually RGB) and specifying a fourth value as a `float`. 
+Shaders commonly move fluidly between `float`, `float2`, `half3`, and `half4` as needed. For example, if you create a `half4` from a `float` then the number will just get repeated for each component in the vector. You’ll also frequently see code to create a `half4` by using a `half3` for the first three values (usually RGB) and specifying a fourth value as a `float`. Converting between `half` and `float` is free.
+
+Be mindful when choosing the type of your variables: the GPU is heavily optimized for performing floating-point operations, and (especially on iOS), half-precision floating-point operations. That means you should prefer to use the `half` data types whenever the precision requirements allow it. This will also save register space and increase the so-called "occupancy" of the shader program, effectively letting more GPU cores run your shader simultaneously. Check out the [Learn performance best practices for Metal shaders](https://developer.apple.com/videos/play/tech-talks/111373?time=778) tech talk for more details.
+
+Also, be careful with scalar numbers in your shader code. Make sure to use the correct type of number for an operation. For example, `float y = (x - 1) / 2` works, but `1` and `2` are `int` here and are needlessly converted to `float` at runtime. Instead, write `float y = (x - 1.0) / 2.0`. Number literals for the corresponding types look like this:
+
+- `float`: `0.5`, `0.5f`, or `0.5F`
+- `half`: `0.5h` or `0.5H`
+- `int`: `42`
+- `uint`: `42u` or `42U` 
 
 Here are the functions used in Inferno:
 
@@ -115,15 +125,16 @@ Here are the functions used in Inferno:
 - `distance()` calculates the distance between two values. For example, if you provide it with a pair `vec2` you’ll get the length of the vector created by subtracting one from the other. This always returns a single number no matter what data type you give it.
 - `dot()` calculates the dot product of two values. This means multiplying each component of the first value by the respective component in the second value, then adding the result.
 - `floor()` rounds a number down to its nearest integer. If you pass it a vector (e.g. `float2`) this will be done for each component.
-- `fract()` returns the fractional component of a value. For example, `fract(12.5)` is 0.5. If you pass this a vector then the operation will be performed component-wise, and a new vector will be returning containing the results.
-- `min()` is used to find the lower of two values. If you pass vectors this is done component-wise, meaning that the resulting vector will evaluate each component in the vector and place the lowest in the resulting vector.
-- `max()` is used to find the higher of two values. If you pass vectors this is done component-wise, meaning that the resulting vector will evaluate each component in the vector and place the highest in the resulting vector.
+- `fract()` returns the fractional component of a value. For example, `fract(12.5)` is 0.5. If you pass this a vector then the operation will be performed component-wise, and a new vector will be returned containing the results.
+- `min()` is used to find the lower of two values. If you pass vectors, this is done component-wise, meaning that the resulting vector will evaluate each component in the vector and place the lowest in the resulting vector.
+- `max()` is used to find the higher of two values. If you pass vectors, this is done component-wise, meaning that the resulting vector will evaluate each component in the vector and place the highest in the resulting vector.
 - `mix()` smooth interpolates between two values based on a third value that’s specified between 0 and 1, providing a linear curve.
-- `pow()` calculates one value raised to the power of another, for example `pow(2, 3)` evaluates to 2 * 2 * 2, giving 8. As well as operating on a `float`, `pow()` can also calculate component-wise exponents – it raises the first item in the first vector to the power of the first item in the second vector, and so on.
+- `pow()` calculates one value raised to the power of another, for example `pow(2.0, 3.0)` evaluates to 2 * 2 * 2, giving 8. As well as operating on a `float`, `pow()` can also calculate component-wise exponents – it raises the first item in the first vector to the power of the first item in the second vector, and so on.
 - `sin()` calculates the sine of a value in radians. The sine will always fall between -1 and 1. If you provide `sin()` with a vector (e.g. `float2`) it will calculate the sine of each component in the vector and return a vector of the same size containing the results.
 - `smoothstep()` interpolates between two values based on a third value that’s specified between 0 and 1, providing an S-curve shape. That is, the interpolation starts slow (values near 0.0), picks up speed (values near 0.5), then slows down towards the end (values near 1.0).
 - `sample()` provides the color value of a SwiftUI layer at a specific location. This is most commonly used to read the current pixel’s color.
 
+More about all of this can be found in the [Metal Shading Language Specification](https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf).
 
 
 ## Sending values to shaders
