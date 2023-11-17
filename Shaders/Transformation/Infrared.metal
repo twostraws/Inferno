@@ -53,7 +53,7 @@ using namespace metal;
 
         // Create the final color, multiplying by this
         // pixel's alpha (to avoid a hard edge).
-        return half4(newColor, color.a) * color.a;
+        return half4(newColor, 1.0h) * color.a;
     } else {
         // Use the current (transparent) color.
         return color;

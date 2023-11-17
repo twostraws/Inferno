@@ -78,5 +78,5 @@ using namespace metal;
 
     // Send back the finished color, taking into account the
     // current alpha value.
-    return half4(waveColor, color.a) * color.a;
+    return half4(waveColor, 1.0h) * color.a;
 }
