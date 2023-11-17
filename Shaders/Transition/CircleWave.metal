@@ -24,15 +24,15 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[ stitchable ]] half4 circleWaveTransition(float2 position, half4 color, float2 size, float amount, float circleSize) {
     // Calculate our coordinate in UV space, 0 to 1.
-    float2 uv = position / size;
+    half2 uv = half2(position / size);
 
     // Figure out our position relative to the nearest
     // circle.
-    float2 f = fract(position / circleSize);
+    half2 f = half2(fract(position / circleSize));
 
     // Calculate the Euclidean distance from this pixel
     // to the center of the nearest circle.
-    float d = distance(f, 0.5);
+    half d = distance(f, 0.5);
 
     // If the transition has progressed beyond our distance,
     // factoring in our X/Y UV coordinate…

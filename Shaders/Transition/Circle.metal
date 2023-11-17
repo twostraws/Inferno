@@ -22,11 +22,11 @@ using namespace metal;
 [[ stitchable ]] half4 circleTransition(float2 position, half4 color, float amount, float circleSize) {
     // Figure out our position relative to the nearest
     // circle.
-    float2 f = fract(position / circleSize);
+    half2 f = half2(fract(position / circleSize));
 
     // Calculate the Euclidean distance from this pixel
     // to the center of the nearest circle.
-    float d = distance(f, 0.5);
+    half d = distance(f, 0.5h);
 
     // If the transition has progressed beyond our distance,
     // factoring in our X/Y UV coordinate…

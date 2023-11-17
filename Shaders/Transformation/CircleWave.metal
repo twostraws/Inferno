@@ -36,26 +36,26 @@ using namespace metal;
     // If it's not transparent…
     if (color.a > 0.0h) {
         // Calculate our coordinate in UV space, 0 to 1.
-        float2 uv = position / size;
+        half2 uv = half2(position / size);
 
         // Calculate how far this pixel is from the center point.
-        float2 delta = uv - center;
+        half2 delta = uv - half2(center);
 
         // Make sure we can create round circles even in views
         // that aren't square.
-        float aspectRatio = size.x / size.y;
+        half aspectRatio = size.x / size.y;
 
         // Add the aspect ratio correction to our distance.
         delta.x *= aspectRatio;
 
         // Euclidean distance from our pixel to the center
         // of the circle.
-        float pixelDistance = sqrt((delta.x * delta.x) + (delta.y * delta.y));
+        half pixelDistance = sqrt((delta.x * delta.x) + (delta.y * delta.y));
 
         // Calculate how fast to make the waves move; this
         // is negative so the waves move outwards with a
         // positive speed.
-        float waveSpeed = -(time * speed * 10.0);
+        half waveSpeed = -(time * speed * 10.0h);
 
         // Create RGB colors from the provided brightness.
         half3 newBrightness = half3(brightness);
@@ -67,35 +67,35 @@ using namespace metal;
 
         // Calculate how much color to apply to this pixel
         // by cubing its distance from the center.
-        float colorStrength = pow(1.0 - pixelDistance, 3.0);
+        half colorStrength = pow(1.0h - pixelDistance, 3.0h);
 
         // Multiply by the user's input strength.
         colorStrength *= strength;
 
         // Calculate the size of our wave by multiplying
         // provided density with our distance from the center.
-        float waveDensity = density * pixelDistance;
+        half waveDensity = density * pixelDistance;
 
         // Decide how dark this pixel should be as a range
         // from -1 to 1 by adding the speed of the overall
         // wave by the density of the current pixel.
-        float cosine = cos(waveSpeed + waveDensity);
+        half cosine = cos(waveSpeed + waveDensity);
 
         // Halve that cosine and add 0.5, which will give a 
         // range of 0 to 1. This is our wave fluctuation,
         // which causes waves to vary between colored and dark.
-        float cosineAdjustment = (0.5 * cosine) + 0.5;
+        half cosineAdjustment = (0.5h * cosine) + 0.5h;
 
         // Calculate the brightness for this pixel by
         // multiplying its color strength with the sum
         // of the user's requested strength and our cosine
         // adjustment.
-        float luma = colorStrength * (strength + cosineAdjustment);
+        half luma = colorStrength * (strength + cosineAdjustment);
 
         // Force the brightness to decay rapidly so we
         // don't hit the edges of our sprite.
-        luma *= 1.0 - (pixelDistance * 2.0);
-        luma = max(0.0, luma);
+        luma *= 1.0h - (pixelDistance * 2.0h);
+        luma = max(0.0h, luma);
 
         // Multiply our gradient color by brightness for RGB,
         // and the brightness itself for A.

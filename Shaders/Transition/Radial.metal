@@ -23,11 +23,11 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[stitchable]] half4 radialTransition(float2 position, SwiftUI::Layer layer, float2 size, float amount) {
     // Calculate our coordinate in UV space, 0 to 1.
-    float2 uv = position / size;
+    half2 uv = half2(position / size);
 
     // Get the same UV in the range -1 to 1, so that
     // 0 is in the center.
-    float2 rp = uv * 2.0 - 1.0;
+    half2 rp = uv * 2.0h - 1.0h;
 
     // Read the current color of this pixel.
     half4 currentColor = layer.sample(position);
@@ -35,19 +35,19 @@ using namespace metal;
     // Calculate the angle to this pixel, adjusted by
     // half π (90 degrees) so our transition starts
     // directly up rather than to the left.
-    float angle = atan2(rp.y, rp.x) + M_PI_2_F;
+    half angle = atan2(rp.y, rp.x) + M_PI_2_H;
 
     // Wrap the angle around so it's always in the 
     // range 0...2π.
-    if (angle < 0) angle += M_PI_F * 2.0;
+    if (angle < 0.0h) angle += M_PI_H * 2.0h;
 
     // Rotate clockwise rather than anti-clockwise.
-    angle = M_PI_F * 2.0 - angle;
+    angle = M_PI_H * 2.0h - angle;
 
     // Calculate how far this pixel is through the transition.
-    float progress = smoothstep(0.0, 1.0, angle - (amount - 0.5) * M_PI_F * 4.0);
+    half progress = smoothstep(0.0h, 1.0h, angle - (half(amount) - 0.5h) * M_PI_H * 4.0h);
 
     // Send back a blend between transparent and the original
     // color based on the progress.
-    return mix(0.0, currentColor, progress);
+    return mix(0.0h, currentColor, progress);
 }
