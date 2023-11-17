@@ -20,5 +20,5 @@ using namespace metal;
 [[ stitchable ]] half4 gradientFill(float2 position, half4 color) {
     // Send back a new color based on the position of the pixel
     // factoring in the original alpha to get smooth edges.
-    return half4(position.x / position.y, 0, position.y / position.x, color.a) * color.a;
+    return half4(position.x / position.y, 0.0h, position.y / position.x, color.a) * color.a;
 }

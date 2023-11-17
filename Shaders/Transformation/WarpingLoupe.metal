@@ -28,24 +28,24 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[ stitchable ]] half4 warpingLoupe(float2 position, SwiftUI::Layer layer, float2 size, float2 touch, float maxDistance, float zoomFactor) {
     // Calculate our coordinate in UV space, 0 to 1.
-    float2 uv = position / size;
-    
+    half2 uv = half2(position / size);
+
     // Figure out where the user's touch is in UV space.
-    float2 center = touch / size;
+    half2 center = half2(touch / size);
 
     // Calculate how far this pixel is from the touch.
-    float2 delta = uv - center;
+    half2 delta = uv - center;
 
     // Make sure we can create a round loupe even in views
     // that aren't square.
-    float aspectRatio = size.x / size.y;
+    half aspectRatio = size.x / size.y;
 
     // Figure out the squared Euclidean distance from
     // this pixel to the touch, factoring in aspect ratio.
-    float distance = (delta.x * delta.x) + (delta.y * delta.y) / aspectRatio;
+    half distance = (delta.x * delta.x) + (delta.y * delta.y) / aspectRatio;
 
     // Show 1 pixel in the space by default.
-    float totalZoom = 1;
+    half totalZoom = 1.0h;
 
     // If we're inside the loupe area…
     if (distance < maxDistance) {
@@ -56,18 +56,18 @@ using namespace metal;
         // Add back to the zoom some amount of the distance,
         // causing the zoom effect to lessen as pixels are
         // further from the touch point.
-        float zoomAdjustment = smoothstep(0.0, maxDistance, distance);
-        totalZoom += zoomAdjustment / 2;
+        float zoomAdjustment = smoothstep(0.0h, half(maxDistance), distance);
+        totalZoom += zoomAdjustment / 2.0h;
     }
 
     // Calculate the new pixel to read by applying that zoom
     // to the distance from the pixel to the touch, then
     // offsetting it back to the center.
-    float2 newPosition = delta * totalZoom + center;
+    half2 newPosition = delta * totalZoom + center;
 
     // Sample and return that color, taking the position
     // back to user space.
-    return layer.sample(newPosition * size);
+    return layer.sample(float2(newPosition) * size);
 }
 
 

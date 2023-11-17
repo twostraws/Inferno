@@ -22,14 +22,14 @@ using namespace metal;
     // If it's not transparent…
     if (color.a > 0) {
         // Create three colors: blue (cold), yellow (medium), and hot (red).
-        half3 cold = half3(0, 0, 1);
-        half3 medium = half3(1, 1, 0);
-        half3 hot = half3(1, 0, 0);
+        half3 cold = half3(0.0h, 0.0h, 1.0h);
+        half3 medium = half3(1.0h, 1.0h, 0.0h);
+        half3 hot = half3(1.0h, 0.0h, 0.0h);
 
         // These values correspond to how important each
         // color is to the overall brightness. The total
         // is 1.
-        half3 grayValues = half3(0.2125, 0.7154, 0.0721);
+        half3 grayValues = half3(0.2125h, 0.7154h, 0.0721h);
 
         // The dot() function multiplies all the colors
         // in our source color with all the values in
@@ -43,7 +43,7 @@ using namespace metal;
         half3 newColor;
 
         // If we have brightness of lower than 0.5…
-        if (luma < 0.5) {
+        if (luma < 0.5h) {
             // Create a mix of blue and yellow; luma / 0.5 means this will be a range from 0 to 1.
             newColor = mix(cold, medium, luma / 0.5h);
         } else {

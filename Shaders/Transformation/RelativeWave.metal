@@ -28,12 +28,12 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[ stitchable ]] float2 relativeWave(float2 position, float2 size, float time, float speed, float smoothing, float strength) {
     // Calculate our coordinate in UV space, 0 to 1.
-    float2 uv = position / size;
-    
+    half2 uv = half2(position / size);
+
     // Offset our Y value by some amount of our X position.
     // Using time * 5 speeds up the wave, and dividing the
     // X position by 20 smooths out the wave to avoid jaggies.
-    float offset = sin(time * speed + position.x / smoothing);
+    half offset = sin(time * speed + position.x / smoothing);
 
     // Apply some amount of that offset based on how far we
     // are from the leading edge.

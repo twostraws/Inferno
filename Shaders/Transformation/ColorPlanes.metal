@@ -25,7 +25,7 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[ stitchable ]] half4 colorPlanes(float2 position, SwiftUI::Layer layer, float2 offset) {
     // Our red value should be read from double our offset.
-    float2 red = position - (offset * 2);
+    float2 red = position - (offset * 2.0);
 
     // Our blue value should be read from our offset.
     float2 blue = position - offset;

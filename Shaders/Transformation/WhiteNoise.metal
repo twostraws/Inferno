@@ -46,11 +46,11 @@ float whiteRandom(float offset, float2 position, float time) {
 /// - Returns: The new pixel color.
 [[ stitchable ]] half4 whiteNoise(float2 position, half4 color, float time) {
     // If it's not transparent…
-    if (color.a > 0) {
+    if (color.a > 0.0h) {
         // Make a color where the RGB values are the same
         // random number and A is 1; multiply by the
         // original alpha to get smooth edges.
-        return half4(half3(whiteRandom(1, position, time)), 1) * color.a;
+        return half4(half3(whiteRandom(1.0, position, time)), 1.0h) * color.a;
     } else {
         // Use the current (transparent) color.
         return color;

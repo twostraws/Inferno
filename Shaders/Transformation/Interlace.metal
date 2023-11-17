@@ -23,9 +23,9 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[ stitchable ]] half4 interlace(float2 position, half4 color, float2 size, float width, half4 replacement, float strength) {
     // If the current color is not transparent…
-    if (color.a > 0) {
+    if (color.a > 0.0h) {
         // If we are an alternating horizontal line…
-        if (fmod(position.y, width * 2) <= width) {
+        if (fmod(position.y, width * 2.0) <= width) {
             // Render the original color
             return color;
         } else {

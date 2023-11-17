@@ -54,7 +54,7 @@ float rainbowRandom(float offset, float2 position, float time) {
 /// - Returns: The new pixel color.
 [[ stitchable ]] half4 rainbowNoise(float2 position, half4 color, float time) {
     // If it's not transparent…
-    if (color.a > 0) {
+    if (color.a > 0.0h) {
         // Make a color where the RGB values are the same
         // random number and A is 1; multiply by the
         // original alpha to get smooth edges.
@@ -62,7 +62,7 @@ float rainbowRandom(float offset, float2 position, float time) {
             rainbowRandom(1.23, position, time),
             rainbowRandom(5.67, position, time),
             rainbowRandom(8.90, position, time),
-            1
+            1.0h
         ) * color.a;
     } else {
         // Use the current (transparent) color.

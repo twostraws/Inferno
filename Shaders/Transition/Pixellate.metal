@@ -42,39 +42,39 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[stitchable]] half4 pixellate(float2 position, SwiftUI::Layer layer, float2 size, float amount, float squares, float steps) {
     // Calculate our coordinate in UV space, 0 to 1.
-    float2 uv = position / size;
+    half2 uv = half2(position / size);
 
     // Determine the direction of transition and restrict it
     // to the 0...1 range. This will count from 0.0 to 0.5,
     // then back down to to 0.0 again.
-    float direction = min(amount, 1 - amount);
+    half direction = min(amount, 1.0 - amount);
 
     // Quantize d to create a stepping effect. So, rather
     // than moving smoothly between states, we move in
     // discrete steps based on the number of steps specified
     // above. This causes a rougher transition, which works
     // great with the pixellation style.
-    float steppedProgress = ceil(direction * steps) / steps;
+    half steppedProgress = ceil(direction * steps) / steps;
 
     // Calculate the size of each square based on steppedProgress
     // and the minimum number of squares.
-    float2 squareSize = 2 * steppedProgress / float2(squares);
+    half2 squareSize = 2.0h * steppedProgress / half2(squares);
 
     // If steppedProgress is greater than 0, adjust uv to be the
     // center of a square. Otherwise, use uv as is.
-    float2 newPosition;
+    half2 newPosition;
 
     // If our stepped progress is 0…
-    if (steppedProgress == 0) {
+    if (steppedProgress == 0.0h) {
         // Use the original pixel location, to avoid a divide by 0.
         newPosition = uv;
     } else {
         // Otherwise snap to the nearest point.
-        newPosition = (floor(uv / squareSize) + 0.5) * squareSize;
+        newPosition = (floor(uv / squareSize) + 0.5h) * squareSize;
     }
 
     // Now blend the pixel at that location with the clear
     // color based on transition progress, so we fade out
     // as we pixellate.
-    return mix(layer.sample(newPosition * size), 0, amount);
+    return mix(layer.sample(float2(newPosition) * size), 0.0h, amount);
 }

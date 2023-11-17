@@ -22,27 +22,27 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[ stitchable ]] half4 sinebow(float2 position, half4 color, float2 size, float time) {
     // Calculate our aspect ratio.
-    float aspectRatio = size.x / size.y;
+    half aspectRatio = size.x / size.y;
 
     // Calculate our coordinate in UV space, -1 to 1.
-    float2 uv = (position / size.x) * 2 - 1;
+    half2 uv = half2(position / size.x) * 2.0h - 1.0h;
 
     // Make sure we can create the effect roughly equally no
     // matter what aspect ratio we're in.
     uv.x /= aspectRatio;
 
     // Calculate the overall wave movement.
-    float wave = sin(uv.x + time);
+    half wave = sin(uv.x + time);
 
     // Square that movement, and multiply by a large number
     // to make the peaks and troughs be nice and big.
-    wave *= wave * 50;
+    wave *= wave * 50.0h;
 
     // Assume a black color by default.
-    half3 waveColor = half3(0);
+    half3 waveColor = half3(0.0h);
 
     // Create 10 lines in total.
-    for (float i = 0; i < 10; i++) {
+    for (half i = 0.0h; i < 10.0h; i++) {
         // The base brightness of this pixel is 1%, but we
         // need to factor in the position after our wave
         // calculation is taken into account. The abs()
@@ -50,15 +50,15 @@ using namespace metal;
         // so we care about the absolute distance to the
         // nearest line, rather than ignoring values that
         // are negative.
-        float luma = abs(1 / (100 * uv.y + wave));
+        half luma = abs(1.0h / (100.0h * uv.y + wave));
 
         // This calculates a second sine wave that's unique
         // to each line, so we get waves inside waves.
-        float y = sin(uv.x * sin(time) + i * 0.2 + time);
+        half y = sin(uv.x * sin(time) + i * 0.2h + time);
 
         // This offsets each line by that second wave amount,
         // so the waves move non-uniformly.
-        uv.y += 0.05 * y;
+        uv.y += 0.05h * y;
 
         // Our final color is based on fixed red and blue
         // values, but green fluctuates much more so that
@@ -66,9 +66,9 @@ using namespace metal;
         // The * 0.5 + 0.5 part ensures the sin() values
         // are between 0 and 1 rather than -1 and 1.
         half3 rainbow = half3(
-            sin(i * 0.3 + time) * 0.5 + 0.5,
-            sin(i * 0.3 + 2 + sin(time * 0.3) * 2) * 0.5 + 0.5,
-            sin(i * 0.3 + 4) * 0.5 + 0.5
+            sin(i * 0.3h + time) * 0.5h + 0.5h,
+            sin(i * 0.3h + 2.0h + sin(time * 0.3h) * 2.0h) * 0.5h + 0.5h,
+            sin(i * 0.3h + 4.0h) * 0.5h + 0.5h
         );
 
         // Add that to the current wave color, ensuring that

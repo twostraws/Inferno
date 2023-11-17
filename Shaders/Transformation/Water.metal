@@ -27,12 +27,12 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[ stitchable ]] float2 water(float2 position, float2 size, float time, float speed, float strength, float frequency) {
     // Calculate our coordinate in UV space, 0 to 1.
-    float2 uv = position / size;
+    half2 uv = half2(position / size);
 
     // Bring both speed and strength into the kinds of
     // ranges we need for this effect.
-    float adjustedSpeed = time * speed * 0.05;
-    float adjustedStrength = strength / 100;
+    half adjustedSpeed = time * speed * 0.05h;
+    half adjustedStrength = strength / 100.0h;
 
     // Offset the coordinate by a small amount in each
     // direction, based on wave frequency and wave strength.
@@ -40,5 +40,5 @@ using namespace metal;
     uv.y += cos((uv.y + adjustedSpeed) * frequency) * adjustedStrength;
 
     // Bring the position back up to user-space coordinates.
-    return uv * size;
+    return float2(uv) * size;
 }

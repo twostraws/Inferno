@@ -24,23 +24,23 @@ using namespace metal;
 /// - Returns: The new pixel color.
 [[ stitchable ]] half4 diamondWaveTransition(float2 position, half4 color, float2 size, float amount, float diamondSize) {
     // Calculate our coordinate in UV space, 0 to 1.
-    float2 uv = position / size;
+    half2 uv = half2(position / size);
 
     // Figure out our position relative to the nearest
     // diamond.
-    float2 f = fract(position / diamondSize);
+    half2 f = half2(fract(position / diamondSize));
 
     // Calculate the Manhattan distance from our pixel to
     // the center of the nearest diamond.
-    float d = abs(f.x - 0.5) + abs(f.y - 0.5);
+    half d = abs(f.x - 0.5h) + abs(f.y - 0.5h);
 
     // If the transition has progressed beyond our distance,
     // factoring in our X/Y UV coordinate…
-    if (d + uv.x + uv.y < amount * 3) {
+    if (d + uv.x + uv.y < amount * 3.0) {
         // Send back the color
         return color;
     } else {
         // Otherwise send back clear.
-        return 0;
+        return half4(0.0h);
     }
 }

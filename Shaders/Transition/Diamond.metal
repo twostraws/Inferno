@@ -23,11 +23,11 @@ using namespace metal;
 [[ stitchable ]] half4 diamondTransition(float2 position, half4 color, float amount, float diamondSize) {
     // Figure out our position relative to the nearest
     // diamond.
-    float2 f = fract(position / diamondSize);
+    half2 f = half2(fract(position / diamondSize));
 
     // Calculate the Manhattan distance from our pixel to
     // the center of the nearest diamond.
-    float d = abs(f.x - 0.5) + abs(f.y - 0.5);
+    half d = abs(f.x - 0.5h) + abs(f.y - 0.5h);
 
     // If the transition has progressed beyond our distance…
     if (d < amount) {
@@ -35,6 +35,6 @@ using namespace metal;
         return color;
     } else {
         // Otherwise send back clear.
-        return 0;
+        return half4(0.0h);
     }
 }
