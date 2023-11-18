@@ -14,15 +14,11 @@ struct InfernoApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
-                #if !os(visionOS)
-                .frame(minWidth: 800, minHeight: 600)
-                #else
+                #if !os(iOS)
                 .frame(minWidth: 1000, minHeight: 800)
                 #endif
         }
-        #if !os(visionOS)
-        .defaultSize(width: 800, height: 600)
-        #else
+        #if !os(iOS)
         .defaultSize(width: 1000, height: 800)
         #endif
     }
