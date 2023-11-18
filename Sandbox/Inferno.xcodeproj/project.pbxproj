@@ -60,6 +60,7 @@
 		51DB1BD42AF3F8E300518737 /* TimeTransformationPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD32AF3F8E300518737 /* TimeTransformationPreview.swift */; };
 		51DB1BD62AF3FCEC00518737 /* SimpleTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */; };
 		51DB1BD82AF3FD5500518737 /* TimeTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */; };
+		51ED43172B08E1D700EE73E8 /* PlatformShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ED43162B08E1D700EE73E8 /* PlatformShims.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		51DB1BD32AF3F8E300518737 /* TimeTransformationPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTransformationPreview.swift; sourceTree = "<group>"; };
 		51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTransformationShader.swift; sourceTree = "<group>"; };
 		51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTransformationShader.swift; sourceTree = "<group>"; };
+		51ED43162B08E1D700EE73E8 /* PlatformShims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformShims.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				518833962AFBC44400D30D44 /* ContentPreview.swift */,
 				518833942AFBC0DF00D30D44 /* ContentPreviewSelector.swift */,
+				51ED43162B08E1D700EE73E8 /* PlatformShims.swift */,
 				51C72BA42AFC40440094D932 /* PreviewType.swift */,
 				516617A72AFA6BC300978554 /* String-ShaderName.swift */,
 				51A63CED2B05018A00A67C06 /* ToggleAlphaButton.swift */,
@@ -378,6 +381,7 @@
 				51C72B942AFBE7C40094D932 /* AnimatedGradientFill.metal in Sources */,
 				51C72B8E2AFBE7C40094D932 /* Circle.metal in Sources */,
 				51C72BA52AFC40440094D932 /* PreviewType.swift in Sources */,
+				51ED43172B08E1D700EE73E8 /* PlatformShims.swift in Sources */,
 				51C72B9E2AFBE7C40094D932 /* Passthrough.metal in Sources */,
 				51C72BA32AFC20FA0094D932 /* CircleWave.metal in Sources */,
 				516617982AFA517C00978554 /* TouchTransformationPreview.swift in Sources */,
@@ -452,6 +456,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -460,6 +465,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Debug;
 		};
@@ -509,12 +515,14 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				XROS_DEPLOYMENT_TARGET = 1.0;
 			};
 			name = Release;
 		};
@@ -528,11 +536,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Inferno/Preview Content\"";
-				DEVELOPMENT_TEAM = J5CY9Q9UP5;
+				DEVELOPMENT_TEAM = B5C26XE59E;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -558,11 +569,14 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Inferno/Preview Content\"";
-				DEVELOPMENT_TEAM = J5CY9Q9UP5;
+				DEVELOPMENT_TEAM = B5C26XE59E;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
