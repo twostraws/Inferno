@@ -24,18 +24,10 @@ struct ContentPreviewSelector: View {
         .padding()
         #else
         HStack {
-            Button(action: { currentPreviewType = .emoji }) {
-                Text("Emoji")
-            }
-            Button(action: { currentPreviewType = .image }) {
-                Text("Image")
-            }
-            Button(action: { currentPreviewType = .shape }) {
-                Text("Shape")
-            }
-            Button(action: { currentPreviewType = .symbol }) {
-                Text("Symbol")
-            }
+            Button("Emoji", action: { currentPreviewType = .emoji })
+            Button("Image", action: { currentPreviewType = .image })
+            Button("Shape", action: { currentPreviewType = .shape })
+            Button("Symbol", action: { currentPreviewType = .symbol })
         }
         .frame(maxWidth: 400)
         .padding()
