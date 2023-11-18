@@ -37,6 +37,8 @@ struct RelativeTouchTransformationPreview: View {
                         .onChanged { touch = $0.translation }
                 )
         }
+        #if !os(visionOS)
         .navigationSubtitle(shader.name)
+        #endif
     }
 }
