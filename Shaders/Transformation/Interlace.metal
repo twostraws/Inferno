@@ -21,7 +21,7 @@ using namespace metal;
 /// - Parameter strength: How much to blend interlaced lines with color. Specify 0
 ///   (not at all) up to 1 (fully).
 /// - Returns: The new pixel color.
-[[ stitchable ]] half4 interlace(float2 position, half4 color, float2 size, float width, half4 replacement, float strength) {
+[[ stitchable ]] half4 interlace(float2 position, half4 color, float width, half4 replacement, float strength) {
     // If the current color is not transparent…
     if (color.a > 0.0h) {
         // If we are an alternating horizontal line…

@@ -90,7 +90,6 @@ struct SimpleTransformationShader: Hashable, Identifiable {
             let shader = ShaderLibrary[dynamicMember: "interlace"]
 
             return shader(
-                .float2(size),
                 .float(value),
                 .color(color),
                 .float(1)
