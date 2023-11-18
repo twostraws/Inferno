@@ -39,8 +39,5 @@ struct AbsoluteTouchTransformationPreview: View {
                         .onChanged { touch = $0.location }
                 )
         }
-        #if !os(visionOS)
-        .navigationSubtitle(shader.name)
-        #endif
     }
 }
