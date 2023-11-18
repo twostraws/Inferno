@@ -27,9 +27,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                #if !os(visionOS)
-                .collapsible(false)
-                #endif
 
                 Section("Animated") {
                     ForEach(TimeTransformationShader.shaders) { shader in
@@ -38,9 +35,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                #if !os(visionOS)
-                .collapsible(false)
-                #endif
 
                 Section("Touchable") {
                     ForEach(TouchTransformationShader.shaders) { shader in
@@ -49,9 +43,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                #if !os(visionOS)
-                .collapsible(false)
-                #endif
 
                 Section("Transitions") {
                     ForEach(TransitionShader.shaders) { shader in
@@ -60,9 +51,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                #if !os(visionOS)
-                .collapsible(false)
-                #endif
 
                 Section("Generation") {
                     ForEach(GenerativeShader.shaders) { shader in
@@ -71,9 +59,6 @@ struct ContentView: View {
                         }
                     }
                 }
-                #if !os(visionOS)
-                .collapsible(false)
-                #endif
             }
             .navigationTitle("Inferno Sandbox")
             .navigationDestination(for: SimpleTransformationShader.self) { shader in
