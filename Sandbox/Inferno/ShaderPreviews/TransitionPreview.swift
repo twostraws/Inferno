@@ -50,7 +50,9 @@ struct TransitionPreview: View {
         .toolbar {
             ToggleAlphaButton(opacity: $opacity)
         }
+        #if !os(visionOS)
         .navigationSubtitle(shader.name)
+        #endif
     }
 }
 
