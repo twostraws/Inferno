@@ -20,9 +20,9 @@ struct WelcomeView: View {
                 .padding(.bottom, 10)
 
             Link("github.com/twostraws/inferno", destination: URL(string: "https://github.com/twostraws/inferno")!)
-                .font(.title.bold())
+                .font(.title2.bold())
 
-            Text("This is a small sandbox so you can see the various shaders in action. To use the shaders in your own code, follow the instructions in the documentation rather than taking code from here – this project contains a lot of extra code to handle previewing, most of which isn't required in other projects.")
+            Text("This is a small sandbox so you can see the various shaders in action. To use the shaders in your own code, follow the instructions in the documentation rather than taking code from here.")
                 .multilineTextAlignment(.center)
                 .font(.title3)
 
@@ -39,9 +39,7 @@ struct WelcomeView: View {
             .onHover { logoHover = $0 }
             .foregroundStyle(.white)
         }
-        #if !os(visionOS)
         .navigationSubtitle("Welcome to the Shader Sandbox")
-        #endif
         .padding()
     }
 }
