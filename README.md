@@ -1,13 +1,3 @@
-
-This is a fork of Paul Hudson's Inferno repo, Metal shaders for SwiftUI, to experimentally support visionOS.
-You can see how the Metal Shaders for SwiftUI work in visionOS simulator.
-
-- Xcode 15.1 beta 3, visionOS beta
-
-The Picker View has some issues in visioOS simulator, so it was replaced with a Buttons View as a temporary measure.
-
-<hr>
-
 <p align="center">
     <img src="https://www.hackingwithswift.com/files/inferno/inferno-logo.png" alt="Inferno logo" width="272" height="272" />
 </p>
