@@ -864,6 +864,7 @@ As well as the shaders listed above, Inferno provides a selection of shaders spe
 > [!Note]
 > As well as copying one specific shader into your project, you should also add Transitions.swift to include the `AnyTransition` extensions.
 
+
 ### Circle 
 
 A transition where many circles grow upwards to reveal the new content.
