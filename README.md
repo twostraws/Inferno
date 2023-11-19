@@ -12,9 +12,9 @@
     </a>
 </p>
 
-Inferno is an open-source collection of fragment shaders designed for use in SwiftUI apps. The shaders are designed to be easy to read and understand, even for relative beginners, so you’ll find each line of code is rephrased in plain English as well as an overall explanation of the algorithm used at the top of each file.
+Inferno is an open-source collection of fragment shaders designed for SwiftUI apps. The shaders are designed to be easy to read and understand, even for relative beginners, so you’ll find each line of code rephrased in plain English and an overall explanation of the algorithm used at the top of each file.
 
-If you’re already comfortable with shaders then please download one or more that interest you and get going. If not, most of the the remainder of this README acts as a primer for using shaders in SwiftUI.
+If you’re already comfortable with shaders, please download one or more that interest you and get going. If not, most of the remainder of this README acts as a primer for using shaders in SwiftUI.
 
 
 * [See it in action](#see-it-in-action)
@@ -64,7 +64,7 @@ If you’re already comfortable with shaders then please download one or more th
 
 This repository contains a cross-platform sample project demonstrating all the shaders in action. The sample project is built using SwiftUI and requires iOS 17 and macOS 14.
 
-The sample project contains a lot of extra helper code to demonstrate all the shaders in various ways. To use the shaders in your own project, you just need to copy the relevant Metal files across, and optionally also Transitions.swift if you're using a transition shader.
+The sample project contains many extra helper codes to demonstrate all the shaders in various ways. To use the shaders in your own project, you need to copy the relevant Metal files across, and optionally also Transitions.swift if you're using a transition shader.
 
 ![The Inferno Sandbox app demonstrating the simple loupe shader.](sandbox-screenshot.png)
 
@@ -73,9 +73,9 @@ The sample project contains a lot of extra helper code to demonstrate all the sh
 
 If you use SwiftUI, you can add special effects from Inferno to add water ripples, spinning black holes, flashing lights, embossing, noise, gradients, and more – all done on the GPU for maximum speed.
 
-To use a shader from here, copy the appropriate .metal file into your project, then start with sample code for that shader shown below. If you're using an Inferno transition, you should also copy Transitions.swift to your project.
+To use a shader from here, copy the appropriate .metal file into your project, then start with the sample code for the shader below. If you're using an Inferno transition, copy Transitions.swift to your project.
 
-To find out more, click below to watch my YouTube video about building shaders for use with SwiftUI.
+If you'd like to find out more, you can click below to watch my YouTube video about building shaders for use with SwiftUI.
 
 [![Video: SwiftUI + Metal – Learn to build your own shaders](https://img.youtube.com/vi/EgzWwgRpUuw/maxresdefault.jpg)](https://youtu.be/EgzWwgRpUuw)
 
@@ -91,9 +91,9 @@ The transformation process can recolor the pixel however it wants. Users can cus
 
 ## How are shaders written?
 
-Shaders are written in the Metal Shading Language (MSL), which is a simple, fast, and extremely efficient language based on C++ that is optimized for high-performance GPU operations. Metal shaders are compiled at build-time and linked into a `.metallib` file. When you activate a shader in your app, the corresponding Metal function is loaded from the `metallib` and is then used to create a program to be executed on the GPU.
+Shaders are written in the Metal Shading Language (MSL), which is a simple, fast, and highly efficient language based on C++ that is optimized for high-performance GPU operations. Metal shaders are compiled at build-time and linked into a `.metallib` file. When you activate a shader in your app, the corresponding Metal function is loaded from the `metallib` and is then used to create a program to be executed on the GPU.
 
-SwiftUI is able to work with a variety of Metal shaders, depending on what kind of effect you're trying to create.
+SwiftUI can work with various Metal shaders, depending on what kind of effect you're trying to create.
 
 MSL comes with a wide variety of built-in data types and functions, many of which operate on more than one data types. The data types used in Inferno are nice and simple:
 
@@ -191,11 +191,11 @@ Inferno provides a selection of shaders, most of which allow some customization 
 
 ### Animated Gradient Fill
 
-A `colorEffect()` shader that generates generates a constantly cycling color gradient, centered on the input view.
+A `colorEffect()` shader that generates a constantly cycling color gradient, centered on the input view.
 
 **Parameters:**
 
-- `size`: The size of the whole image, in user-space.
+- `size`: The size of the whole image, in user space.
 - `time`: The number of elapsed seconds since the shader was created.
 
 Example code:
@@ -250,12 +250,12 @@ Image(systemName: "figure.walk.circle")
 
 ### Circle Wave
 
-A `colorEffect()` shader that generates circular waves moving out or in, with varying size, brightness, speed, strength, and more.
+A `colorEffect()` shader generates circular waves moving out or in, with varying size, brightness, speed, strength, and more.
 
 **Parameters:**
 
-- `size`: The size of the whole image, in user-space.
-- `time`: The number of elapsed seconds since the shader was created.
+- `size`: The size of the whole image in user-space.
+- `time`: The number of seconds that have elapsed since the shader was created.
 - `brightness`:  How bright the colors should be. Ranges from 0 to 5 work best; try starting with 0.5 and experiment.
 - `speed`: How fast the wave should travel. Ranges from -2 to 2 work best, where negative numbers cause waves to come inwards; try starting with 1.
 - `strength`: How intense the waves should be. Ranges from 0.02 to 5 work best; try starting with 2.
@@ -336,7 +336,7 @@ struct ContentView: View {
 
 ### Emboss 
 
-A `layerEffect()` shader that creates an embossing effect by adding brightness from pixels in one direction, and subtracting brightness from pixels in the other direction.
+A `layerEffect()` shader that creates an embossing effect by adding brightness from pixels in one direction and subtracting brightness from pixels in the other direction.
 
 **Parameters:**
 
@@ -407,7 +407,7 @@ Text("👩‍💻")
 
 ### Interlace
 
-A `colorEffect()` shader that applies an interlacing effect where horizontal lines of the original color are separated by lines of another color.
+A `colorEffect()` shader that applies an interlacing effect where lines of another color separate horizontal lines of the original color.
 
 **Parameters:**
 
@@ -454,11 +454,11 @@ Text("🤷‍♂️")
 
 ### Light Grid
 
-A `colorEffect()` shader that generates generates multiple twisting and turning lines that cycle through colors.
+A `colorEffect()` shader generates multiple twisting and turning lines that cycle through colors.
 
 **Parameters:**
 
-- `size`: The size of the whole image, in user-space.
+- `size`: The size of the whole image in user-space.
 - `time`: The number of elapsed seconds since the shader was created
 - `density`: How many rows and columns to create. A range of 1 to 50 works well; try starting with 8.
 - `speed`: How fast to make the lights vary their color. Higher values cause lights to flash faster and vary in color more. A range of 1 to 20 works well; try starting with 3.
@@ -500,7 +500,7 @@ struct ContentView: View {
 
 ### Passthrough
 
-A `colorEffect()` shader that sends back the existing color data, changing nothing.
+A `colorEffect()` shader returns the existing color data, changing nothing.
 
 **Parameters:**
 
@@ -550,7 +550,7 @@ struct ContentView: View {
 
 ### Recolor
 
-A `colorEffect()` that changes input colors to a replacement, while respecting the current alpha value.
+A `colorEffect()` that changes input colors to a replacement while respecting the current alpha value.
 
 **Parameters:**
 
@@ -571,12 +571,12 @@ Text("💪")
 
 ### Relative Wave
 
-A `distortionEffect()` shader that generates a wave effect, where no effect is applied on the left side of the input, and the full effect is applied on the right side.
+A `distortionEffect()` shader generates a wave effect, where no effect is applied on the left side of the input, and the full effect is applied on the right side.
 
 **Parameters:**
 
-- `size`: The size of the whole image, in user-space.
-- `time`: The number of elapsed seconds since the shader was created.
+- `size`: The size of the whole image in user-space.
+- `time`: The number of seconds that have elapsed since the shader was created.
 - `speed`: How fast to make the waves ripple. Try starting with a value of 5.
 - `smoothing`: How much to smooth out the ripples, where greater values produce a smoother effect. Try starting with a value of 20.
 - `strength`: How pronounced to make the ripple effect. Try starting with a value of 5.
@@ -617,11 +617,11 @@ struct ContentView: View {
 
 ### Simple Loupe
 
-A `layerEffect()` shader that creates a circular zoom effect over a precise location.
+A `layerEffect()` shader creates a circular zoom effect over a precise location.
 
 **Parameters:**
 
-- `size`: The size of the whole image, in user-space.
+- `size`: The size of the whole image in user-space.
 - `touch`: The location the user is touching, where the zoom should be centered.
 - `maxDistance`: How big to make the zoomed area. Try starting with 0.05.
 - `zoomFactor`: How much to zoom the contents of the loupe.
@@ -661,12 +661,12 @@ struct ContentView: View {
 
 ### Sinebow
 
-A `colorEffect()` shader that generates generates multiple twisting and turning lines that cycle through colors.
+A `colorEffect()` shader generates multiple twisting and turning lines that cycle through colors.
 
 **Parameters:**
 
-- `size`: The size of the whole image, in user-space.
-- `time`: The number of elapsed seconds since the shader was created.
+- `size`: The size of the whole image in user-space.
+- `time`: The number of seconds elapsed since the shader was created.
 
 Example code:
 
@@ -696,11 +696,11 @@ struct ContentView: View {
 
 ### Warping Loupe
 
-A `layerEffect()` shader that creates a circular zoom effect over a precise location, with variable zoom around the touch area to create a glass orb-like effect.
+A `layerEffect()` shader creates a circular zoom effect over a precise location, with variable zoom around the touch area to create a glass orb-like effect.
 
 **Parameters:**
 
-- `size`: The size of the whole image, in user-space.
+- `size`: The size of the whole image in user-space.
 - `touch`: The location the user is touching, where the zoom should be centered.
 - `maxDistance`: How big to make the zoomed area. Try starting with 0.05.
 - `zoomFactor`: How much to zoom the contents of the loupe.
@@ -744,8 +744,8 @@ A `distortionEffect()` shader that generates a water rippling effect.
 
 **Parameters:**
 
-- `size`: The size of the whole image, in user-space.
-- `time`: The number of elapsed seconds since the shader was created.
+- `size`: The size of the whole image in user-space.
+- `time`: The number of seconds that have elapsed since the shader was created.
 - `speed`: How fast to make the water ripple. Ranges from 0.5 to 10 work best; try starting with 3.
 - `strength`: How pronounced the rippling effect should be. Ranges from 1 to 5 work best; try starting with 3.
 - `frequency`: How often ripples should be created. Ranges from 5 to 25 work best; try starting with 10.
@@ -787,11 +787,11 @@ struct ContentView: View {
 
 ### Wave
 
-A `distortionEffect()` shader that generates a wave effect, where no effect is applied on the left side of the input, and the full effect is applied on the right side.
+A `distortionEffect()` shader generates a wave effect, where no effect is applied on the left side of the input, and the full effect is applied on the right side.
 
 **Parameters:**
 
-- `time`: The number of elapsed seconds since the shader was created.
+- `time`: The number of seconds elapsed since the shader was created.
 - `speed`: How fast to make the waves ripple. Try starting with a value of 5.
 - `smoothing`: How much to smooth out the ripples, where greater values produce a smoother effect. Try starting with a value of 10.
 - `strength`: How pronounced to make the ripple effect. Try starting with a value of 5.
