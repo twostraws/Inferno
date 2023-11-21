@@ -191,7 +191,7 @@ Inferno provides a selection of shaders, most of which allow some customization 
 
 ### Animated Gradient Fill
 
-A `colorEffect()` shader that generates generates a constantly cycling color gradient, centered on the input view.
+A `colorEffect()` shader that generates a constantly cycling color gradient, centered on the input view.
 
 **Parameters:**
 
@@ -454,7 +454,7 @@ Text("🤷‍♂️")
 
 ### Light Grid
 
-A `colorEffect()` shader that generates generates multiple twisting and turning lines that cycle through colors.
+A `colorEffect()` shader that generates multiple twisting and turning lines that cycle through colors.
 
 **Parameters:**
 
@@ -661,7 +661,7 @@ struct ContentView: View {
 
 ### Sinebow
 
-A `colorEffect()` shader that generates generates multiple twisting and turning lines that cycle through colors.
+A `colorEffect()` shader that generates multiple twisting and turning lines that cycle through colors.
 
 **Parameters:**
 
