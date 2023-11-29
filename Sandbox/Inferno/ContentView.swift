@@ -59,6 +59,14 @@ struct ContentView: View {
                         }
                     }
                 }
+                
+                Section("Blurs") {
+                    ForEach(BlurEffect.effects) { effect in
+                        NavigationLink(value: effect) {
+                            Text(effect.name)
+                        }
+                    }
+                }
             }
             .navigationTitle("Inferno Sandbox")
             .navigationDestination(for: SimpleTransformationShader.self) { shader in
@@ -82,6 +90,7 @@ struct ContentView: View {
                 TransitionPreview(shader: shader).id(UUID())
             }
             .navigationDestination(for: GenerativeShader.self, destination: GenerativePreview.init)
+            .navigationDestination(for: BlurEffect.self, destination: BlurPreview.init)
             .frame(minWidth: 200)
         } detail: {
             WelcomeView()

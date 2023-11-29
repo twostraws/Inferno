@@ -61,6 +61,13 @@
 		51DB1BD62AF3FCEC00518737 /* SimpleTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */; };
 		51DB1BD82AF3FD5500518737 /* TimeTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */; };
 		51ED43172B08E1D700EE73E8 /* PlatformShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ED43162B08E1D700EE73E8 /* PlatformShims.swift */; };
+		E931DA2A2B1686F8005E940A /* VariableGaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = E931DA292B1686F8005E940A /* VariableGaussianBlur.metal */; };
+		E931DA2D2B169C7E005E940A /* VisualEffect+variableBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA2C2B169C7E005E940A /* VisualEffect+variableBlur.swift */; };
+		E931DA2F2B169CC4005E940A /* View+variableBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA2E2B169CC4005E940A /* View+variableBlur.swift */; };
+		E931DA312B169DD2005E940A /* BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA302B169DD2005E940A /* BlurEffect.swift */; };
+		E931DA332B16A356005E940A /* BlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA322B16A356005E940A /* BlurPreview.swift */; };
+		E931DA352B16A68A005E940A /* ProgressiveBlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA342B16A68A005E940A /* ProgressiveBlurPreview.swift */; };
+		E931DA372B16A6FE005E940A /* ShapeBlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA362B16A6FE005E940A /* ShapeBlurPreview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,7 +119,7 @@
 		51C72BA82AFD36A80094D932 /* LightGrid.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LightGrid.metal; sourceTree = "<group>"; };
 		51DB1B9F2AF3EFEE00518737 /* Inferno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inferno.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DB1BA22AF3EFEE00518737 /* InfernoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfernoApp.swift; sourceTree = "<group>"; };
-		51DB1BA42AF3EFEE00518737 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		51DB1BA42AF3EFEE00518737 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		51DB1BA62AF3EFEF00518737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		51DB1BA92AF3EFEF00518737 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		51DB1BAB2AF3EFEF00518737 /* Inferno.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Inferno.entitlements; sourceTree = "<group>"; };
@@ -120,6 +127,13 @@
 		51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTransformationShader.swift; sourceTree = "<group>"; };
 		51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTransformationShader.swift; sourceTree = "<group>"; };
 		51ED43162B08E1D700EE73E8 /* PlatformShims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformShims.swift; sourceTree = "<group>"; };
+		E931DA292B1686F8005E940A /* VariableGaussianBlur.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = VariableGaussianBlur.metal; sourceTree = "<group>"; usesTabs = 0; };
+		E931DA2C2B169C7E005E940A /* VisualEffect+variableBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisualEffect+variableBlur.swift"; sourceTree = "<group>"; usesTabs = 0; };
+		E931DA2E2B169CC4005E940A /* View+variableBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+variableBlur.swift"; sourceTree = "<group>"; };
+		E931DA302B169DD2005E940A /* BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffect.swift; sourceTree = "<group>"; usesTabs = 0; };
+		E931DA322B16A356005E940A /* BlurPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurPreview.swift; sourceTree = "<group>"; usesTabs = 0; };
+		E931DA342B16A68A005E940A /* ProgressiveBlurPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressiveBlurPreview.swift; sourceTree = "<group>"; usesTabs = 0; };
+		E931DA362B16A6FE005E940A /* ShapeBlurPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBlurPreview.swift; sourceTree = "<group>"; usesTabs = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +155,7 @@
 				51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */,
 				51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */,
 				516617992AFA519500978554 /* TouchTransformationShader.swift */,
+				E931DA302B169DD2005E940A /* BlurEffect.swift */,
 			);
 			path = ShaderDescriptions;
 			sourceTree = "<group>";
@@ -155,6 +170,9 @@
 				51DB1BD32AF3F8E300518737 /* TimeTransformationPreview.swift */,
 				516617972AFA517C00978554 /* TouchTransformationPreview.swift */,
 				516617A12AFA58CA00978554 /* TransitionPreview.swift */,
+				E931DA322B16A356005E940A /* BlurPreview.swift */,
+				E931DA342B16A68A005E940A /* ProgressiveBlurPreview.swift */,
+				E931DA362B16A6FE005E940A /* ShapeBlurPreview.swift */,
 			);
 			path = ShaderPreviews;
 			sourceTree = "<group>";
@@ -176,6 +194,7 @@
 		51C72B6C2AFBE7C40094D932 /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
+				E931DA282B1686D5005E940A /* Blur */,
 				51C72B872AFBE7C40094D932 /* Generation */,
 				51C72B772AFBE7C40094D932 /* Transformation */,
 				51C72B6D2AFBE7C40094D932 /* Transition */,
@@ -254,6 +273,7 @@
 			isa = PBXGroup;
 			children = (
 				51C72B6C2AFBE7C40094D932 /* Shaders */,
+				E931DA2B2B169C55005E940A /* SwiftUI Wrappers */,
 				5188339E2AFBD66200D30D44 /* Helpers */,
 				5188339D2AFBD5ED00D30D44 /* ShaderPreviews */,
 				5188339C2AFBD5D000D30D44 /* ShaderDescriptions */,
@@ -274,6 +294,23 @@
 				51DB1BA92AF3EFEF00518737 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E931DA282B1686D5005E940A /* Blur */ = {
+			isa = PBXGroup;
+			children = (
+				E931DA292B1686F8005E940A /* VariableGaussianBlur.metal */,
+			);
+			path = Blur;
+			sourceTree = "<group>";
+		};
+		E931DA2B2B169C55005E940A /* SwiftUI Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				E931DA2C2B169C7E005E940A /* VisualEffect+variableBlur.swift */,
+				E931DA2E2B169CC4005E940A /* View+variableBlur.swift */,
+			);
+			path = "SwiftUI Wrappers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,10 +398,13 @@
 				51C72B962AFBE7C40094D932 /* Emboss.metal in Sources */,
 				51C72B8B2AFBE7C40094D932 /* Pixellate.metal in Sources */,
 				51A63CEE2B05018A00A67C06 /* ToggleAlphaButton.swift in Sources */,
+				E931DA352B16A68A005E940A /* ProgressiveBlurPreview.swift in Sources */,
+				E931DA2D2B169C7E005E940A /* VisualEffect+variableBlur.swift in Sources */,
 				51C72B952AFBE7C40094D932 /* GradientFill.metal in Sources */,
 				51DB1BA52AF3EFEE00518737 /* ContentView.swift in Sources */,
 				51C72B672AFBE7800094D932 /* Transitions.swift in Sources */,
 				51C72B9F2AFBE7C40094D932 /* Infrared.metal in Sources */,
+				E931DA2F2B169CC4005E940A /* View+variableBlur.swift in Sources */,
 				51C72B8A2AFBE7C40094D932 /* CircleWave.metal in Sources */,
 				51C72B8D2AFBE7C40094D932 /* Radial.metal in Sources */,
 				516617A82AFA6BC300978554 /* String-ShaderName.swift in Sources */,
@@ -376,6 +416,7 @@
 				51A63DC02B0570F400A67C06 /* Interlace.metal in Sources */,
 				51C72BA02AFBE7C40094D932 /* ColorPlanes.metal in Sources */,
 				51C72B9B2AFBE7C40094D932 /* SimpleLoupe.metal in Sources */,
+				E931DA332B16A356005E940A /* BlurPreview.swift in Sources */,
 				51C72B982AFBE7C40094D932 /* WhiteNoise.metal in Sources */,
 				51C72B892AFBE7C40094D932 /* Diamond.metal in Sources */,
 				51C72B942AFBE7C40094D932 /* AnimatedGradientFill.metal in Sources */,
@@ -394,10 +435,13 @@
 				518833952AFBC0DF00D30D44 /* ContentPreviewSelector.swift in Sources */,
 				516617B22AFA717500978554 /* RelativeTouchTransformationPreview.swift in Sources */,
 				5166179C2AFA543700978554 /* TransitionShader.swift in Sources */,
+				E931DA2A2B1686F8005E940A /* VariableGaussianBlur.metal in Sources */,
 				51C72B902AFBE7C40094D932 /* Wind.metal in Sources */,
 				516617962AFA4B2300978554 /* SimpleTransformationPreview.swift in Sources */,
+				E931DA372B16A6FE005E940A /* ShapeBlurPreview.swift in Sources */,
 				51C72BA92AFD36A80094D932 /* LightGrid.metal in Sources */,
 				516617B02AFA711B00978554 /* AbsoluteTouchTransformationPreview.swift in Sources */,
+				E931DA312B169DD2005E940A /* BlurEffect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
