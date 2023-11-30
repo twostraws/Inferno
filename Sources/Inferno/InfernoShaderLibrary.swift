@@ -8,6 +8,7 @@
 import SwiftUI
 
 /// The Inferno Metal shader library.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 @dynamicMemberLookup
 public enum InfernoShaderLibrary {
     /// Returns a new shader function representing the stitchable MSL

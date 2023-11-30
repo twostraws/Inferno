@@ -15,6 +15,7 @@
 import SwiftUI
 
 /// A transition where many circles grow upwards to reveal the new content.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct CircleTransition: ViewModifier {
     /// How big to make the circles.
     var size = 20.0
@@ -35,6 +36,7 @@ struct CircleTransition: ViewModifier {
 
 /// A transition where many circles grow upwards to reveal the new content,
 /// with the circles moving outwards from the top-left edge.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct CircleWaveTransition: ViewModifier {
     /// How big to make the circles.
     var size = 20.0
@@ -58,6 +60,7 @@ struct CircleWaveTransition: ViewModifier {
 }
 
 /// A transition where many diamonds grow upwards to reveal the new content.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct DiamondTransition: ViewModifier {
     /// How big to make the diamonds.
     var size = 20.0
@@ -78,6 +81,7 @@ struct DiamondTransition: ViewModifier {
 
 /// A transition where many diamonds grow upwards to reveal the new content,
 /// with the diamonds moving outwards from the top-left edge.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct DiamondWaveTransition: ViewModifier {
     /// How big to make the diamonds.
     var size = 20.0
@@ -104,6 +108,7 @@ struct DiamondWaveTransition: ViewModifier {
 /// A Metal-powered layer effect transition that needs to know the
 /// view's size. You probably don't want to use this directly, and
 /// should instead use one of the AnyTransition extensions.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct InfernoTransition: ViewModifier {
     /// The name of the shader function we're rendering.
     var name: String
@@ -127,6 +132,7 @@ struct InfernoTransition: ViewModifier {
 /// A transition that causes the incoming and outgoing views to become
 /// increasingly pixellated, then return to their normal state. While this
 /// happens the old view fades out and the new one fades in.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct PixellateTransition: ViewModifier {
     /// How large the pixels should be.
     var squares = 10.0
@@ -155,6 +161,7 @@ struct PixellateTransition: ViewModifier {
 }
 
 /// A transition where views are twirled from the center and faded out.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct SwirlTransition: ViewModifier {
     /// How large the swirl should be relative to the view it's transitioning.
     var radius = 0.5
@@ -177,6 +184,7 @@ struct SwirlTransition: ViewModifier {
 }
 
 /// A transition where views are removed blowing streaks from the right edge.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct WindTransition: ViewModifier {
     /// How long the streaks should be, relative to the view's width.
     var size = 0.2
@@ -199,6 +207,7 @@ struct WindTransition: ViewModifier {
 }
 
 /// A collection of wrappers to make Inferno transitions easier to use.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 extension AnyTransition {
     /// A transition that makes a variety of circles simultaneously zoom up
     ///  across the screen.

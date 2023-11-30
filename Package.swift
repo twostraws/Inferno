@@ -5,7 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "Inferno",
-    platforms: [.iOS(.v17)],
+    platforms: [.iOS(.v15), .macOS(.v12), .macCatalyst(.v15), .tvOS(.v15), .visionOS(.v1)],
     products: [
         .library(name: "Inferno", targets: ["Inferno"]),
     ],
