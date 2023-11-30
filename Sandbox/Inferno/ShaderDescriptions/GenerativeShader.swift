@@ -5,6 +5,7 @@
 // See LICENSE for license information.
 //
 
+import Inferno
 import SwiftUI
 
 /// A shader that generates its contents fully from scratch.
@@ -40,7 +41,7 @@ struct GenerativeShader: Hashable, Identifiable {
         if let initializer {
             return initializer(elapsedTime, size)
         } else {
-            let shader = ShaderLibrary[dynamicMember: name.shaderName]
+            let shader = InfernoShaderLibrary[dynamicMember: name.shaderName]
             return shader(
                 .float2(size),
                 .float(elapsedTime)
@@ -54,7 +55,7 @@ struct GenerativeShader: Hashable, Identifiable {
     /// All the generative shaders we want to show.
     static let shaders = [
         GenerativeShader(name: "Light Grid") { time, size in
-            let shader = ShaderLibrary[dynamicMember: "lightGrid"]
+            let shader = InfernoShaderLibrary[dynamicMember: "lightGrid"]
 
             return shader(
                 .float2(size),

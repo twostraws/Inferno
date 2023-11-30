@@ -5,6 +5,7 @@
 // See LICENSE for license information.
 //
 
+import Inferno
 import SwiftUI
 
 /// A shader that accepts a time input value so that its effect changes over time.
@@ -45,7 +46,7 @@ struct TimeTransformationShader: Hashable, Identifiable {
         if let initializer {
             return initializer(elapsedTime, .zero)
         } else {
-            let shader = ShaderLibrary[dynamicMember: name.shaderName]
+            let shader = InfernoShaderLibrary[dynamicMember: name.shaderName]
             return shader(
                 .float(elapsedTime)
             )
@@ -59,7 +60,7 @@ struct TimeTransformationShader: Hashable, Identifiable {
         if let initializer {
             return initializer(elapsedTime, size)
         } else {
-            let shader = ShaderLibrary[dynamicMember: name.shaderName]
+            let shader = InfernoShaderLibrary[dynamicMember: name.shaderName]
 
             return shader(
                 .float2(size),
@@ -75,7 +76,7 @@ struct TimeTransformationShader: Hashable, Identifiable {
     static let shaders = [
         TimeTransformationShader(name: "Animated Gradient Fill", type: .visualEffectColor),
         TimeTransformationShader(name: "Circle Wave", type: .visualEffectColor) { time, size in
-            let shader = ShaderLibrary[dynamicMember: "circleWave"]
+            let shader = InfernoShaderLibrary[dynamicMember: "circleWave"]
 
             // This is such a great shader, but trying to squeeze
             // all these options into the main sandbox UI would
@@ -96,7 +97,7 @@ struct TimeTransformationShader: Hashable, Identifiable {
         },
         TimeTransformationShader(name: "Rainbow Noise", type: .colorEffect),
         TimeTransformationShader(name: "Relative Wave", type: .visualEffectDistortion) { time, size in
-            let shader = ShaderLibrary[dynamicMember: "relativeWave"]
+            let shader = InfernoShaderLibrary[dynamicMember: "relativeWave"]
 
             return shader(
                 .float2(size),
@@ -107,7 +108,7 @@ struct TimeTransformationShader: Hashable, Identifiable {
             )
         },
         TimeTransformationShader(name: "Water", type: .visualEffectDistortion) { time, size in
-            let shader = ShaderLibrary[dynamicMember: "water"]
+            let shader = InfernoShaderLibrary[dynamicMember: "water"]
 
             return shader(
                 .float2(size),
@@ -118,7 +119,7 @@ struct TimeTransformationShader: Hashable, Identifiable {
             )
         },
         TimeTransformationShader(name: "Wave", type: .distortionEffect) { time, _ in
-            let shader = ShaderLibrary[dynamicMember: "wave"]
+            let shader = InfernoShaderLibrary[dynamicMember: "wave"]
 
             return shader(
                 .float(time),

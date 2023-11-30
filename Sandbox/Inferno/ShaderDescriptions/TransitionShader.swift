@@ -5,6 +5,7 @@
 // See LICENSE for license information.
 //
 
+import Inferno
 import SwiftUI
 
 /// A shader able to act as a SwiftUI transition.
