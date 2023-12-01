@@ -5,6 +5,6 @@
       location = "self:">
    </FileRef>
    <FileRef
-      location = "group:/Users/john/Documents/src/Inferno/Sandbox/InfernoSandbox.xcodeproj">
+      location = "group:Sandbox/InfernoSandbox.xcodeproj">
    </FileRef>
 </Workspace>

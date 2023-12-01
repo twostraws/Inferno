@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,6 +31,8 @@
 		51DB1BD62AF3FCEC00518737 /* SimpleTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */; };
 		51DB1BD82AF3FD5500518737 /* TimeTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */; };
 		51ED43172B08E1D700EE73E8 /* PlatformShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ED43162B08E1D700EE73E8 /* PlatformShims.swift */; };
+		5219F8122B19676500E05093 /* Inferno in Frameworks */ = {isa = PBXBuildFile; productRef = 52FDE56F2B18149B00D3AF01 /* Inferno */; };
+		5219F8152B19678300E05093 /* Inferno in Frameworks */ = {isa = PBXBuildFile; productRef = 5219F8142B19678300E05093 /* Inferno */; };
 		E931DA312B169DD2005E940A /* BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA302B169DD2005E940A /* BlurEffect.swift */; };
 		E931DA332B16A356005E940A /* BlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA322B16A356005E940A /* BlurPreview.swift */; };
 		E931DA352B16A68A005E940A /* ProgressiveBlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA342B16A68A005E940A /* ProgressiveBlurPreview.swift */; };
@@ -54,7 +56,7 @@
 		5188339A2AFBD0DE00D30D44 /* TransformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationType.swift; sourceTree = "<group>"; };
 		51A63CED2B05018A00A67C06 /* ToggleAlphaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleAlphaButton.swift; sourceTree = "<group>"; };
 		51C72BA42AFC40440094D932 /* PreviewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewType.swift; sourceTree = "<group>"; };
-		51DB1B9F2AF3EFEE00518737 /* InfernoSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inferno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51DB1B9F2AF3EFEE00518737 /* InfernoSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfernoSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DB1BA22AF3EFEE00518737 /* InfernoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfernoApp.swift; sourceTree = "<group>"; };
 		51DB1BA42AF3EFEE00518737 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		51DB1BA62AF3EFEF00518737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -75,7 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52FDE5702B18149B00D3AF01 /* Inferno in Frameworks */,
+				5219F8152B19678300E05093 /* Inferno in Frameworks */,
+				5219F8122B19676500E05093 /* Inferno in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +154,6 @@
 				5188339C2AFBD5D000D30D44 /* ShaderDescriptions */,
 				51DB1BA22AF3EFEE00518737 /* InfernoApp.swift */,
 				51DB1BA42AF3EFEE00518737 /* ContentView.swift */,
-				51C72B662AFBE7800094D932 /* Transitions.swift */,
 				516617A32AFA6A5000978554 /* WelcomeView.swift */,
 				51DB1BA62AF3EFEF00518737 /* Assets.xcassets */,
 				51DB1BAB2AF3EFEF00518737 /* Inferno.entitlements */,
@@ -193,6 +195,7 @@
 			name = InfernoSandbox;
 			packageProductDependencies = (
 				52FDE56F2B18149B00D3AF01 /* Inferno */,
+				5219F8142B19678300E05093 /* Inferno */,
 			);
 			productName = Inferno;
 			productReference = 51DB1B9F2AF3EFEE00518737 /* InfernoSandbox.app */;
@@ -222,6 +225,9 @@
 				Base,
 			);
 			mainGroup = 51DB1B962AF3EFEE00518737;
+			packageReferences = (
+				5219F8132B19678300E05093 /* XCLocalSwiftPackageReference ".." */,
+			);
 			productRefGroup = 51DB1BA02AF3EFEE00518737 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,7 +263,6 @@
 				51A63CEE2B05018A00A67C06 /* ToggleAlphaButton.swift in Sources */,
 				E931DA352B16A68A005E940A /* ProgressiveBlurPreview.swift in Sources */,
 				51DB1BA52AF3EFEE00518737 /* ContentView.swift in Sources */,
-				51C72B672AFBE7800094D932 /* Transitions.swift in Sources */,
 				516617A82AFA6BC300978554 /* String-ShaderName.swift in Sources */,
 				51DB1BD82AF3FD5500518737 /* TimeTransformationShader.swift in Sources */,
 				516617AA2AFA6C2900978554 /* GenerativePreview.swift in Sources */,
@@ -492,7 +497,18 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		5219F8132B19678300E05093 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		5219F8142B19678300E05093 /* Inferno */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Inferno;
+		};
 		52FDE56F2B18149B00D3AF01 /* Inferno */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Inferno;
