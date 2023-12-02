@@ -68,6 +68,7 @@
 		E931DA332B16A356005E940A /* BlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA322B16A356005E940A /* BlurPreview.swift */; };
 		E931DA352B16A68A005E940A /* ProgressiveBlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA342B16A68A005E940A /* ProgressiveBlurPreview.swift */; };
 		E931DA372B16A6FE005E940A /* ShapeBlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA362B16A6FE005E940A /* ShapeBlurPreview.swift */; };
+		F64CE73D2B1BE2A700442004 /* Shift.metal in Sources */ = {isa = PBXBuildFile; fileRef = F64CE73C2B1BE2A700442004 /* Shift.metal */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		E931DA322B16A356005E940A /* BlurPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurPreview.swift; sourceTree = "<group>"; usesTabs = 0; };
 		E931DA342B16A68A005E940A /* ProgressiveBlurPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressiveBlurPreview.swift; sourceTree = "<group>"; usesTabs = 0; };
 		E931DA362B16A6FE005E940A /* ShapeBlurPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeBlurPreview.swift; sourceTree = "<group>"; usesTabs = 0; };
+		F64CE73C2B1BE2A700442004 /* Shift.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Shift.metal; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +217,7 @@
 				51C72B722AFBE7C40094D932 /* Radial.metal */,
 				51C72B762AFBE7C40094D932 /* Swirl.metal */,
 				51C72B752AFBE7C40094D932 /* Wind.metal */,
+				F64CE73C2B1BE2A700442004 /* Shift.metal */,
 			);
 			path = Transition;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				51C72B952AFBE7C40094D932 /* GradientFill.metal in Sources */,
 				51DB1BA52AF3EFEE00518737 /* ContentView.swift in Sources */,
 				51C72B672AFBE7800094D932 /* Transitions.swift in Sources */,
+				F64CE73D2B1BE2A700442004 /* Shift.metal in Sources */,
 				51C72B9F2AFBE7C40094D932 /* Infrared.metal in Sources */,
 				E931DA2F2B169CC4005E940A /* View+variableBlur.swift in Sources */,
 				51C72B8A2AFBE7C40094D932 /* CircleWave.metal in Sources */,
@@ -580,7 +584,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Inferno/Preview Content\"";
-				DEVELOPMENT_TEAM = B5C26XE59E;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -613,7 +617,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Inferno/Preview Content\"";
-				DEVELOPMENT_TEAM = B5C26XE59E;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

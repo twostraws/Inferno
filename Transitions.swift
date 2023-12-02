@@ -124,6 +124,26 @@ struct InfernoTransition: ViewModifier {
     }
 }
 
+struct InferoDistortionTranstion: ViewModifier {
+    /// The name of the shader function we're rendering.
+    var name: String
+
+    /// How far we are through the transition: 0 is unstarted, and 1 is finished.
+    var progress = 0.0
+
+    func body(content: Content) -> some View {
+        content
+            .visualEffect { content, proxy in
+                content
+                    .distortionEffect(
+                        ShaderLibrary[dynamicMember: name](
+                            .float2(proxy.size),
+                            .float(progress)
+                        ), maxSampleOffset: .zero)
+            }
+    }
+}
+
 /// A transition that causes the incoming and outgoing views to become
 /// increasingly pixellated, then return to their normal state. While this
 /// happens the old view fades out and the new one fades in.
@@ -296,6 +316,22 @@ extension AnyTransition {
             removal: .modifier(
                 active: PixellateTransition(squares: squares, steps: steps, progress: 1),
                 identity: PixellateTransition(squares: squares, steps: steps, progress: 0)
+            )
+        )
+    }
+
+    /// A transition that causes the incoming and outgoing views to become
+    /// shifted/angled then return to their normal state. While this
+    /// happens the old view slides out and the new one slides in.
+    static func shift() -> AnyTransition {
+        .asymmetric(
+            insertion: .modifier(
+                active: InferoDistortionTranstion(name: "shiftTranstion", progress: 1),
+                identity:  InferoDistortionTranstion(name: "shiftTranstion", progress: 0)
+            ),
+            removal: .modifier(
+                active:  InferoDistortionTranstion(name: "shiftTranstion", progress: -1),
+                identity:  InferoDistortionTranstion(name: "shiftTranstion", progress: 0)
             )
         )
     }

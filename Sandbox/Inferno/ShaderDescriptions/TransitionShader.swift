@@ -48,5 +48,6 @@ struct TransitionShader: Hashable, Identifiable {
         TransitionShader(name: "Radial", transition: .radial),
         TransitionShader(name: "Swirl", transition: .swirl(radius: 0.5)),
         TransitionShader(name: "Wind", transition: .wind(size: 0.1)),
+        TransitionShader(name: "Shift", transition: .shift())
     ]
 }
