@@ -34,7 +34,7 @@ struct TransitionShader: Hashable, Identifiable {
     }
 
     /// An example shader used for Xcode previews.
-    static let example = shaders[0]
+    static let example = shaders.last!
 
     /// All the transition shaders we want to show.
     static let shaders = [
@@ -48,6 +48,7 @@ struct TransitionShader: Hashable, Identifiable {
         TransitionShader(name: "Radial", transition: .radial),
         TransitionShader(name: "Swirl", transition: .swirl(radius: 0.5)),
         TransitionShader(name: "Wind", transition: .wind(size: 0.1)),
-        TransitionShader(name: "Shift", transition: .shift())
+        TransitionShader(name: "Shift", transition: .shift()),
+        TransitionShader(name: "Genie", transition: .genie())
     ]
 }

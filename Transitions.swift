@@ -336,6 +336,22 @@ extension AnyTransition {
         )
     }
 
+    /// A transition that causes the incoming and outgoing views to become
+    /// shifted/angled then return to their normal state. While this
+    /// happens the old view slides out and the new one slides in.
+    static func genie() -> AnyTransition {
+        .asymmetric(
+            insertion: .modifier(
+                active: InferoDistortionTranstion(name: "genieTranstion", progress: 1),
+                identity:  InferoDistortionTranstion(name: "genieTranstion", progress: 0)
+            ),
+            removal: .modifier(
+                active:  InferoDistortionTranstion(name: "genieTranstion", progress: 1),
+                identity:  InferoDistortionTranstion(name: "genieTranstion", progress: 0)
+            )
+        )
+    }
+
     /// A transition that creates an old-school radial wipe, starting from straight up.
     static let radial: AnyTransition = .asymmetric(
         insertion: .modifier(
