@@ -34,7 +34,7 @@ struct TransitionShader: Hashable, Identifiable {
     }
 
     /// An example shader used for Xcode previews.
-    static let example = shaders.last!
+    static let example = shaders[0]
 
     /// All the transition shaders we want to show.
     static let shaders = [

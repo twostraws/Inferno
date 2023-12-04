@@ -337,8 +337,7 @@ extension AnyTransition {
     }
 
     /// A transition that causes the incoming and outgoing views to become
-    /// shifted/angled then return to their normal state. While this
-    /// happens the old view slides out and the new one slides in.
+    /// sucked in and ouf of the top right corner.
     static func genie() -> AnyTransition {
         .asymmetric(
             insertion: .modifier(
