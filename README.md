@@ -16,49 +16,47 @@ Inferno is an open-source collection of fragment shaders designed for SwiftUI ap
 
 If you’re already comfortable with shaders then please download one or more that interest you and get going. If not, most of the remainder of this README acts as a primer for using shaders in SwiftUI.
 
-
-* [See it in action](#see-it-in-action)
-* [How to use Inferno in your project](#how-to-use-inferno-in-your-project)
-* [What are shaders?](#what-are-shaders)
-* [How are shaders written?](#how-are-shaders-written)
-* [Sending values to shaders](#sending-values-to-shaders)
-* [Reading the shader code](#reading-the-shader-code)
-* [Shaders included in Inferno](#shaders-included-in-inferno)
-    * [Animated Gradient Fill](#animated-gradient-fill)
-    * [Checkerboard](#checkerboard)
-    * [Circle Wave](#circle-wave)
-    * [Color Planes](#color-lanes)
-    * [Emboss](#emboss)
-    * [Gradient Fill](#gradient-fill)
-    * [Infrared](#infrared)
-    * [Interlace](#interlace)
-    * [Invert Alpha](#invert-alpha)
-    * [Light Grid](#light-grid)
-    * [Passthrough](#passthrough)
-    * [Rainbow Noise](#rainbow-noise)
-    * [Recolor](#recolor)
-    * [Relative Wave](#relative-wave)
-    * [Simple Loupe](#simple-loupe)
-    * [Sinebow](#sinebow)
-    * [Warping Loupe](#warping-loupe)
-    * [Water](#water)
-    * [Wave](#wave)
-    * [White Noise](#white-noise)
-* [Transitions included in Inferno](#transitions-included-in-inferno)
-    * [Circle](#circle)
-    * [Circle Wave](#circle-wave)
-    * [Crosswarp LTR](#crosswarp-ltr)
-    * [Crosswarp RTL](#crosswarp-rtl)
-    * [Diamond](#diamond)
-    * [Diamond Wave](#diamond-wave)
-    * [Pixellate](#pixellate)
-    * [Radial](#radial)
-    * [Swirl](#swirl)
-* [Inferno Sandbox](#inferno-sandbox)
-* [Contributing](#contributing)
-* [License](#license)
-* [Where to learn more](#where-to-learn-more)
-
+- [See it in action](#see-it-in-action)
+- [How to use Inferno in your project](#how-to-use-inferno-in-your-project)
+- [What are shaders?](#what-are-shaders)
+- [How are shaders written?](#how-are-shaders-written)
+- [Sending values to shaders](#sending-values-to-shaders)
+- [Reading the shader code](#reading-the-shader-code)
+- [Shaders included in Inferno](#shaders-included-in-inferno)
+  - [Animated Gradient Fill](#animated-gradient-fill)
+  - [Checkerboard](#checkerboard)
+  - [Circle Wave](#circle-wave)
+  - [Color Planes](#color-lanes)
+  - [Emboss](#emboss)
+  - [Gradient Fill](#gradient-fill)
+  - [Infrared](#infrared)
+  - [Interlace](#interlace)
+  - [Invert Alpha](#invert-alpha)
+  - [Light Grid](#light-grid)
+  - [Passthrough](#passthrough)
+  - [Rainbow Noise](#rainbow-noise)
+  - [Recolor](#recolor)
+  - [Relative Wave](#relative-wave)
+  - [Simple Loupe](#simple-loupe)
+  - [Sinebow](#sinebow)
+  - [Warping Loupe](#warping-loupe)
+  - [Water](#water)
+  - [Wave](#wave)
+  - [White Noise](#white-noise)
+- [Transitions included in Inferno](#transitions-included-in-inferno)
+  - [Circle](#circle)
+  - [Circle Wave](#circle-wave)
+  - [Crosswarp LTR](#crosswarp-ltr)
+  - [Crosswarp RTL](#crosswarp-rtl)
+  - [Diamond](#diamond)
+  - [Diamond Wave](#diamond-wave)
+  - [Pixellate](#pixellate)
+  - [Radial](#radial)
+  - [Swirl](#swirl)
+- [Inferno Sandbox](#inferno-sandbox)
+- [Contributing](#contributing)
+- [License](#license)
+- [Where to learn more](#where-to-learn-more)
 
 ## See it in action
 
@@ -67,7 +65,6 @@ This repository contains a cross-platform sample project demonstrating all the s
 The sample project contains a lot of extra helper code to demonstrate all the shaders in various ways. To use the shaders in your own project, you just need to copy the relevant Metal files across, and optionally also Transitions.swift if you're using a transition shader.
 
 ![The Inferno Sandbox app demonstrating the simple loupe shader.](sandbox-screenshot.png)
-
 
 ## How to use Inferno in your project
 
@@ -79,7 +76,6 @@ To find out more, click below to watch my YouTube video about building shaders f
 
 [![Video: SwiftUI + Metal – Learn to build your own shaders](https://img.youtube.com/vi/EgzWwgRpUuw/maxresdefault.jpg)](https://youtu.be/EgzWwgRpUuw)
 
-
 ## What are shaders?
 
 Fragment shaders are tiny programs that operate on individual elements of a SwiftUI layer. They are sometimes called “pixel shaders” – it’s not a wholly accurate name, but it does make them easier to understand.
@@ -87,7 +83,6 @@ Fragment shaders are tiny programs that operate on individual elements of a Swif
 Effectively, a fragment shader gets run on every pixel in a SwiftUI view, and can transform that pixel however it wants. That might sound slow, but it isn’t – all the fragment shaders here run at 60fps on all phones that support iOS 17, and 120fps on all ProMotion devices.
 
 The transformation process can recolor the pixel however it wants. Users can customize the process by passing various parameters into each shader, and SwiftUI also provides some values for us to work with, such as the coordinate for the pixel being modified and its current color.
-
 
 ## How are shaders written?
 
@@ -115,7 +110,7 @@ Also, be careful with scalar numbers in your shader code. Make sure to use the c
 - `float`: `0.5`, `0.5f`, or `0.5F`
 - `half`: `0.5h` or `0.5H`
 - `int`: `42`
-- `uint`: `42u` or `42U` 
+- `uint`: `42u` or `42U`
 
 Here are the functions used in Inferno:
 
@@ -135,7 +130,6 @@ Here are the functions used in Inferno:
 - `sample()` provides the color value of a SwiftUI layer at a specific location. This is most commonly used to read the current pixel’s color.
 
 More about all of this can be found in the [Metal Shading Language Specification](https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf).
-
 
 ## Sending values to shaders
 
@@ -167,8 +161,7 @@ SwiftUI provides three modifiers that let us apply Metal shaders to view hierarc
 - The `distortionEffect()` modifier passes in just the current pixel's position in user space.
 - The `layerEffect()` modifier passes in the current pixel's position in user space, and also the SwiftUI layer itself so you can read values from there freely.
 
-In the documentation below, shader parameters are listed *without* the ones SwiftUI passes in automatically – you just see the ones you actually need to pass yourself.
-
+In the documentation below, shader parameters are listed _without_ the ones SwiftUI passes in automatically – you just see the ones you actually need to pass yourself.
 
 ## Reading the shader code
 
@@ -179,17 +172,17 @@ All the shaders in Inferno were specifically written for readability. Specifical
 3. Have an explanation of the algorithm used.
 4. Provide detailed line-by-line English translations of what the code means.
 
-The combination of what the code *does* (the interlinear comments) and what the code *means* (the algorithm introduction) should hopefully make these shaders comprehensible to everyone.
+The combination of what the code _does_ (the interlinear comments) and what the code _means_ (the algorithm introduction) should hopefully make these shaders comprehensible to everyone.
 
 One small note: you will commonly see final color values multiplied by the original color’s alpha, just to make sure we get very smooth edges where this is transparency.
-
 
 ## Shaders included in Inferno
 
 Inferno provides a selection of shaders, most of which allow some customization using input parameters.
 
-
 ### Animated Gradient Fill
+
+![An animated gradient fill shader.](assets/animated-gradient-fill.png)
 
 A `colorEffect()` shader that generates a constantly cycling color gradient, centered on the input view.
 
@@ -224,8 +217,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### Checkerboard
+
+![A checkerboard shader.](assets/checkerboard.png)
 
 A `colorEffect()` shader that replaces the current image with a checkerboard pattern, flipping between the original color and a replacement.
 
@@ -247,8 +241,9 @@ Image(systemName: "figure.walk.circle")
     )
 ```
 
-
 ### Circle Wave
+
+![A circle wave shader.](assets/circle-wave.png)
 
 A `colorEffect()` shader that generates circular waves moving out or in, with varying size, brightness, speed, strength, and more.
 
@@ -256,7 +251,7 @@ A `colorEffect()` shader that generates circular waves moving out or in, with va
 
 - `size`: The size of the whole image, in user-space.
 - `time`: The number of elapsed seconds since the shader was created.
-- `brightness`:  How bright the colors should be. Ranges from 0 to 5 work best; try starting with 0.5 and experiment.
+- `brightness`: How bright the colors should be. Ranges from 0 to 5 work best; try starting with 0.5 and experiment.
 - `speed`: How fast the wave should travel. Ranges from -2 to 2 work best, where negative numbers cause waves to come inwards; try starting with 1.
 - `strength`: How intense the waves should be. Ranges from 0.02 to 5 work best; try starting with 2.
 - `density`: How large each wave should be. Ranges from 20 to 500 work best; try starting with 100.
@@ -297,8 +292,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### Color Planes
+
+![A color planes shader.](assets/color-planes.png)
 
 A `layerEffect()` shader that separates the RGB values for a pixel and offsets them to create a glitch-style effect. This works particularly well on iOS when the `offset` value is provided as through accelerometer data.
 
@@ -333,8 +329,9 @@ struct ContentView: View {
 }
 ```
 
+### Emboss
 
-### Emboss 
+![An emboss shader.](assets/emboss.png)
 
 A `layerEffect()` shader that creates an embossing effect by adding brightness from pixels in one direction, and subtracting brightness from pixels in the other direction.
 
@@ -366,8 +363,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### Gradient Fill
+
+![A gradient fill shader.](assets/gradient-fill.png)
 
 A `colorEffect()` shader that generates a gradient fill
 
@@ -385,8 +383,9 @@ Image(systemName: "figure.walk.circle")
     )
 ```
 
-
 ### Infrared
+
+![An infrared shader.](assets/infrared.png)
 
 Simulates an infrared camera by coloring brighter objects red and darker objects blue.
 
@@ -404,8 +403,9 @@ Text("👩‍💻")
     )
 ```
 
-
 ### Interlace
+
+![An interlace shader.](assets/interlace.png)
 
 A `colorEffect()` shader that applies an interlacing effect where horizontal lines of the original color are separated by lines of another color.
 
@@ -430,8 +430,9 @@ Image(systemName: "figure.walk.circle")
     )
 ```
 
-
 ### Invert Alpha
+
+![An invert alpha shader.](assets/invert-alpha.png)
 
 A `colorEffect()` shader that inverts the alpha of an image, replacing transparent colors with a supplied color.
 
@@ -451,8 +452,9 @@ Text("🤷‍♂️")
     )
 ```
 
-
 ### Light Grid
+
+![A light grid shader.](assets/light-grid.png)
 
 A `colorEffect()` shader that generates multiple twisting and turning lines that cycle through colors.
 
@@ -497,8 +499,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### Passthrough
+
+![A passthrough shader.](assets/passthrough.png)
 
 A `colorEffect()` shader that sends back the existing color data, changing nothing.
 
@@ -516,8 +519,9 @@ Text("🏳️‍🌈")
     )
 ```
 
-
 ### Rainbow Noise
+
+![A rainbow noise shader.](assets/rainbow-noise.png)
 
 A `colorEffect()` shader that generates dynamic, multi-colored noise.
 
@@ -547,8 +551,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### Recolor
+
+![A recolor shader.](assets/recolor.png)
 
 A `colorEffect()` that changes input colors to a replacement, while respecting the current alpha value.
 
@@ -568,8 +573,9 @@ Text("💪")
     )
 ```
 
-
 ### Relative Wave
+
+![A relative wave shader.](assets/relative-wave.png)
 
 A `distortionEffect()` shader that generates a wave effect, where no effect is applied on the left side of the input, and the full effect is applied on the right side.
 
@@ -614,8 +620,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### Simple Loupe
+
+![A simple loupe shader.](assets/simple-loupe.png)
 
 A `layerEffect()` shader that creates a circular zoom effect over a precise location.
 
@@ -658,8 +665,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### Sinebow
+
+![A sinebow shader.](assets/sinebow.png)
 
 A `colorEffect()` shader that generates multiple twisting and turning lines that cycle through colors.
 
@@ -693,8 +701,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### Warping Loupe
+
+![A warping loupe shader.](assets/warping-loupe.png)
 
 A `layerEffect()` shader that creates a circular zoom effect over a precise location, with variable zoom around the touch area to create a glass orb-like effect.
 
@@ -737,8 +746,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### Water
+
+![A water shader.](assets/water.png)
 
 A `distortionEffect()` shader that generates a water rippling effect.
 
@@ -783,9 +793,9 @@ struct ContentView: View {
 }
 ```
 
-
-
 ### Wave
+
+![A wave shader.](assets/wave.png)
 
 A `distortionEffect()` shader that generates a wave effect, where no effect is applied on the left side of the input, and the full effect is applied on the right side.
 
@@ -825,8 +835,9 @@ struct ContentView: View {
 }
 ```
 
-
 ### White Noise
+
+![A white noise shader.](assets/white-noise.png)
 
 A `colorEffect()` shader that generates dynamic, grayscale noise.
 
@@ -856,7 +867,6 @@ struct ContentView: View {
 }
 ```
 
-
 ## Transitions included in Inferno
 
 As well as the shaders listed above, Inferno provides a selection of shaders specifically designed to be used as transitions. Although these are still Metal shaders internally, you'll use them through `AnyTransition` extensions that make the process seamless.
@@ -864,8 +874,7 @@ As well as the shaders listed above, Inferno provides a selection of shaders spe
 > [!Note]
 > As well as copying one specific shader into your project, you should also add Transitions.swift to include the `AnyTransition` extensions.
 
-
-### Circle 
+### Circle
 
 A transition where many circles grow upwards to reveal the new content.
 
@@ -908,7 +917,6 @@ struct ContentView: View {
     }
 }
 ```
-
 
 ### Circle Wave
 
@@ -954,7 +962,6 @@ struct ContentView: View {
 }
 ```
 
-
 ### Crosswarp LTR
 
 A transition that stretches and fades pixels starting from the left edge.
@@ -998,7 +1005,6 @@ struct ContentView: View {
     }
 }
 ```
-
 
 ### Crosswarp RTL
 
@@ -1044,11 +1050,10 @@ struct ContentView: View {
 }
 ```
 
-
 ### Diamond
 
 A transition that makes a variety of diamonds simultaneously zoom up across the screen.
-    
+
 **Parameters:**
 
 - `size`: How big to make the diamonds.
@@ -1088,7 +1093,6 @@ struct ContentView: View {
     }
 }
 ```
-
 
 ### Diamond Wave
 
@@ -1133,7 +1137,6 @@ struct ContentView: View {
     }
 }
 ```
-
 
 ### Pixellate
 
@@ -1180,7 +1183,6 @@ struct ContentView: View {
 }
 ```
 
-
 ### Radial
 
 A transition that creates an old-school radial wipe, starting from straight up.
@@ -1224,7 +1226,6 @@ struct ContentView: View {
     }
 }
 ```
-
 
 ### Swirl
 
@@ -1270,7 +1271,6 @@ struct ContentView: View {
 }
 ```
 
-
 ### Wind
 
 A transition that makes it look the pixels of one image are being blown away horizontally.
@@ -1315,7 +1315,6 @@ struct ContentView: View {
 }
 ```
 
-
 ## Inferno Sandbox
 
 Inside this repository is an example SwiftUI project for macOS that demonstrate each of the shaders with some example values – try running them if you’re curious how each of the shaders look or perform.
@@ -1327,7 +1326,6 @@ All shaders here work great on all devices that support macOS Sonoma and coordin
 > [!Tip]
 > Although the sandbox is helpful for previewing shaders, almost all its code isn't required in order to use Inferno shaders in your own projects – you just need to copy the relevant Metal files across, and optionally also Transitions.swift if you're using a transition shader.
 
-
 ## Contributing
 
 I made Inferno because not enough people know that shaders are powerful, easy ways to add special effects to your apps. If you’d like to contribute your own shaders or modifications to existing shaders, that’s great! But first please read the following:
@@ -1337,12 +1335,11 @@ I made Inferno because not enough people know that shaders are powerful, easy wa
 - All code must be licensed under the MIT license so it can benefit the most people.
 - Please add your code to the Inferno Sandbox app, so folks can try it out easily.
 
-
 ## License
 
 MIT License.
 
-Copyright (c) 2023 Paul Hudson and other authors. 
+Copyright (c) 2023 Paul Hudson and other authors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -1360,17 +1357,15 @@ Some shaders were ported to Metal by me, from other open-source samples also rel
 - Swirl is based on [Swirl](https://gl-transitions.com/editor/Swirl) by Sergey Kosarevsky / gre.
 - Wind is based on [Wind](https://gl-transitions.com/editor/wind) by gre.
 
-
 ## Where to learn more
 
 If you're keen to learn more about Metal shaders, here are the resources I recommend:
 
-* [The Book of Shaders](https://www.thebookofshaders.com) has taught countless thousands of people how to build shaders, and contains comprehensive descriptions. Note: This is written for GLSL, but the concepts still apply to Metal.
-* [ShaderToy](https://www.shadertoy.com) contains all sorts of fantastic shader ideas where you gain inspiration, plus all their code is there to learn from. Again this is written for GLSL, but you can transfer to Metal.
-* [GL Transitions](https://www.gl-transitions.com) contains a variety of open-source GLSL transitions for inspiration.
-* [Apple's Metal documentation](https://developer.apple.com/metal) goes into great detail on the many other usages of Metal – we've just covered fragment shaders here, but it can do so much more!
-* [Hacking with Swift+](https://www.hackingwithswift.com/plus) contains a tutorial series teaching how to build Metal shaders for use with SwiftUI, going into much more depth on how the shaders actually work.
-
+- [The Book of Shaders](https://www.thebookofshaders.com) has taught countless thousands of people how to build shaders, and contains comprehensive descriptions. Note: This is written for GLSL, but the concepts still apply to Metal.
+- [ShaderToy](https://www.shadertoy.com) contains all sorts of fantastic shader ideas where you gain inspiration, plus all their code is there to learn from. Again this is written for GLSL, but you can transfer to Metal.
+- [GL Transitions](https://www.gl-transitions.com) contains a variety of open-source GLSL transitions for inspiration.
+- [Apple's Metal documentation](https://developer.apple.com/metal) goes into great detail on the many other usages of Metal – we've just covered fragment shaders here, but it can do so much more!
+- [Hacking with Swift+](https://www.hackingwithswift.com/plus) contains a tutorial series teaching how to build Metal shaders for use with SwiftUI, going into much more depth on how the shaders actually work.
 
 <p align="center">
     <a href="https://www.hackingwithswift.com/plus">
