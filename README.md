@@ -23,6 +23,7 @@ If you’re already comfortable with shaders then please download one or more th
 - [Sending values to shaders](#sending-values-to-shaders)
 - [Reading the shader code](#reading-the-shader-code)
 - [Shaders included in Inferno](#shaders-included-in-inferno)
+<!--
   - [Animated Gradient Fill](#animated-gradient-fill)
   - [Checkerboard](#checkerboard)
   - [Circle Wave](#circle-wave)
@@ -43,7 +44,9 @@ If you’re already comfortable with shaders then please download one or more th
   - [Water](#water)
   - [Wave](#wave)
   - [White Noise](#white-noise)
+-->
 - [Transitions included in Inferno](#transitions-included-in-inferno)
+<!--
   - [Circle](#circle)
   - [Circle Wave](#circle-wave)
   - [Crosswarp LTR](#crosswarp-ltr)
@@ -53,6 +56,7 @@ If you’re already comfortable with shaders then please download one or more th
   - [Pixellate](#pixellate)
   - [Radial](#radial)
   - [Swirl](#swirl)
+-->
 - [Inferno Sandbox](#inferno-sandbox)
 - [Contributing](#contributing)
 - [License](#license)
@@ -60,20 +64,14 @@ If you’re already comfortable with shaders then please download one or more th
 
 ## See it in action
 
-<details>
-<summary> Details (Click to expand) </summary>
 This repository contains a cross-platform sample project demonstrating all the shaders in action. The sample project is built using SwiftUI and requires iOS 17 and macOS 14.
 
 The sample project contains a lot of extra helper code to demonstrate all the shaders in various ways. To use the shaders in your own project, you just need to copy the relevant Metal files across, and optionally also Transitions.swift if you're using a transition shader.
 
 ![The Inferno Sandbox app demonstrating the simple loupe shader.](sandbox-screenshot.png)
 
-</details>
-
 ## How to use Inferno in your project
 
-<details>
-<summary> Details (Click to expand) </summary>
 If you use SwiftUI, you can add special effects from Inferno to add water ripples, spinning black holes, flashing lights, embossing, noise, gradients, and more – all done on the GPU for maximum speed.
 
 To use a shader from here, copy the appropriate .metal file into your project, then start with sample code for that shader shown below. If you're using an Inferno transition, you should also copy Transitions.swift to your project.
@@ -81,8 +79,6 @@ To use a shader from here, copy the appropriate .metal file into your project, t
 To find out more, click below to watch my YouTube video about building shaders for use with SwiftUI.
 
 [![Video: SwiftUI + Metal – Learn to build your own shaders](https://img.youtube.com/vi/EgzWwgRpUuw/maxresdefault.jpg)](https://youtu.be/EgzWwgRpUuw)
-
-</details>
 
 ## What are shaders?
 
@@ -1505,9 +1501,6 @@ struct ContentView: View {
 
 ## Inferno Sandbox
 
-<details>
-<summary> Details (Click to expand) </summary>
-
 Inside this repository is an example SwiftUI project for macOS that demonstrate each of the shaders with some example values – try running them if you’re curious how each of the shaders look or perform.
 
 If you’ve modified one of the shaders and want to see how it looks, the sandbox is the best place. If you click the "Toggle Opacity" toolbar button, preview content will alternate between opacity 0 and 1 so you can make sure your modifications blend correctly.
@@ -1517,12 +1510,7 @@ All shaders here work great on all devices that support macOS Sonoma and coordin
 > [!Tip]
 > Although the sandbox is helpful for previewing shaders, almost all its code isn't required in order to use Inferno shaders in your own projects – you just need to copy the relevant Metal files across, and optionally also Transitions.swift if you're using a transition shader.
 
-</details>
-
 ## Contributing
-
-<details>
-<summary> Details (Click to expand) </summary>
 
 I made Inferno because not enough people know that shaders are powerful, easy ways to add special effects to your apps. If you’d like to contribute your own shaders or modifications to existing shaders, that’s great! But first please read the following:
 
@@ -1531,12 +1519,7 @@ I made Inferno because not enough people know that shaders are powerful, easy wa
 - All code must be licensed under the MIT license so it can benefit the most people.
 - Please add your code to the Inferno Sandbox app, so folks can try it out easily.
 
-</details>
-
 ## License
-
-<details>
-<summary> Details (Click to expand) </summary>
 
 MIT License.
 
@@ -1557,8 +1540,6 @@ Some shaders were ported to Metal by me, from other open-source samples also rel
 - Radial is based on [Radial](https://gl-transitions.com/editor/Radial) by Xaychru / gre.
 - Swirl is based on [Swirl](https://gl-transitions.com/editor/Swirl) by Sergey Kosarevsky / gre.
 - Wind is based on [Wind](https://gl-transitions.com/editor/wind) by gre.
-
-</details>
 
 ## Where to learn more
 
