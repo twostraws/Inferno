@@ -78,11 +78,16 @@ To find out more, click below to watch my YouTube video about building shaders f
 
 ## What are shaders?
 
+<details>
+<summary> Details (Click to expand) </summary>
+
 Fragment shaders are tiny programs that operate on individual elements of a SwiftUI layer. They are sometimes called “pixel shaders” – it’s not a wholly accurate name, but it does make them easier to understand.
 
 Effectively, a fragment shader gets run on every pixel in a SwiftUI view, and can transform that pixel however it wants. That might sound slow, but it isn’t – all the fragment shaders here run at 60fps on all phones that support iOS 17, and 120fps on all ProMotion devices.
 
 The transformation process can recolor the pixel however it wants. Users can customize the process by passing various parameters into each shader, and SwiftUI also provides some values for us to work with, such as the coordinate for the pixel being modified and its current color.
+
+</details>
 
 ## How are shaders written?
 
