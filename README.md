@@ -214,8 +214,6 @@ One small note: you will commonly see final color values multiplied by the origi
 
 Inferno provides a selection of shaders, most of which allow some customization using input parameters.
 
-</details>
-
 ### Animated Gradient Fill
 
 <details>
@@ -1001,6 +999,7 @@ struct ContentView: View {
 ```
 
 </details>
+</details>
 
 ## Transitions included in Inferno
 
@@ -1011,8 +1010,6 @@ As well as the shaders listed above, Inferno provides a selection of shaders spe
 
 > [!Note]
 > As well as copying one specific shader into your project, you should also add Transitions.swift to include the `AnyTransition` extensions.
-
-</details>
 
 ### Circle
 
@@ -1503,6 +1500,7 @@ struct ContentView: View {
 }
 ```
 
+</details>
 </details>
 
 ## Inferno Sandbox
