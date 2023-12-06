@@ -5,6 +5,7 @@
 // See LICENSE for license information.
 //
 
+import Inferno
 import SwiftUI
 
 /// A shader that accepts the location of a user touch, using that to control
@@ -49,7 +50,7 @@ struct TouchTransformationShader: Hashable, Identifiable {
         if let initializer {
             return initializer(.zero, touchLocation, value)
         } else {
-            let shader = ShaderLibrary[dynamicMember: name.shaderName]
+            let shader = InfernoShaderLibrary[dynamicMember: name.shaderName]
 
             if valueRange != nil {
                 return shader(
@@ -71,7 +72,7 @@ struct TouchTransformationShader: Hashable, Identifiable {
         if let initializer {
             return initializer(size, touchLocation, value)
         } else {
-            let shader = ShaderLibrary[dynamicMember: name.shaderName]
+            let shader = InfernoShaderLibrary[dynamicMember: name.shaderName]
 
             if valueRange != nil {
                 return shader(
@@ -95,7 +96,7 @@ struct TouchTransformationShader: Hashable, Identifiable {
     static let shaders = [
         TouchTransformationShader(name: "Color Planes", usesSize: false),
         TouchTransformationShader(name: "Simple Loupe", usesSize: true, valueRange: 0.001...0.1) { size, touch, value in
-            let shader = ShaderLibrary[dynamicMember: "simpleLoupe"]
+            let shader = InfernoShaderLibrary[dynamicMember: "simpleLoupe"]
 
             return shader(
                 .float2(size),
@@ -105,7 +106,7 @@ struct TouchTransformationShader: Hashable, Identifiable {
             )
         },
         TouchTransformationShader(name: "Warping Loupe", usesSize: true, valueRange: 0.001...0.1) { size, touch, value in
-            let shader = ShaderLibrary[dynamicMember: "warpingLoupe"]
+            let shader = InfernoShaderLibrary[dynamicMember: "warpingLoupe"]
 
             return shader(
                 .float2(size),

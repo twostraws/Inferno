@@ -5,6 +5,7 @@
 // See LICENSE for license information.
 //
 
+import Inferno
 import SwiftUI
 
 /// A small shader that adjusts its input without any further data, e.g. recoloring.
@@ -52,7 +53,7 @@ struct SimpleTransformationShader: Hashable, Identifiable {
         if let initializer {
             return initializer(size, color, value)
         } else {
-            let shader = ShaderLibrary[dynamicMember: name.shaderName]
+            let shader = InfernoShaderLibrary[dynamicMember: name.shaderName]
 
             if valueRange != nil {
                 if usesReplacementColor {
@@ -87,7 +88,7 @@ struct SimpleTransformationShader: Hashable, Identifiable {
         SimpleTransformationShader(name: "Gradient Fill", usesReplacementColor: false),
         SimpleTransformationShader(name: "Infrared", usesReplacementColor: false),
         SimpleTransformationShader(name: "Interlace", usesReplacementColor: true, valueRange: 1...5) { size, color, value in
-            let shader = ShaderLibrary[dynamicMember: "interlace"]
+            let shader = InfernoShaderLibrary[dynamicMember: "interlace"]
 
             return shader(
                 .float(value),

@@ -15,6 +15,7 @@
 import SwiftUI
 
 /// A transition where many circles grow upwards to reveal the new content.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct CircleTransition: ViewModifier {
     /// How big to make the circles.
     var size = 20.0
@@ -25,7 +26,7 @@ struct CircleTransition: ViewModifier {
     func body(content: Content) -> some View {
         content
             .colorEffect(
-                ShaderLibrary.circleTransition(
+                InfernoShaderLibrary.circleTransition(
                     .float(progress),
                     .float(size)
                 )
@@ -35,6 +36,7 @@ struct CircleTransition: ViewModifier {
 
 /// A transition where many circles grow upwards to reveal the new content,
 /// with the circles moving outwards from the top-left edge.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct CircleWaveTransition: ViewModifier {
     /// How big to make the circles.
     var size = 20.0
@@ -47,7 +49,7 @@ struct CircleWaveTransition: ViewModifier {
             .visualEffect { content, proxy in
                 content
                     .colorEffect(
-                        ShaderLibrary.circleWaveTransition(
+                        InfernoShaderLibrary.circleWaveTransition(
                             .float2(proxy.size),
                             .float(progress),
                             .float(size)
@@ -58,6 +60,7 @@ struct CircleWaveTransition: ViewModifier {
 }
 
 /// A transition where many diamonds grow upwards to reveal the new content.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct DiamondTransition: ViewModifier {
     /// How big to make the diamonds.
     var size = 20.0
@@ -68,7 +71,7 @@ struct DiamondTransition: ViewModifier {
     func body(content: Content) -> some View {
         content
             .colorEffect(
-                ShaderLibrary.diamondTransition(
+                InfernoShaderLibrary.diamondTransition(
                     .float(progress),
                     .float(size)
                 )
@@ -78,6 +81,7 @@ struct DiamondTransition: ViewModifier {
 
 /// A transition where many diamonds grow upwards to reveal the new content,
 /// with the diamonds moving outwards from the top-left edge.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct DiamondWaveTransition: ViewModifier {
     /// How big to make the diamonds.
     var size = 20.0
@@ -90,7 +94,7 @@ struct DiamondWaveTransition: ViewModifier {
             .visualEffect { content, proxy in
                 content
                     .colorEffect(
-                        ShaderLibrary.diamondWaveTransition(
+                        InfernoShaderLibrary.diamondWaveTransition(
                             .float2(proxy.size),
                             .float(progress),
                             .float(size)
@@ -104,6 +108,7 @@ struct DiamondWaveTransition: ViewModifier {
 /// A Metal-powered layer effect transition that needs to know the
 /// view's size. You probably don't want to use this directly, and
 /// should instead use one of the AnyTransition extensions.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct InfernoTransition: ViewModifier {
     /// The name of the shader function we're rendering.
     var name: String
@@ -116,7 +121,7 @@ struct InfernoTransition: ViewModifier {
             .visualEffect { content, proxy in
                 content
                     .layerEffect(
-                        ShaderLibrary[dynamicMember: name](
+                        InfernoShaderLibrary[dynamicMember: name](
                             .float2(proxy.size),
                             .float(progress)
                         ), maxSampleOffset: .zero)
@@ -127,6 +132,7 @@ struct InfernoTransition: ViewModifier {
 /// A transition that causes the incoming and outgoing views to become
 /// increasingly pixellated, then return to their normal state. While this
 /// happens the old view fades out and the new one fades in.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct PixellateTransition: ViewModifier {
     /// How large the pixels should be.
     var squares = 10.0
@@ -144,7 +150,7 @@ struct PixellateTransition: ViewModifier {
             .visualEffect { content, proxy in
                 content
                     .layerEffect(
-                        ShaderLibrary.pixellate(
+                        InfernoShaderLibrary.pixellate(
                             .float2(proxy.size),
                             .float(progress),
                             .float(squares),
@@ -155,6 +161,7 @@ struct PixellateTransition: ViewModifier {
 }
 
 /// A transition where views are twirled from the center and faded out.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct SwirlTransition: ViewModifier {
     /// How large the swirl should be relative to the view it's transitioning.
     var radius = 0.5
@@ -167,7 +174,7 @@ struct SwirlTransition: ViewModifier {
             .visualEffect { content, proxy in
                 content
                     .layerEffect(
-                        ShaderLibrary.swirl(
+                        InfernoShaderLibrary.swirl(
                             .float2(proxy.size),
                             .float(progress),
                             .float(radius)
@@ -177,6 +184,7 @@ struct SwirlTransition: ViewModifier {
 }
 
 /// A transition where views are removed blowing streaks from the right edge.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct WindTransition: ViewModifier {
     /// How long the streaks should be, relative to the view's width.
     var size = 0.2
@@ -189,7 +197,7 @@ struct WindTransition: ViewModifier {
             .visualEffect { content, proxy in
                 content
                     .layerEffect(
-                        ShaderLibrary.windTransition(
+                        InfernoShaderLibrary.windTransition(
                             .float2(proxy.size),
                             .float(progress),
                             .float(size)
@@ -199,12 +207,13 @@ struct WindTransition: ViewModifier {
 }
 
 /// A collection of wrappers to make Inferno transitions easier to use.
+@available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 extension AnyTransition {
     /// A transition that makes a variety of circles simultaneously zoom up
     ///  across the screen.
     /// - Parameters:
     /// - Parameter size: The size of the circles.
-    static func circles(size: Double = 20) -> AnyTransition {
+    public static func circles(size: Double = 20) -> AnyTransition {
         .asymmetric(
             insertion: .modifier(
                 active: CircleTransition(size: size, progress: 0),
@@ -218,7 +227,7 @@ extension AnyTransition {
     /// based on their X/Y position.
     /// - Parameters:
     /// - Parameter size: The size of the circles.
-    static func circleWave(size: Double = 20) -> AnyTransition {
+    public static func circleWave(size: Double = 20) -> AnyTransition {
         .asymmetric(
             insertion: .modifier(
                 active: CircleWaveTransition(size: size, progress: 0),
@@ -231,7 +240,7 @@ extension AnyTransition {
     /// A transition that makes a variety of diamonds simultaneously zoom up
     ///  across the screen.
     /// - Parameter size: The size of the diamonds.
-    static func diamonds(size: Double = 20) -> AnyTransition {
+    public static func diamonds(size: Double = 20) -> AnyTransition {
         .asymmetric(
             insertion: .modifier(
                 active: DiamondTransition(size: size, progress: 0),
@@ -245,7 +254,7 @@ extension AnyTransition {
     /// based on their X/Y position.
     /// - Parameters:
     /// - Parameter size: The size of the diamonds.
-    static func diamondWave(size: Double = 20) -> AnyTransition {
+    public static func diamondWave(size: Double = 20) -> AnyTransition {
         .asymmetric(
             insertion: .modifier(
                 active: DiamondWaveTransition(size: size, progress: 0),
@@ -257,7 +266,7 @@ extension AnyTransition {
 
     /// A transition that stretches a view from one edge to the other, while
     /// also fading it out. This one is for left-to-right transitions.
-    static let crosswarpLTR: AnyTransition = .asymmetric(
+    public static let crosswarpLTR: AnyTransition = .asymmetric(
         insertion: .modifier(
             active: InfernoTransition(name: "crosswarpLTRTransition", progress: 1),
             identity: InfernoTransition(name: "crosswarpLTRTransition", progress: 0)
@@ -270,7 +279,7 @@ extension AnyTransition {
 
     /// A transition that stretches a view from one edge to the other, while
     /// also fading it out. This one is for right-to-left transitions.
-    static let crosswarpRTL: AnyTransition = .asymmetric(
+    public static let crosswarpRTL: AnyTransition = .asymmetric(
         insertion: .modifier(
             active: InfernoTransition(name: "crosswarpRTLTransition", progress: 1),
             identity: InfernoTransition(name: "crosswarpRTLTransition", progress: 0)
@@ -287,7 +296,7 @@ extension AnyTransition {
     /// - Parameters:
     ///   - squares: How many pixel squares to create.
     ///   - steps: How many animation steps to use; anything >= 60 looks smooth.
-    static func pixellate(squares: Double = 20, steps: Double = 60) -> AnyTransition {
+    public static func pixellate(squares: Double = 20, steps: Double = 60) -> AnyTransition {
         .asymmetric(
             insertion: .modifier(
                 active: PixellateTransition(squares: squares, steps: steps, progress: 1),
@@ -301,7 +310,7 @@ extension AnyTransition {
     }
 
     /// A transition that creates an old-school radial wipe, starting from straight up.
-    static let radial: AnyTransition = .asymmetric(
+    public static let radial: AnyTransition = .asymmetric(
         insertion: .modifier(
             active: InfernoTransition(name: "radialTransition", progress: 1),
             identity: InfernoTransition(name: "radialTransition", progress: 0)
@@ -314,7 +323,7 @@ extension AnyTransition {
     /// views fade to move smoothly from one to the other.
     /// - Parameters:
     /// - Parameter radius: How much of the view to swirl, in the range 0 to 1. Start with 0.5 and experiment.
-    static func swirl(radius: Double = 0.5) -> AnyTransition {
+    public static func swirl(radius: Double = 0.5) -> AnyTransition {
         .asymmetric(
             insertion: .modifier(
                 active: SwirlTransition(radius: radius, progress: 1),
@@ -331,7 +340,7 @@ extension AnyTransition {
     /// away horizontally.
     /// - Parameters:
     /// - Parameter size: How big the wind streaks should be, relative to the view's width.
-    static func wind(size: Double = 0.2) -> AnyTransition {
+    public static func wind(size: Double = 0.2) -> AnyTransition {
         .asymmetric(
             insertion: .modifier(
                 active: WindTransition(size: size, progress: 1),

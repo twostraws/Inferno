@@ -31,7 +31,7 @@ public extension VisualEffect {
         isEnabled: Bool = true
     ) -> some VisualEffect {
         self.layerEffect(
-            ShaderLibrary.variableBlur(
+            InfernoShaderLibrary.variableBlur(
                 .boundingRect,
                 .float(radius),
                 .float(CGFloat(maxSampleCount)),
@@ -42,7 +42,7 @@ public extension VisualEffect {
             isEnabled: isEnabled
         )
         .layerEffect(
-            ShaderLibrary.variableBlur(
+            InfernoShaderLibrary.variableBlur(
                 .boundingRect,
                 .float(radius),
                 .float(CGFloat(maxSampleCount)),

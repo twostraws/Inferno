@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,37 +22,7 @@
 		518833972AFBC44400D30D44 /* ContentPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 518833962AFBC44400D30D44 /* ContentPreview.swift */; };
 		5188339B2AFBD0DE00D30D44 /* TransformationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5188339A2AFBD0DE00D30D44 /* TransformationType.swift */; };
 		51A63CEE2B05018A00A67C06 /* ToggleAlphaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A63CED2B05018A00A67C06 /* ToggleAlphaButton.swift */; };
-		51A63DBE2B054F6700A67C06 /* Water.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51A63DBD2B054F6700A67C06 /* Water.metal */; };
-		51A63DC02B0570F400A67C06 /* Interlace.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51A63DBF2B0570F400A67C06 /* Interlace.metal */; };
-		51C72B672AFBE7800094D932 /* Transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B662AFBE7800094D932 /* Transitions.swift */; };
-		51C72B892AFBE7C40094D932 /* Diamond.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B6E2AFBE7C40094D932 /* Diamond.metal */; };
-		51C72B8A2AFBE7C40094D932 /* CircleWave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B6F2AFBE7C40094D932 /* CircleWave.metal */; };
-		51C72B8B2AFBE7C40094D932 /* Pixellate.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B702AFBE7C40094D932 /* Pixellate.metal */; };
-		51C72B8C2AFBE7C40094D932 /* DiamondWave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B712AFBE7C40094D932 /* DiamondWave.metal */; };
-		51C72B8D2AFBE7C40094D932 /* Radial.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B722AFBE7C40094D932 /* Radial.metal */; };
-		51C72B8E2AFBE7C40094D932 /* Circle.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B732AFBE7C40094D932 /* Circle.metal */; };
-		51C72B8F2AFBE7C40094D932 /* Crosswarp.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B742AFBE7C40094D932 /* Crosswarp.metal */; };
-		51C72B902AFBE7C40094D932 /* Wind.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B752AFBE7C40094D932 /* Wind.metal */; };
-		51C72B912AFBE7C40094D932 /* Swirl.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B762AFBE7C40094D932 /* Swirl.metal */; };
-		51C72B922AFBE7C40094D932 /* RainbowNoise.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B782AFBE7C40094D932 /* RainbowNoise.metal */; };
-		51C72B932AFBE7C40094D932 /* WarpingLoupe.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B792AFBE7C40094D932 /* WarpingLoupe.metal */; };
-		51C72B942AFBE7C40094D932 /* AnimatedGradientFill.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7A2AFBE7C40094D932 /* AnimatedGradientFill.metal */; };
-		51C72B952AFBE7C40094D932 /* GradientFill.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7B2AFBE7C40094D932 /* GradientFill.metal */; };
-		51C72B962AFBE7C40094D932 /* Emboss.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7C2AFBE7C40094D932 /* Emboss.metal */; };
-		51C72B972AFBE7C40094D932 /* InvertAlpha.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7D2AFBE7C40094D932 /* InvertAlpha.metal */; };
-		51C72B982AFBE7C40094D932 /* WhiteNoise.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7E2AFBE7C40094D932 /* WhiteNoise.metal */; };
-		51C72B992AFBE7C40094D932 /* Checkerboard.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B7F2AFBE7C40094D932 /* Checkerboard.metal */; };
-		51C72B9A2AFBE7C40094D932 /* RelativeWave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B802AFBE7C40094D932 /* RelativeWave.metal */; };
-		51C72B9B2AFBE7C40094D932 /* SimpleLoupe.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B812AFBE7C40094D932 /* SimpleLoupe.metal */; };
-		51C72B9C2AFBE7C40094D932 /* Recolor.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B822AFBE7C40094D932 /* Recolor.metal */; };
-		51C72B9D2AFBE7C40094D932 /* Wave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B832AFBE7C40094D932 /* Wave.metal */; };
-		51C72B9E2AFBE7C40094D932 /* Passthrough.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B842AFBE7C40094D932 /* Passthrough.metal */; };
-		51C72B9F2AFBE7C40094D932 /* Infrared.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B852AFBE7C40094D932 /* Infrared.metal */; };
-		51C72BA02AFBE7C40094D932 /* ColorPlanes.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B862AFBE7C40094D932 /* ColorPlanes.metal */; };
-		51C72BA12AFBE7C40094D932 /* Sinebow.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72B882AFBE7C40094D932 /* Sinebow.metal */; };
-		51C72BA32AFC20FA0094D932 /* CircleWave.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72BA22AFC20FA0094D932 /* CircleWave.metal */; };
 		51C72BA52AFC40440094D932 /* PreviewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51C72BA42AFC40440094D932 /* PreviewType.swift */; };
-		51C72BA92AFD36A80094D932 /* LightGrid.metal in Sources */ = {isa = PBXBuildFile; fileRef = 51C72BA82AFD36A80094D932 /* LightGrid.metal */; };
 		51DB1BA32AF3EFEE00518737 /* InfernoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BA22AF3EFEE00518737 /* InfernoApp.swift */; };
 		51DB1BA52AF3EFEE00518737 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BA42AF3EFEE00518737 /* ContentView.swift */; };
 		51DB1BA72AF3EFEF00518737 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 51DB1BA62AF3EFEF00518737 /* Assets.xcassets */; };
@@ -61,9 +31,8 @@
 		51DB1BD62AF3FCEC00518737 /* SimpleTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */; };
 		51DB1BD82AF3FD5500518737 /* TimeTransformationShader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */; };
 		51ED43172B08E1D700EE73E8 /* PlatformShims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51ED43162B08E1D700EE73E8 /* PlatformShims.swift */; };
-		E931DA2A2B1686F8005E940A /* VariableGaussianBlur.metal in Sources */ = {isa = PBXBuildFile; fileRef = E931DA292B1686F8005E940A /* VariableGaussianBlur.metal */; };
-		E931DA2D2B169C7E005E940A /* VisualEffect+variableBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA2C2B169C7E005E940A /* VisualEffect+variableBlur.swift */; };
-		E931DA2F2B169CC4005E940A /* View+variableBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA2E2B169CC4005E940A /* View+variableBlur.swift */; };
+		5219F8122B19676500E05093 /* Inferno in Frameworks */ = {isa = PBXBuildFile; productRef = 52FDE56F2B18149B00D3AF01 /* Inferno */; };
+		5219F8152B19678300E05093 /* Inferno in Frameworks */ = {isa = PBXBuildFile; productRef = 5219F8142B19678300E05093 /* Inferno */; };
 		E931DA312B169DD2005E940A /* BlurEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA302B169DD2005E940A /* BlurEffect.swift */; };
 		E931DA332B16A356005E940A /* BlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA322B16A356005E940A /* BlurPreview.swift */; };
 		E931DA352B16A68A005E940A /* ProgressiveBlurPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E931DA342B16A68A005E940A /* ProgressiveBlurPreview.swift */; };
@@ -86,38 +55,8 @@
 		518833962AFBC44400D30D44 /* ContentPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPreview.swift; sourceTree = "<group>"; };
 		5188339A2AFBD0DE00D30D44 /* TransformationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationType.swift; sourceTree = "<group>"; };
 		51A63CED2B05018A00A67C06 /* ToggleAlphaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleAlphaButton.swift; sourceTree = "<group>"; };
-		51A63DBD2B054F6700A67C06 /* Water.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Water.metal; sourceTree = "<group>"; };
-		51A63DBF2B0570F400A67C06 /* Interlace.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = Interlace.metal; sourceTree = "<group>"; };
-		51C72B662AFBE7800094D932 /* Transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transitions.swift; path = ../../Transitions.swift; sourceTree = "<group>"; };
-		51C72B6E2AFBE7C40094D932 /* Diamond.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Diamond.metal; sourceTree = "<group>"; };
-		51C72B6F2AFBE7C40094D932 /* CircleWave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = CircleWave.metal; sourceTree = "<group>"; };
-		51C72B702AFBE7C40094D932 /* Pixellate.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Pixellate.metal; sourceTree = "<group>"; };
-		51C72B712AFBE7C40094D932 /* DiamondWave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = DiamondWave.metal; sourceTree = "<group>"; };
-		51C72B722AFBE7C40094D932 /* Radial.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Radial.metal; sourceTree = "<group>"; };
-		51C72B732AFBE7C40094D932 /* Circle.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Circle.metal; sourceTree = "<group>"; };
-		51C72B742AFBE7C40094D932 /* Crosswarp.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Crosswarp.metal; sourceTree = "<group>"; };
-		51C72B752AFBE7C40094D932 /* Wind.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Wind.metal; sourceTree = "<group>"; };
-		51C72B762AFBE7C40094D932 /* Swirl.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Swirl.metal; sourceTree = "<group>"; };
-		51C72B782AFBE7C40094D932 /* RainbowNoise.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RainbowNoise.metal; sourceTree = "<group>"; };
-		51C72B792AFBE7C40094D932 /* WarpingLoupe.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = WarpingLoupe.metal; sourceTree = "<group>"; };
-		51C72B7A2AFBE7C40094D932 /* AnimatedGradientFill.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = AnimatedGradientFill.metal; sourceTree = "<group>"; };
-		51C72B7B2AFBE7C40094D932 /* GradientFill.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = GradientFill.metal; sourceTree = "<group>"; };
-		51C72B7C2AFBE7C40094D932 /* Emboss.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Emboss.metal; sourceTree = "<group>"; };
-		51C72B7D2AFBE7C40094D932 /* InvertAlpha.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = InvertAlpha.metal; sourceTree = "<group>"; };
-		51C72B7E2AFBE7C40094D932 /* WhiteNoise.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = WhiteNoise.metal; sourceTree = "<group>"; };
-		51C72B7F2AFBE7C40094D932 /* Checkerboard.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Checkerboard.metal; sourceTree = "<group>"; };
-		51C72B802AFBE7C40094D932 /* RelativeWave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = RelativeWave.metal; sourceTree = "<group>"; };
-		51C72B812AFBE7C40094D932 /* SimpleLoupe.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = SimpleLoupe.metal; sourceTree = "<group>"; };
-		51C72B822AFBE7C40094D932 /* Recolor.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Recolor.metal; sourceTree = "<group>"; };
-		51C72B832AFBE7C40094D932 /* Wave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Wave.metal; sourceTree = "<group>"; };
-		51C72B842AFBE7C40094D932 /* Passthrough.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Passthrough.metal; sourceTree = "<group>"; };
-		51C72B852AFBE7C40094D932 /* Infrared.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Infrared.metal; sourceTree = "<group>"; };
-		51C72B862AFBE7C40094D932 /* ColorPlanes.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ColorPlanes.metal; sourceTree = "<group>"; };
-		51C72B882AFBE7C40094D932 /* Sinebow.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = Sinebow.metal; sourceTree = "<group>"; };
-		51C72BA22AFC20FA0094D932 /* CircleWave.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = CircleWave.metal; sourceTree = "<group>"; };
 		51C72BA42AFC40440094D932 /* PreviewType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewType.swift; sourceTree = "<group>"; };
-		51C72BA82AFD36A80094D932 /* LightGrid.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = LightGrid.metal; sourceTree = "<group>"; };
-		51DB1B9F2AF3EFEE00518737 /* Inferno.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inferno.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		51DB1B9F2AF3EFEE00518737 /* InfernoSandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfernoSandbox.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51DB1BA22AF3EFEE00518737 /* InfernoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfernoApp.swift; sourceTree = "<group>"; };
 		51DB1BA42AF3EFEE00518737 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; usesTabs = 0; };
 		51DB1BA62AF3EFEF00518737 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,9 +66,6 @@
 		51DB1BD52AF3FCEC00518737 /* SimpleTransformationShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleTransformationShader.swift; sourceTree = "<group>"; };
 		51DB1BD72AF3FD5500518737 /* TimeTransformationShader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeTransformationShader.swift; sourceTree = "<group>"; };
 		51ED43162B08E1D700EE73E8 /* PlatformShims.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatformShims.swift; sourceTree = "<group>"; };
-		E931DA292B1686F8005E940A /* VariableGaussianBlur.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = VariableGaussianBlur.metal; sourceTree = "<group>"; usesTabs = 0; };
-		E931DA2C2B169C7E005E940A /* VisualEffect+variableBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisualEffect+variableBlur.swift"; sourceTree = "<group>"; usesTabs = 0; };
-		E931DA2E2B169CC4005E940A /* View+variableBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+variableBlur.swift"; sourceTree = "<group>"; };
 		E931DA302B169DD2005E940A /* BlurEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurEffect.swift; sourceTree = "<group>"; usesTabs = 0; };
 		E931DA322B16A356005E940A /* BlurPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurPreview.swift; sourceTree = "<group>"; usesTabs = 0; };
 		E931DA342B16A68A005E940A /* ProgressiveBlurPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressiveBlurPreview.swift; sourceTree = "<group>"; usesTabs = 0; };
@@ -141,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5219F8152B19678300E05093 /* Inferno in Frameworks */,
+				5219F8122B19676500E05093 /* Inferno in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,80 +129,19 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		51C72B6C2AFBE7C40094D932 /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				E931DA282B1686D5005E940A /* Blur */,
-				51C72B872AFBE7C40094D932 /* Generation */,
-				51C72B772AFBE7C40094D932 /* Transformation */,
-				51C72B6D2AFBE7C40094D932 /* Transition */,
-			);
-			name = Shaders;
-			path = ../../Shaders;
-			sourceTree = "<group>";
-		};
-		51C72B6D2AFBE7C40094D932 /* Transition */ = {
-			isa = PBXGroup;
-			children = (
-				51C72B732AFBE7C40094D932 /* Circle.metal */,
-				51C72B6F2AFBE7C40094D932 /* CircleWave.metal */,
-				51C72B742AFBE7C40094D932 /* Crosswarp.metal */,
-				51C72B6E2AFBE7C40094D932 /* Diamond.metal */,
-				51C72B712AFBE7C40094D932 /* DiamondWave.metal */,
-				51C72B702AFBE7C40094D932 /* Pixellate.metal */,
-				51C72B722AFBE7C40094D932 /* Radial.metal */,
-				51C72B762AFBE7C40094D932 /* Swirl.metal */,
-				51C72B752AFBE7C40094D932 /* Wind.metal */,
-			);
-			path = Transition;
-			sourceTree = "<group>";
-		};
-		51C72B772AFBE7C40094D932 /* Transformation */ = {
-			isa = PBXGroup;
-			children = (
-				51C72B7A2AFBE7C40094D932 /* AnimatedGradientFill.metal */,
-				51C72B7F2AFBE7C40094D932 /* Checkerboard.metal */,
-				51C72BA22AFC20FA0094D932 /* CircleWave.metal */,
-				51C72B862AFBE7C40094D932 /* ColorPlanes.metal */,
-				51C72B7C2AFBE7C40094D932 /* Emboss.metal */,
-				51C72B7B2AFBE7C40094D932 /* GradientFill.metal */,
-				51C72B852AFBE7C40094D932 /* Infrared.metal */,
-				51A63DBF2B0570F400A67C06 /* Interlace.metal */,
-				51C72B7D2AFBE7C40094D932 /* InvertAlpha.metal */,
-				51C72B842AFBE7C40094D932 /* Passthrough.metal */,
-				51C72B782AFBE7C40094D932 /* RainbowNoise.metal */,
-				51C72B822AFBE7C40094D932 /* Recolor.metal */,
-				51C72B802AFBE7C40094D932 /* RelativeWave.metal */,
-				51C72B812AFBE7C40094D932 /* SimpleLoupe.metal */,
-				51C72B792AFBE7C40094D932 /* WarpingLoupe.metal */,
-				51A63DBD2B054F6700A67C06 /* Water.metal */,
-				51C72B832AFBE7C40094D932 /* Wave.metal */,
-				51C72B7E2AFBE7C40094D932 /* WhiteNoise.metal */,
-			);
-			path = Transformation;
-			sourceTree = "<group>";
-		};
-		51C72B872AFBE7C40094D932 /* Generation */ = {
-			isa = PBXGroup;
-			children = (
-				51C72BA82AFD36A80094D932 /* LightGrid.metal */,
-				51C72B882AFBE7C40094D932 /* Sinebow.metal */,
-			);
-			path = Generation;
-			sourceTree = "<group>";
-		};
 		51DB1B962AF3EFEE00518737 = {
 			isa = PBXGroup;
 			children = (
 				51DB1BA12AF3EFEE00518737 /* Inferno */,
 				51DB1BA02AF3EFEE00518737 /* Products */,
+				52FDE56E2B18149B00D3AF01 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		51DB1BA02AF3EFEE00518737 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				51DB1B9F2AF3EFEE00518737 /* Inferno.app */,
+				51DB1B9F2AF3EFEE00518737 /* InfernoSandbox.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -272,14 +149,11 @@
 		51DB1BA12AF3EFEE00518737 /* Inferno */ = {
 			isa = PBXGroup;
 			children = (
-				51C72B6C2AFBE7C40094D932 /* Shaders */,
-				E931DA2B2B169C55005E940A /* SwiftUI Wrappers */,
 				5188339E2AFBD66200D30D44 /* Helpers */,
 				5188339D2AFBD5ED00D30D44 /* ShaderPreviews */,
 				5188339C2AFBD5D000D30D44 /* ShaderDescriptions */,
 				51DB1BA22AF3EFEE00518737 /* InfernoApp.swift */,
 				51DB1BA42AF3EFEE00518737 /* ContentView.swift */,
-				51C72B662AFBE7800094D932 /* Transitions.swift */,
 				516617A32AFA6A5000978554 /* WelcomeView.swift */,
 				51DB1BA62AF3EFEF00518737 /* Assets.xcassets */,
 				51DB1BAB2AF3EFEF00518737 /* Inferno.entitlements */,
@@ -296,29 +170,19 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		E931DA282B1686D5005E940A /* Blur */ = {
+		52FDE56E2B18149B00D3AF01 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E931DA292B1686F8005E940A /* VariableGaussianBlur.metal */,
 			);
-			path = Blur;
-			sourceTree = "<group>";
-		};
-		E931DA2B2B169C55005E940A /* SwiftUI Wrappers */ = {
-			isa = PBXGroup;
-			children = (
-				E931DA2C2B169C7E005E940A /* VisualEffect+variableBlur.swift */,
-				E931DA2E2B169CC4005E940A /* View+variableBlur.swift */,
-			);
-			path = "SwiftUI Wrappers";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		51DB1B9E2AF3EFEE00518737 /* Inferno */ = {
+		51DB1B9E2AF3EFEE00518737 /* InfernoSandbox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 51DB1BAE2AF3EFEF00518737 /* Build configuration list for PBXNativeTarget "Inferno" */;
+			buildConfigurationList = 51DB1BAE2AF3EFEF00518737 /* Build configuration list for PBXNativeTarget "InfernoSandbox" */;
 			buildPhases = (
 				51DB1B9B2AF3EFEE00518737 /* Sources */,
 				51DB1B9C2AF3EFEE00518737 /* Frameworks */,
@@ -328,9 +192,13 @@
 			);
 			dependencies = (
 			);
-			name = Inferno;
+			name = InfernoSandbox;
+			packageProductDependencies = (
+				52FDE56F2B18149B00D3AF01 /* Inferno */,
+				5219F8142B19678300E05093 /* Inferno */,
+			);
 			productName = Inferno;
-			productReference = 51DB1B9F2AF3EFEE00518737 /* Inferno.app */;
+			productReference = 51DB1B9F2AF3EFEE00518737 /* InfernoSandbox.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -348,7 +216,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 51DB1B9A2AF3EFEE00518737 /* Build configuration list for PBXProject "Inferno" */;
+			buildConfigurationList = 51DB1B9A2AF3EFEE00518737 /* Build configuration list for PBXProject "InfernoSandbox" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -357,11 +225,14 @@
 				Base,
 			);
 			mainGroup = 51DB1B962AF3EFEE00518737;
+			packageReferences = (
+				5219F8132B19678300E05093 /* XCLocalSwiftPackageReference ".." */,
+			);
 			productRefGroup = 51DB1BA02AF3EFEE00518737 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				51DB1B9E2AF3EFEE00518737 /* Inferno */,
+				51DB1B9E2AF3EFEE00518737 /* InfernoSandbox */,
 			);
 		};
 /* End PBXProject section */
@@ -384,62 +255,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				518833972AFBC44400D30D44 /* ContentPreview.swift in Sources */,
-				51C72B992AFBE7C40094D932 /* Checkerboard.metal in Sources */,
-				51C72B9A2AFBE7C40094D932 /* RelativeWave.metal in Sources */,
-				51C72B8C2AFBE7C40094D932 /* DiamondWave.metal in Sources */,
 				516617A62AFA6B8500978554 /* GenerativeShader.swift in Sources */,
 				5166179A2AFA519500978554 /* TouchTransformationShader.swift in Sources */,
-				51C72BA12AFBE7C40094D932 /* Sinebow.metal in Sources */,
-				51A63DBE2B054F6700A67C06 /* Water.metal in Sources */,
 				516617A22AFA58CA00978554 /* TransitionPreview.swift in Sources */,
-				51C72B932AFBE7C40094D932 /* WarpingLoupe.metal in Sources */,
 				516617A42AFA6A5100978554 /* WelcomeView.swift in Sources */,
 				51DB1BD42AF3F8E300518737 /* TimeTransformationPreview.swift in Sources */,
-				51C72B962AFBE7C40094D932 /* Emboss.metal in Sources */,
-				51C72B8B2AFBE7C40094D932 /* Pixellate.metal in Sources */,
 				51A63CEE2B05018A00A67C06 /* ToggleAlphaButton.swift in Sources */,
 				E931DA352B16A68A005E940A /* ProgressiveBlurPreview.swift in Sources */,
-				E931DA2D2B169C7E005E940A /* VisualEffect+variableBlur.swift in Sources */,
-				51C72B952AFBE7C40094D932 /* GradientFill.metal in Sources */,
 				51DB1BA52AF3EFEE00518737 /* ContentView.swift in Sources */,
-				51C72B672AFBE7800094D932 /* Transitions.swift in Sources */,
-				51C72B9F2AFBE7C40094D932 /* Infrared.metal in Sources */,
-				E931DA2F2B169CC4005E940A /* View+variableBlur.swift in Sources */,
-				51C72B8A2AFBE7C40094D932 /* CircleWave.metal in Sources */,
-				51C72B8D2AFBE7C40094D932 /* Radial.metal in Sources */,
 				516617A82AFA6BC300978554 /* String-ShaderName.swift in Sources */,
-				51C72B922AFBE7C40094D932 /* RainbowNoise.metal in Sources */,
 				51DB1BD82AF3FD5500518737 /* TimeTransformationShader.swift in Sources */,
-				51C72B9C2AFBE7C40094D932 /* Recolor.metal in Sources */,
 				516617AA2AFA6C2900978554 /* GenerativePreview.swift in Sources */,
 				51DB1BD62AF3FCEC00518737 /* SimpleTransformationShader.swift in Sources */,
-				51A63DC02B0570F400A67C06 /* Interlace.metal in Sources */,
-				51C72BA02AFBE7C40094D932 /* ColorPlanes.metal in Sources */,
-				51C72B9B2AFBE7C40094D932 /* SimpleLoupe.metal in Sources */,
 				E931DA332B16A356005E940A /* BlurPreview.swift in Sources */,
-				51C72B982AFBE7C40094D932 /* WhiteNoise.metal in Sources */,
-				51C72B892AFBE7C40094D932 /* Diamond.metal in Sources */,
-				51C72B942AFBE7C40094D932 /* AnimatedGradientFill.metal in Sources */,
-				51C72B8E2AFBE7C40094D932 /* Circle.metal in Sources */,
 				51C72BA52AFC40440094D932 /* PreviewType.swift in Sources */,
 				51ED43172B08E1D700EE73E8 /* PlatformShims.swift in Sources */,
-				51C72B9E2AFBE7C40094D932 /* Passthrough.metal in Sources */,
-				51C72BA32AFC20FA0094D932 /* CircleWave.metal in Sources */,
 				516617982AFA517C00978554 /* TouchTransformationPreview.swift in Sources */,
-				51C72B972AFBE7C40094D932 /* InvertAlpha.metal in Sources */,
-				51C72B912AFBE7C40094D932 /* Swirl.metal in Sources */,
 				51DB1BA32AF3EFEE00518737 /* InfernoApp.swift in Sources */,
-				51C72B8F2AFBE7C40094D932 /* Crosswarp.metal in Sources */,
 				5188339B2AFBD0DE00D30D44 /* TransformationType.swift in Sources */,
-				51C72B9D2AFBE7C40094D932 /* Wave.metal in Sources */,
 				518833952AFBC0DF00D30D44 /* ContentPreviewSelector.swift in Sources */,
 				516617B22AFA717500978554 /* RelativeTouchTransformationPreview.swift in Sources */,
 				5166179C2AFA543700978554 /* TransitionShader.swift in Sources */,
-				E931DA2A2B1686F8005E940A /* VariableGaussianBlur.metal in Sources */,
-				51C72B902AFBE7C40094D932 /* Wind.metal in Sources */,
 				516617962AFA4B2300978554 /* SimpleTransformationPreview.swift in Sources */,
 				E931DA372B16A6FE005E940A /* ShapeBlurPreview.swift in Sources */,
-				51C72BA92AFD36A80094D932 /* LightGrid.metal in Sources */,
 				516617B02AFA711B00978554 /* AbsoluteTouchTransformationPreview.swift in Sources */,
 				E931DA312B169DD2005E940A /* BlurEffect.swift in Sources */,
 			);
@@ -580,7 +418,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Inferno/Preview Content\"";
-				DEVELOPMENT_TEAM = B5C26XE59E;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -613,7 +451,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Inferno/Preview Content\"";
-				DEVELOPMENT_TEAM = B5C26XE59E;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -639,7 +477,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		51DB1B9A2AF3EFEE00518737 /* Build configuration list for PBXProject "Inferno" */ = {
+		51DB1B9A2AF3EFEE00518737 /* Build configuration list for PBXProject "InfernoSandbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				51DB1BAC2AF3EFEF00518737 /* Debug */,
@@ -648,7 +486,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		51DB1BAE2AF3EFEF00518737 /* Build configuration list for PBXNativeTarget "Inferno" */ = {
+		51DB1BAE2AF3EFEF00518737 /* Build configuration list for PBXNativeTarget "InfernoSandbox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				51DB1BAF2AF3EFEF00518737 /* Debug */,
@@ -658,6 +496,24 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		5219F8132B19678300E05093 /* XCLocalSwiftPackageReference ".." */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ..;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5219F8142B19678300E05093 /* Inferno */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Inferno;
+		};
+		52FDE56F2B18149B00D3AF01 /* Inferno */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Inferno;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 51DB1B972AF3EFEE00518737 /* Project object */;
 }
