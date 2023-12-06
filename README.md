@@ -131,6 +131,7 @@ Here are the functions used in Inferno:
 
 More about all of this can be found in the [Metal Shading Language Specification](https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf).
 
+
 ## Sending values to shaders
 
 Many shaders can operate without any special input from the user – it can manipulate the data it was sent by SwiftUI, then send back new data.
@@ -162,6 +163,10 @@ SwiftUI provides three modifiers that let us apply Metal shaders to view hierarc
 - The `layerEffect()` modifier passes in the current pixel's position in user space, and also the SwiftUI layer itself so you can read values from there freely.
 
 In the documentation below, shader parameters are listed _without_ the ones SwiftUI passes in automatically – you just see the ones you actually need to pass yourself.
+
+> [!Tip]
+> When writing more complex shaders, you'll often find yourself needing to optimize your code for maximum efficiency. One of the best places to start with this is by looking into *shader uniforms*: rather than calculating a value that is the same for every fragment inside a shader, instead precompute values on the CPU and pass them directly into the shader. This means such calculations are done once per draw, rather than once per fragment.
+
 
 ## Reading the shader code
 
