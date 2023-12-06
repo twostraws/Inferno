@@ -23,40 +23,7 @@ If you’re already comfortable with shaders then please download one or more th
 - [Sending values to shaders](#sending-values-to-shaders)
 - [Reading the shader code](#reading-the-shader-code)
 - [Shaders included in Inferno](#shaders-included-in-inferno)
-<!--
-  - [Animated Gradient Fill](#animated-gradient-fill)
-  - [Checkerboard](#checkerboard)
-  - [Circle Wave](#circle-wave)
-  - [Color Planes](#color-lanes)
-  - [Emboss](#emboss)
-  - [Gradient Fill](#gradient-fill)
-  - [Infrared](#infrared)
-  - [Interlace](#interlace)
-  - [Invert Alpha](#invert-alpha)
-  - [Light Grid](#light-grid)
-  - [Passthrough](#passthrough)
-  - [Rainbow Noise](#rainbow-noise)
-  - [Recolor](#recolor)
-  - [Relative Wave](#relative-wave)
-  - [Simple Loupe](#simple-loupe)
-  - [Sinebow](#sinebow)
-  - [Warping Loupe](#warping-loupe)
-  - [Water](#water)
-  - [Wave](#wave)
-  - [White Noise](#white-noise)
--->
 - [Transitions included in Inferno](#transitions-included-in-inferno)
-<!--
-  - [Circle](#circle)
-  - [Circle Wave](#circle-wave)
-  - [Crosswarp LTR](#crosswarp-ltr)
-  - [Crosswarp RTL](#crosswarp-rtl)
-  - [Diamond](#diamond)
-  - [Diamond Wave](#diamond-wave)
-  - [Pixellate](#pixellate)
-  - [Radial](#radial)
-  - [Swirl](#swirl)
--->
 - [Inferno Sandbox](#inferno-sandbox)
 - [Contributing](#contributing)
 - [License](#license)
@@ -1004,7 +971,7 @@ struct ContentView: View {
 
 As well as the shaders listed above, Inferno provides a selection of shaders specifically designed to be used as transitions. Although these are still Metal shaders internally, you'll use them through `AnyTransition` extensions that make the process seamless.
 
-> [!Note]
+> [!Tip]
 > As well as copying one specific shader into your project, you should also add Transitions.swift to include the `AnyTransition` extensions.
 
 ### Circle
