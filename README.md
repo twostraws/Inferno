@@ -350,6 +350,7 @@ struct ContentView: View {
 
 <details>
 <summary> Details (Click to expand) </summary>
+
 ![An emboss shader.](assets/emboss.png)
 
 A `layerEffect()` shader that creates an embossing effect by adding brightness from pixels in one direction, and subtracting brightness from pixels in the other direction.
