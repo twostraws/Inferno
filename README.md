@@ -1465,6 +1465,13 @@ struct ContentView: View {
 ```
 
 </details>
+
+### Genie
+<details>
+<summary> Details (Click to expand) </summary>
+
+A transition that makes it look like the view is getting sucked into a corner.
+</details>
 </details>
 
 ## Inferno Sandbox
@@ -1508,6 +1515,7 @@ Some shaders were ported to Metal by me, from other open-source samples also rel
 - Radial is based on [Radial](https://gl-transitions.com/editor/Radial) by Xaychru / gre.
 - Swirl is based on [Swirl](https://gl-transitions.com/editor/Swirl) by Sergey Kosarevsky / gre.
 - Wind is based on [Wind](https://gl-transitions.com/editor/wind) by gre.
+- Genie is based on [Mac Genie Effecty](https://www.shadertoy.com/view/flyfRt) by altaha-ansari.
 
 ## Where to learn more
 
