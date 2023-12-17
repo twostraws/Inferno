@@ -1471,6 +1471,46 @@ struct ContentView: View {
 <summary> Details (Click to expand) </summary>
 
 A transition that makes it look like the view is getting sucked into a corner.
+
+**Parameters:**
+
+- None.
+
+Example code:
+
+```swift
+struct ContentView: View {
+    @State private var showingFirstView = true
+
+    var body: some View {
+        VStack {
+            if showingFirstView {
+                Image(systemName: "figure.walk.circle")
+                    .font(.system(size: 300))
+                    .foregroundStyle(.white)
+                    .padding()
+                    .background(.blue)
+                    .drawingGroup()
+                    .transition(.genie())
+            } else {
+                Image(systemName: "figure.run.circle")
+                    .font(.system(size: 300))
+                    .foregroundStyle(.white)
+                    .padding()
+                    .background(.indigo)
+                    .drawingGroup()
+                    .transition(.genie())
+            }
+
+            Button("Toggle Views") {
+                withAnimation(.easeIn(duration: 1.5)) {
+                    showingFirstView.toggle()
+                }
+            }
+        }
+    }
+}
+```
 </details>
 </details>
 
