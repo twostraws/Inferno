@@ -114,6 +114,15 @@ struct TouchTransformationShader: Hashable, Identifiable {
                 .float(value),
                 .float(2)
             )
+        },
+        TouchTransformationShader(name: "Bubble", usesSize: true, valueRange: 10...100) { size, touch, value in
+          let shader = InfernoShaderLibrary[dynamicMember: "bubble"]
+
+            return shader(
+                .float2(size),
+                .float2(touch),
+                .float(value)
+            )
         }
     ]
 }
