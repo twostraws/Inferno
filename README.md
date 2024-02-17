@@ -828,6 +828,54 @@ struct ContentView: View {
 
 </details>
 
+### Bubble
+
+<details>
+<summary> Details (Click to expand) </summary>
+
+![A bubble shader.](assets/bubble.png)
+
+A `layerEffect()` shader that creates a simple soap bubble effect over a precise location.
+
+**Parameters:**
+
+- `uiSize`: The size of the whole image, in user-space.
+- `uiPosition`: The location, where the bubble should be centered, in user-space.
+- `uiRadius`: How large the bubble area should be, in user-space.
+
+Example code:
+
+```swift
+struct ContentView: View {
+    @State private var touchLocation = CGPoint.zero
+
+    var body: some View {
+        Image(systemName: "figure.walk.circle")
+            .font(.system(size: 300))
+            .padding()
+            .background(.background)
+            .drawingGroup()
+            .visualEffect { content, proxy in
+                content
+                    .layerEffect(
+                        ShaderLibrary.bubble(
+                            .float2(proxy.size),
+                            .float2(touchLocation),
+                            .float(50)
+                        ),
+                        maxSampleOffset: .zero
+                    )
+            }
+            .gesture(
+                DragGesture(minimumDistance: 0)
+                    .onChanged { touchLocation = $0.location }
+            )
+    }
+}
+```
+
+</details>
+
 ### Water
 
 <details>
