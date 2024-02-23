@@ -17,7 +17,7 @@ public enum InfernoShaderLibrary {
     /// Typically this subscript is used implicitly via the dynamic
     /// member syntax, for example:
     ///
-    ///    let fn = InfernoShaderLibrary.myFunction
+    /// ```let fn = InfernoShaderLibrary.myFunction```
     ///
     /// which creates a reference to the MSL function called
     /// `myFunction()`.
