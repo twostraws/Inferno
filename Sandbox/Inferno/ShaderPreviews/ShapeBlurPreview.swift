@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// A SwiftUI view that renders a variable blur masked by a shape, using the VariableGaussianBlur Metal shader.
+/// A SwiftUI view that renders a variable blur masked by a shape, using the `VariableGaussianBlur Metal shader.
 struct ShapeBlurPreview: View {
     /// A binding to the opacity set in the parent view.
     @Binding var opacity: Double
@@ -60,7 +60,7 @@ struct ShapeBlurPreview: View {
                     )
                 }
                 .opacity(opacity)
-            // We need to give the view an ID based on the parameters used within the drawing callback so that SwiftUI will call it again when they change.
+                // We need to give the view an ID based on the parameters used within the drawing callback so that SwiftUI will call it again when they change.
                 .id(shapeInset)
                 .id(shapeFade)
                 .id(invertMask)
