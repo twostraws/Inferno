@@ -9,15 +9,15 @@ import Foundation
 
 /// The various preview options we provide.
 enum PreviewType: String {
-    // A flag emoji.
+    /// A flag emoji.
     case emoji
 
-    // An image from our asset catalog.
+    /// An image from our asset catalog.
     case image
 
-    // A solid rectangle.
+    /// A solid rectangle.
     case shape
 
-    // An interesting SF Symbol.
+    /// An interesting SF Symbol.
     case symbol
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// Renders a shader that requires a TimelineView to animate itself.
+/// Renders a shader that requires a `TimelineView` to animate itself.
 struct TimeTransformationPreview: View {
     /// The initial time this view was created, so we can send
     /// elapsed time to the shader.

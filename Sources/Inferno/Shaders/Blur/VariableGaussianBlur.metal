@@ -10,10 +10,16 @@
 using namespace metal;
 
 
-/// Formula of a gaussian function for a single axis as described by https://en.wikipedia.org/wiki/Gaussian_blur. Creates a "bell curve" shape which we'll use for the weight of each sample when averaging.
-///
-/// - Parameter distance: The distance from the origin along the current axis.
-/// - Parameter sigma: The desired standard deviation of the bell curve.
+/**
+ Formula of a gaussian function for single axis as described by
+ https://en.wikipedia.org/wiki/Gaussian_blur .
+
+ Creates a "bell curve" shape which we'll use for the weight of each sample when averaging.
+
+ - Parameters:
+    - distance: The distance from the origin along the current axis.
+    - sigma: The desired standard deviation of the bell curve.
+ */
 inline half gaussian(half distance, half sigma) {
     // Calculate the exponent of the Gaussian equation.
     const half gaussianExponent = -(distance * distance) / (2.0h * sigma * sigma);
@@ -22,13 +28,18 @@ inline half gaussian(half distance, half sigma) {
     return (1.0h / (2.0h * M_PI_H * sigma * sigma)) * exp(gaussianExponent);
 }
 
-/// Calculate pixel color using the weighted average of multiple samples along the X axis.
-///
-/// - Parameter position: The coordinates of the current pixel.
-/// - Parameter layer: The SwiftUI layer we're reading from.
-/// - Parameter radius: The desired blur radius.
-/// - Parameter axisMultiplier: A vector defining which axis to sample along. Should be (1, 0) for X, or (0, 1) for Y.
-/// - Parameter maxSamples: The maximum number of samples to read in each direction from the current pixel. Texture sampling is expensive, so instead of sampling every pixel, we use a lower count spread out across the radius.
+/**
+ Calculate pixel color using the weighted average of multiple samples along the X axis.
+
+ - Parameters:
+    - position: The coordinates of the current pixel.
+    - layer: The SwiftUI layer we're reading from.
+    - radius: The desired blur radius.
+    - axisMultiplier: A vector defining which axis to sample along. Should be `(1, 0)` for X, or `(0, 1)` for Y.
+    - maxSamples: The maximum number of samples to read in each direction from the current pixel.
+        Texture sampling is expensive, so instead of sampling every pixel, we use a lower count spread out
+        across the radius.
+ */
 half4 gaussianBlur1D(float2 position, SwiftUI::Layer layer, half radius, half2 axisMultiplier, half maxSamples) {
     // Calculate how far apart the samples should be: either 1 pixel or the desired radius divided by the maximum number of samples, whichever is farther.
     const half interval = max(1.0h, radius / maxSamples);
@@ -66,21 +77,32 @@ half4 gaussianBlur1D(float2 position, SwiftUI::Layer layer, half radius, half2 a
     return weightedColorSum / totalWeight;
 }
 
-/// Variable blur effect along the specified axis that samples from a texture to determine the blur radius multiplier at each pixel. This shader requires two passes, one along the X axis and one along the Y.
-///
-/// The two-pass approach is better for performance as it scales linearly rather than exponentially with pixel count * radius * sample count, but can result in "streak" artifacts where blurred areas meet unblurred areas.
-///
-/// - Parameter position: The coordinates of the current pixel in user space.
-/// - Parameter layer: The SwiftUI layer we're applying the blur to.
-/// - Parameter boundingRect: The bounding rectangle of the SwiftUI view in user space.
-/// - Parameter radius: The desired maximum blur radius for areas of the mask that are fully opaque.
-/// - Parameter maxSamples: The maximum number of samples to read _in each direction_ from the current pixel. Reducing this value increases performance but results in banding in the resulting blur.
-/// - Parameter mask: The texture to sample alpha values from to determine the blur radius at each pixel.
-/// - Parameter vertical: Specifies to blur along the Y axis. Because SwiftUI can't pass booleans to a shader, `0.0` is treated as false (i.e. blur the X axis)  and any other value is treated as true (i.e. blur the Y axis).
-[[ stitchable ]] half4 variableBlur(float2 pos, SwiftUI::Layer layer, float4 boundingRect, float radius, float maxSamples, texture2d<half> mask, float vertical) {
+/**
+ Variable blur effect along the specified axis that samples from a texture to determine the blur radius
+ multiplier at each pixel.
+
+ This shader requires two passes, one along the X axis and one along the Y.
+
+ The two-pass approach is better for performance as it scales linearly rather than exponentially with
+ `pixel count * radius * sample count`, but can result in "streak" artifacts where blurred areas
+ meet unblurred areas.
+
+ - Parameters:
+    - position: The coordinates of the current pixel in user space.
+    - layer: The SwiftUI layer we're applying the blur to.
+    - boundingRect: The bounding rectangle of the SwiftUI view in user space.
+    - radius: The desired maximum blur radius for areas of the mask that are fully opaque.
+    - maxSamples: The maximum number of samples to read _in each direction_ from the current pixel.
+        Reducing this value increases performance but results in banding in the resulting blur.
+    - mask: The texture to sample alpha values from to determine the blur radius at each pixel.
+    - vertical: Specifies to blur along the Y axis. Because SwiftUI can't pass booleans to a shader,
+        `0.0` is treated as `false` (i.e. blur the X axis), and any other value is treated as `true`
+        (i.e. blur the Y axis).
+ */
+[[ stitchable ]] half4 variableBlur(float2 position, SwiftUI::Layer layer, float4 boundingRect, float radius, float maxSamples, texture2d<half> mask, float vertical) {
     // Calculate the position in UV space within the bounding rect (0 to 1).
-    const float2 uv = float2(pos.x / boundingRect[2], pos.y / boundingRect[3]);
-    
+    const float2 uv = float2(position.x / boundingRect[2], position.y / boundingRect[3]);
+
     // Sample the alpha value of the mask at the current UV position.
     const half maskAlpha = mask.sample(metal::sampler(metal::filter::linear), uv).a;
     
@@ -93,9 +115,9 @@ half4 gaussianBlur1D(float2 position, SwiftUI::Layer layer, half radius, half2 a
         const half2 axisMultiplier = vertical == 0.0 ? half2(1, 0) : half2(0, 1);
         
         // Return the blurred color.
-        return gaussianBlur1D(pos, layer, pixelRadius, axisMultiplier, maxSamples);
+        return gaussianBlur1D(position, layer, pixelRadius, axisMultiplier, maxSamples);
     } else {
         // If the blur radius is less than 1 pixel, return the current pixel's color as-is.
-        return layer.sample(pos);
+        return layer.sample(position);
     }
 }

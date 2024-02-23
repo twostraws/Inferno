@@ -15,7 +15,7 @@ float2 remap(float2 uv, float2 inputLow, float2 inputHigh, float2 outputLow, flo
     return final;
 }
 
-[[ stitchable ]] float2 genieTranstion(float2 position, float2 size, float effectValue) {
+[[ stitchable ]] float2 genieTransition(float2 position, float2 size, float effectValue) {
     // Normalized pixel coordinates (from 0 to 1)
     float2 normalizedPosition = position / size;
     float positiveEffect = effectValue*sign(effectValue);
