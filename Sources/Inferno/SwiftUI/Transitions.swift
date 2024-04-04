@@ -107,7 +107,7 @@ struct DiamondWaveTransition: ViewModifier {
 
 /// A Metal-powered layer effect transition that needs to know the
 /// view's size. You probably don't want to use this directly, and
-/// should instead use one of the AnyTransition extensions.
+/// should instead use one of the `AnyTransition` extensions.
 @available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct InfernoTransition: ViewModifier {
     /// The name of the shader function we're rendering.
@@ -131,9 +131,9 @@ struct InfernoTransition: ViewModifier {
 
 /// A Metal-powered distortion effect transition that needs to know
 /// the view's size. You probably don't want to use this directly, and
-/// should instead use one of the AnyTranstion extensions.
+/// should instead use one of the `AnyTransition` extensions.
 @available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
-struct InferoDistortionTranstion: ViewModifier {
+struct InfernoDistortionTransition: ViewModifier {
     /// The name of the shader function we're rendering.
     var name: String
 
@@ -155,7 +155,7 @@ struct InferoDistortionTranstion: ViewModifier {
 
 /// A transition that causes the incoming and outgoing views to become
 /// increasingly pixellated, then return to their normal state. While this
-/// happens the old view fades out and the new one fades in.
+/// happens, the old view fades out and the new one fades in.
 @available(iOS 17, macOS 14, macCatalyst 17, tvOS 17, visionOS 1, *)
 struct PixellateTransition: ViewModifier {
     /// How large the pixels should be.
@@ -235,7 +235,7 @@ struct WindTransition: ViewModifier {
 extension AnyTransition {
     /// A transition that makes a variety of circles simultaneously zoom up
     ///  across the screen.
-    /// - Parameters:
+    ///
     /// - Parameter size: The size of the circles.
     public static func circles(size: Double = 20) -> AnyTransition {
         .asymmetric(
@@ -249,7 +249,7 @@ extension AnyTransition {
 
     /// A transition that makes a variety of circles zoom up across the screen,
     /// based on their X/Y position.
-    /// - Parameters:
+    ///
     /// - Parameter size: The size of the circles.
     public static func circleWave(size: Double = 20) -> AnyTransition {
         .asymmetric(
@@ -276,7 +276,7 @@ extension AnyTransition {
 
     /// A transition that makes a variety of circles zoom up across the screen,
     /// based on their X/Y position.
-    /// - Parameters:
+    ///
     /// - Parameter size: The size of the diamonds.
     public static func diamondWave(size: Double = 20) -> AnyTransition {
         .asymmetric(
@@ -316,7 +316,7 @@ extension AnyTransition {
 
     /// A transition that causes the incoming and outgoing views to become
     /// increasingly pixellated, then return to their normal state. While this
-    /// happens the old view fades out and the new one fades in.
+    /// happens, the old view fades out and the new one fades in.
     /// - Parameters:
     ///   - squares: How many pixel squares to create.
     ///   - steps: How many animation steps to use; anything >= 60 looks smooth.
@@ -334,16 +334,16 @@ extension AnyTransition {
     }
 
     /// A transition that causes the incoming and outgoing views to become
-    /// sucked in and ouf of the top right corner.
+    /// sucked in and out of the top right corner.
     public static func genie() -> AnyTransition {
         .asymmetric(
             insertion: .modifier(
-                active: InferoDistortionTranstion(name: "genieTranstion", progress: 1),
-                identity:  InferoDistortionTranstion(name: "genieTranstion", progress: 0)
+                active: InfernoDistortionTransition(name: "genieTransition", progress: 1),
+                identity:  InfernoDistortionTransition(name: "genieTransition", progress: 0)
             ),
             removal: .modifier(
-                active:  InferoDistortionTranstion(name: "genieTranstion", progress: 1),
-                identity:  InferoDistortionTranstion(name: "genieTranstion", progress: 0)
+                active:  InfernoDistortionTransition(name: "genieTransition", progress: 1),
+                identity:  InfernoDistortionTransition(name: "genieTransition", progress: 0)
             )
         )
     }
@@ -360,7 +360,7 @@ extension AnyTransition {
     /// A transition that increasingly twists the contents of the incoming and outgoing
     /// views, then untwists them to complete the transition. As this happens the two
     /// views fade to move smoothly from one to the other.
-    /// - Parameters:
+    ///
     /// - Parameter radius: How much of the view to swirl, in the range 0 to 1. Start with 0.5 and experiment.
     public static func swirl(radius: Double = 0.5) -> AnyTransition {
         .asymmetric(
@@ -375,9 +375,9 @@ extension AnyTransition {
         )
     }
 
-    /// A transition that makes it look the pixels of one image are being blown
+    /// A transition that makes it look like the pixels of one image are being blown
     /// away horizontally.
-    /// - Parameters:
+    ///
     /// - Parameter size: How big the wind streaks should be, relative to the view's width.
     public static func wind(size: Double = 0.2) -> AnyTransition {
         .asymmetric(
