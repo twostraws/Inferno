@@ -13,9 +13,23 @@ struct WelcomeView: View {
     @State private var logoHover = false
 
     var body: some View {
-        VStack(spacing: 10) {
-            Spacer()
+        ViewThatFits(in: .vertical) {
+            content
 
+            /*
+             If the content's ideal size does not fit vertically, then allow the content to scroll.
+             This is useful when adapting to Dynamic Type changes.
+             */
+            ScrollView {
+                content
+            }
+        }
+        .navigationSubtitle("Welcome to the Shader Sandbox")
+    }
+
+    @ViewBuilder
+    private var content: some View {
+        VStack(spacing: 10) {
             Image(.logo)
                 .padding(.bottom, 10)
 
@@ -39,7 +53,6 @@ struct WelcomeView: View {
             .onHover { logoHover = $0 }
             .foregroundStyle(.white)
         }
-        .navigationSubtitle("Welcome to the Shader Sandbox")
         .padding()
     }
 }
