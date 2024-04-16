@@ -1,8 +1,8 @@
 //
-//  Shimmer.metal
-//  Inferno
-//
-//  Created by Brent Whitman on 2024-04-10.
+// Shimmer.metal
+// Inferno
+// https://www.github.com/twostraws/Inferno
+// See LICENSE for license information.
 //
 
 #include <metal_stdlib>

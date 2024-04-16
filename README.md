@@ -1653,7 +1653,7 @@ Some shaders were ported to Metal by me, from other open-source samples also rel
 - Circle, Circle Wave, Diamond, Diamond Wave are based on [Polka Dots Curtain](https://gl-transitions.com/editor/PolkaDotsCurtain) by bobylito.
 - Crosswarp is based on [Crosswarp](https://gl-transitions.com/editor/crosswarp) by Eke Péter.
 - Radial is based on [Radial](https://gl-transitions.com/editor/Radial) by Xaychru / gre.
-- Shimmer is inspired by [SwiftUI-Shimmer](https://github.com/markiv/SwiftUI-Shimmer) by markiv.
+- Shimmer is inspired by [SwiftUI-Shimmer](https://github.com/markiv/SwiftUI-Shimmer) by markiv; ported to Metal by [@bwhtmn](https://github.com/bwhtmn).
 - Swirl is based on [Swirl](https://gl-transitions.com/editor/Swirl) by Sergey Kosarevsky / gre.
 - Wind is based on [Wind](https://gl-transitions.com/editor/wind) by gre.
 - Genie is based on [Mac Genie Effecty](https://www.shadertoy.com/view/flyfRt) by altaha-ansari.
