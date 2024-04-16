@@ -107,6 +107,17 @@ struct TimeTransformationShader: Hashable, Identifiable {
                 .float(5)
             )
         },
+        TimeTransformationShader(name: "Shimmer", type: .visualEffectColor) { time, size in
+            let shader = InfernoShaderLibrary[dynamicMember: "shimmer"]
+            
+            return shader(
+                .float2(size),
+                .float(time),
+                .float(3.0),
+                .float(0.3),
+                .float(0.9)
+           )
+        },
         TimeTransformationShader(name: "Water", type: .visualEffectDistortion) { time, size in
             let shader = InfernoShaderLibrary[dynamicMember: "water"]
 

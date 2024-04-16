@@ -99,6 +99,7 @@ Here are the functions used in Inferno:
 - `distance()` calculates the distance between two values. For example, if you provide it with a pair `vec2` you’ll get the length of the vector created by subtracting one from the other. This always returns a single number no matter what data type you give it.
 - `dot()` calculates the dot product of two values. This means multiplying each component of the first value by the respective component in the second value, then adding the result.
 - `floor()` rounds a number down to its nearest integer. If you pass it a vector (e.g. `float2`) this will be done for each component.
+- `fmod()` calculates the remainder of a division operation. For example, `fmod(10.5, 3.0)` is 1.5.
 - `fract()` returns the fractional component of a value. For example, `fract(12.5)` is 0.5. If you pass this a vector then the operation will be performed component-wise, and a new vector will be returned containing the results.
 - `min()` is used to find the lower of two values. If you pass vectors, this is done component-wise, meaning that the resulting vector will evaluate each component in the vector and place the lowest in the resulting vector.
 - `max()` is used to find the higher of two values. If you pass vectors, this is done component-wise, meaning that the resulting vector will evaluate each component in the vector and place the highest in the resulting vector.
@@ -678,6 +679,57 @@ struct ContentView: View {
                                 .float(5)
                             ),
                             maxSampleOffset: .zero
+                        )
+                }
+        }
+    }
+}
+```
+
+</details>
+
+### Shimmer
+
+<details>
+<summary> Details (Click to expand) </summary>
+
+![A shimmer shader.](assets/shimmer.png)
+
+A `visualEffect()` and `colorEffect()` shader that generates a shimmering effect, where the input color lightened by a diagonal gradient that animates left-to-right.
+
+**Parameters:**
+
+- `position`: The user-space coordinate of the current pixel.
+- `color`: The current color of the pixel.
+- `size`: The size of the entire view, in user-space.
+- `time`: The number of elapsed seconds since the shader was created.
+- `animationDuration`: The duration of a single loop of the shimmer animation, in seconds.
+- `gradientWidth`: The width of the shimmer gradient in UV space.
+- `maxLightness`: The maximum lightness at the peak of the gradient.
+
+Example code:
+
+```swift
+struct ContentView: View {
+    @State private var startTime = Date.now
+
+    var body: some View {
+        TimelineView(.animation) { timeline in
+            let elapsedTime = startTime.distance(to: timeline.date)
+            
+            Image(systemName: "figure.walk.circle")
+                .font(.system(size: 300))
+                .padding()
+                .visualEffect { content, proxy in
+                    content
+                        .colorEffect(
+                            InfernoShaderLibrary[dynamicMember: "shimmer"](
+                                .float2(proxy.size),
+                                .float(elapsedTime),
+                                .float(3.0),
+                                .float(0.3),
+                                .float(0.9)
+                            )
                         )
                 }
         }
@@ -1601,6 +1653,7 @@ Some shaders were ported to Metal by me, from other open-source samples also rel
 - Circle, Circle Wave, Diamond, Diamond Wave are based on [Polka Dots Curtain](https://gl-transitions.com/editor/PolkaDotsCurtain) by bobylito.
 - Crosswarp is based on [Crosswarp](https://gl-transitions.com/editor/crosswarp) by Eke Péter.
 - Radial is based on [Radial](https://gl-transitions.com/editor/Radial) by Xaychru / gre.
+- Shimmer is inspired by [SwiftUI-Shimmer](https://github.com/markiv/SwiftUI-Shimmer) by markiv.
 - Swirl is based on [Swirl](https://gl-transitions.com/editor/Swirl) by Sergey Kosarevsky / gre.
 - Wind is based on [Wind](https://gl-transitions.com/editor/wind) by gre.
 - Genie is based on [Mac Genie Effecty](https://www.shadertoy.com/view/flyfRt) by altaha-ansari.
