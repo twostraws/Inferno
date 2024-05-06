@@ -1662,7 +1662,7 @@ Some shaders were ported to Metal by me, from other open-source samples also rel
 
 If you're keen to learn more about Metal shaders, here are the resources I recommend:
 
-- [The Book of Shaders](https://www.thebookofshaders.com) has taught countless thousands of people how to build shaders, and contains comprehensive descriptions. Note: This is written for GLSL, but the concepts still apply to Metal.
+- [The Book of Shaders](https://thebookofshaders.com) has taught countless thousands of people how to build shaders, and contains comprehensive descriptions. Note: This is written for GLSL, but the concepts still apply to Metal.
 - [ShaderToy](https://www.shadertoy.com) contains all sorts of fantastic shader ideas where you gain inspiration, plus all their code is there to learn from. Again this is written for GLSL, but you can transfer to Metal.
 - [GL Transitions](https://www.gl-transitions.com) contains a variety of open-source GLSL transitions for inspiration.
 - [Apple's Metal documentation](https://developer.apple.com/metal) goes into great detail on the many other usages of Metal – we've just covered fragment shaders here, but it can do so much more!
