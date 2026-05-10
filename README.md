@@ -1064,6 +1064,58 @@ struct ContentView: View {
 ```
 
 </details>
+
+### Variable Blur
+
+<details>
+<summary> Details (Click to expand) </summary>
+
+ A `layerEffect()` shader that applies a Gaussian blur where the blur radius at each pixel is determined by a mask image. Brighter (more opaque) areas of the mask receive a stronger blur, while transparent areas remain sharp. The blur is implemented as two separate passes (horizontal and vertical) for better performance.
+
+ **Parameters:** 
+
+ - radius` (Float): The maximum blur radius applied in fully opaque areas of the mask. Suggested range: 0–20; try starting with 10.
+ - `maxSampleCount` (Int): The number of texture samples per pass. Higher values produce smoother results at the cost of GPU performance. Default: 15.
+ - `verticalPassFirst` (Bool): When `true`, the vertical blur pass runs before the horizontal pass. Switching the order can reduce artifacts in certain layouts. Default: `false`.
+ - `normalizeEdges` (Bool): When `true`, pixels near the view edges are excluded from the blur to prevent sampling outside the view bounds. Default: `true`.
+
+ **Example using an image mask:** 
+
+ ```swift
+ Image("YourPhoto")
+    .variableBlur(
+         radius: 10,
+         mask: Image("BlurMask")
+    )
+```
+
+
+**Example using a custom-drawn mask:** 
+
+ ```swift
+ Image("YourPhoto")
+     .variableBlur(radius: 10) { context, size in
+         context.fill(
+             Path(
+                 CGRect(
+                     x: 0,
+                     y: size.height / 2,
+                     width: size.width,
+                     height: size.height / 2
+                 )
+             ),
+             with: .linearGradient(
+                 Gradient(colors: [.clear, .white]),
+                 startPoint: CGPoint(x: 0, y: size.height / 2),
+                 endPoint: CGPoint(x: 0, y: size.height)
+             )
+         )
+     }
+ ```
+
+ In this example, only the bottom half of the image is blurred, with a smooth gradient transition from sharp to fully blurred.
+
+ </details>
 </details>
 
 ## Transitions included in Inferno
